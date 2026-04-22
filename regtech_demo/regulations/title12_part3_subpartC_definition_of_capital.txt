@@ -1,0 +1,537 @@
+Subpart C—Definition of Capital
+
+Source:
+
+78 FR 62157, 62273, Oct. 11, 2013, unless otherwise noted.
+
+§ 3.20 Capital components and eligibility criteria for regulatory capital instruments.
+
+(a) Regulatory capital components. A national bank's or Federal savings association's regulatory capital components are:
+
+(1) Common equity tier 1 capital;
+
+(2) Additional tier 1 capital; and
+
+(3) Tier 2 capital.
+
+(b) Common equity tier 1 capital. Common equity tier 1 capital is the sum of the common equity tier 1 capital elements in this paragraph (b), minus regulatory adjustments and deductions in § 3.22. The common equity tier 1 capital elements are:
+
+(1) Any common stock instruments (plus any related surplus) issued by the national bank or Federal savings association, net of treasury stock, and any capital instruments issued by mutual banking organizations, that meet all the following criteria:
+
+(i) The instrument is paid-in, issued directly by the national bank or Federal savings association, and represents the most subordinated claim in a receivership, insolvency, liquidation, or similar proceeding of the national bank or Federal savings association;
+
+(ii) The holder of the instrument is entitled to a claim on the residual assets of the national bank or Federal savings association that is proportional with the holder's share of the national bank's or Federal savings association's issued capital after all senior claims have been satisfied in a receivership, insolvency, liquidation, or similar proceeding;
+
+(iii) The instrument has no maturity date, can only be redeemed via discretionary repurchases with the prior approval of the OCC, and does not contain any term or feature that creates an incentive to redeem;
+
+(iv) The national bank or Federal savings association did not create at issuance of the instrument through any action or communication an expectation that it will buy back, cancel, or redeem the instrument, and the instrument does not include any term or feature that might give rise to such an expectation;
+
+(v) Any cash dividend payments on the instrument are paid out of the national bank's or Federal savings association's net income or retained earnings and are not subject to a limit imposed by the contractual terms governing the instrument.
+
+(vi) The national bank or Federal savings association has full discretion at all times to refrain from paying any dividends and making any other distributions on the instrument without triggering an event of default, a requirement to make a payment-in-kind, or an imposition of any other restrictions on the national bank or Federal savings association;
+
+(vii) Dividend payments and any other distributions on the instrument may be paid only after all legal and contractual obligations of the national bank or Federal savings association have been satisfied, including payments due on more senior claims;
+
+(viii) The holders of the instrument bear losses as they occur equally, proportionately, and simultaneously with the holders of all other common stock instruments before any losses are borne by holders of claims on the national bank or Federal savings association with greater priority in a receivership, insolvency, liquidation, or similar proceeding;
+
+(ix) The paid-in amount is classified as equity under GAAP;
+
+(x) The national bank or Federal savings association, or an entity that the national bank or Federal savings association controls, did not purchase or directly or indirectly fund the purchase of the instrument;
+
+(xi) The instrument is not secured, not covered by a guarantee of the national bank or Federal savings association or of an affiliate of the national bank or Federal savings association, and is not subject to any other arrangement that legally or economically enhances the seniority of the instrument;
+
+(xii) The instrument has been issued in accordance with applicable laws and regulations; and
+
+(xiii) The instrument is reported on the national bank's or Federal savings association's regulatory financial statements separately from other capital instruments.
+
+(2) Retained earnings.
+
+(3) Accumulated other comprehensive income (AOCI) as reported under GAAP.[1]
+
+(4) Any common equity tier 1 minority interest, subject to the limitations in § 3.21.
+
+(5) Notwithstanding the criteria for common stock instruments referenced above, a national bank's or Federal savings association's common stock issued and held in trust for the benefit of its employees as part of an employee stock ownership plan does not violate any of the criteria in paragraph (b)(1)(iii), paragraph (b)(1)(iv) or paragraph (b)(1)(xi) of this section, provided that any repurchase of the stock is required solely by virtue of ERISA for an instrument of a national bank or Federal savings association that is not publicly-traded. In addition, an instrument issued by a national bank or Federal savings association to its employee stock ownership plan does not violate the criterion in paragraph (b)(1)(x) of this section.
+
+(c) Additional tier 1 capital. Additional tier 1 capital is the sum of additional tier 1 capital elements and any related surplus, minus the regulatory adjustments and deductions in § 3.22. Additional tier 1 capital elements are:
+
+(1) Instruments (plus any related surplus) that meet the following criteria:
+
+(i) The instrument is issued and paid-in;
+
+(ii) The instrument is subordinated to depositors, general creditors, and subordinated debt holders of the national bank or Federal savings association in a receivership, insolvency, liquidation, or similar proceeding;
+
+(iii) The instrument is not secured, not covered by a guarantee of the national bank or Federal savings association or of an affiliate of the national bank or Federal savings association, and not subject to any other arrangement that legally or economically enhances the seniority of the instrument;
+
+(iv) The instrument has no maturity date and does not contain a dividend step-up or any other term or feature that creates an incentive to redeem; and
+
+(v) If callable by its terms, the instrument may be called by the national bank or Federal savings association only after a minimum of five years following issuance, except that the terms of the instrument may allow it to be called earlier than five years upon the occurrence of a regulatory event that precludes the instrument from being included in additional tier 1 capital, a tax event, or if the issuing entity is required to register as an investment company pursuant to the Investment Company Act of 1940 (15 U.S.C. 80a-1 et seq.). In addition:
+
+(A) The national bank or Federal savings association must receive prior approval from the OCC to exercise a call option on the instrument.
+
+(B) The national bank or Federal savings association does not create at issuance of the instrument, through any action or communication, an expectation that the call option will be exercised.
+
+(C) Prior to exercising the call option, or immediately thereafter, the national bank or Federal savings association must either: Replace the instrument to be called with an equal amount of instruments that meet the criteria under paragraph (b) of this section or this paragraph (c);[2] or demonstrate to the satisfaction of the OCC that following redemption, the national bank or Federal savings association will continue to hold capital commensurate with its risk.
+
+(vi) Redemption or repurchase of the instrument requires prior approval from the OCC.
+
+(vii) The national bank or Federal savings association has full discretion at all times to cancel dividends or other distributions on the instrument without triggering an event of default, a requirement to make a payment-in-kind, or an imposition of other restrictions on the national bank or Federal savings association except in relation to any distributions to holders of common stock or instruments that are pari passu with the instrument.
+
+(viii) Any cash dividend payments on the instrument are paid out of the national bank's or Federal savings association's net income or retained earnings.
+
+(ix) The instrument does not have a credit-sensitive feature, such as a dividend rate that is reset periodically based in whole or in part on the national bank's or Federal savings association's credit quality, but may have a dividend rate that is adjusted periodically independent of the national bank's or Federal savings association's credit quality, in relation to general market interest rates or similar adjustments.
+
+(x) The paid-in amount is classified as equity under GAAP.
+
+(xi) The national bank or Federal savings association, or an entity that the national bank or Federal savings association controls, did not purchase or directly or indirectly fund the purchase of the instrument.
+
+(xii) The instrument does not have any features that would limit or discourage additional issuance of capital by the national bank or Federal savings association, such as provisions that require the national bank or Federal savings association to compensate holders of the instrument if a new instrument is issued at a lower price during a specified time frame.
+
+(xiii) If the instrument is not issued directly by the national bank or Federal savings association or by a subsidiary of the national bank or Federal savings association that is an operating entity, the only asset of the issuing entity is its investment in the capital of the national bank or Federal savings association, and proceeds must be immediately available without limitation to the national bank or Federal savings association or to the national bank's or Federal savings association's top-tier holding company in a form which meets or exceeds all of the other criteria for additional tier 1 capital instruments.[3]
+
+(xiv) For an advanced approaches national bank or Federal savings association, the governing agreement, offering circular, or prospectus of an instrument issued after the date upon which the national bank or Federal savings association becomes subject to this part as set forth in § 3.1(f) must disclose that the holders of the instrument may be fully subordinated to interests held by the U.S. government in the event that the national bank or Federal savings association enters into a receivership, insolvency, liquidation, or similar proceeding.
+
+(2) Tier 1 minority interest, subject to the limitations in § 3.21, that is not included in the national bank's or Federal savings association's common equity tier 1 capital.
+
+(3)
+
+(i) Any and all instruments that qualified as tier 1 capital under the OCC's general risk-based capital rules under appendix A to this part (national banks), 12 CFR part 167 (Federal savings associations) as then in effect, that were issued under the Small Business Jobs Act of 2010[4] or prior to October 4, 2010, under the Emergency Economic Stabilization Act of 2008.[5]
+
+(ii) Any preferred stock instruments issued under the U.S. Department of the Treasury's Emergency Capital Investment Program pursuant to section 104A of the Community Development Banking and Financial Institutions Act of 1994, added by the Consolidated Appropriations Act, 2021.[6]
+
+(4) Notwithstanding the criteria for additional tier 1 capital instruments referenced above:
+
+(i) An instrument issued by a national bank or Federal savings association and held in trust for the benefit of its employees as part of an employee stock ownership plan does not violate any of the criteria in paragraph (c)(1)(iii) of this section, provided that any repurchase is required solely by virtue of ERISA for an instrument of a national bank or Federal savings association that is not publicly-traded. In addition, an instrument issued by a national bank or Federal savings association to its employee stock ownership plan does not violate the criteria in paragraph (c)(1)(v) or paragraph (c)(1)(xi) of this section; and
+
+(ii) An instrument with terms that provide that the instrument may be called earlier than five years upon the occurrence of a rating agency event does not violate the criterion in paragraph (c)(1)(v) of this section provided that the instrument was issued and included in a national bank's or Federal savings association's tier 1 capital prior to January 1, 2014, and that such instrument satisfies all other criteria under this § 3.20(c).
+
+(d) Tier 2 Capital. Tier 2 capital is the sum of tier 2 capital elements and any related surplus, minus regulatory adjustments and deductions in § 3.22. Tier 2 capital elements are:
+
+(1) Instruments (plus related surplus) that meet the following criteria:
+
+(i) The instrument is issued and paid-in;
+
+(ii) The instrument is subordinated to depositors and general creditors of the national bank or Federal savings association;
+
+(iii) The instrument is not secured, not covered by a guarantee of the national bank or Federal savings association or of an affiliate of the national bank or Federal savings association, and not subject to any other arrangement that legally or economically enhances the seniority of the instrument in relation to more senior claims;
+
+(iv) The instrument has a minimum original maturity of at least five years. At the beginning of each of the last five years of the life of the instrument, the amount that is eligible to be included in tier 2 capital is reduced by 20 percent of the original amount of the instrument (net of redemptions) and is excluded from regulatory capital when the remaining maturity is less than one year. In addition, the instrument must not have any terms or features that require, or create significant incentives for, the national bank or Federal savings association to redeem the instrument prior to maturity;[7] and
+
+(v) The instrument, by its terms, may be called by the national bank or Federal savings association only after a minimum of five years following issuance, except that the terms of the instrument may allow it to be called sooner upon the occurrence of an event that would preclude the instrument from being included in tier 2 capital, a tax event, or if the issuing entity is required to register as an investment company pursuant to the Investment Company Act of 1940 (15 U.S.C. 80a-1 et seq.). In addition:
+
+(A) The national bank or Federal savings association must receive the prior approval of the OCC to exercise a call option on the instrument.
+
+(B) The national bank or Federal savings association does not create at issuance, through action or communication, an expectation the call option will be exercised.
+
+(C) Prior to exercising the call option, or immediately thereafter, the national bank or Federal savings association must either: Replace any amount called with an equivalent amount of an instrument that meets the criteria for regulatory capital under this section;[8] or demonstrate to the satisfaction of the OCC that following redemption, the national bank or Federal savings association would continue to hold an amount of capital that is commensurate with its risk.
+
+(vi) The holder of the instrument must have no contractual right to accelerate payment of principal or interest on the instrument, except in the event of a receivership, insolvency, liquidation, or similar proceeding of the national bank or Federal savings association.
+
+(vii) The instrument has no credit-sensitive feature, such as a dividend or interest rate that is reset periodically based in whole or in part on the national bank's or Federal savings association's credit standing, but may have a dividend rate that is adjusted periodically independent of the national bank's or Federal savings association's credit standing, in relation to general market interest rates or similar adjustments.
+
+(viii) The national bank or Federal savings association, or an entity that the national bank or Federal savings association controls, has not purchased and has not directly or indirectly funded the purchase of the instrument.
+
+(ix) If the instrument is not issued directly by the national bank or Federal savings association or by a subsidiary of the national bank or Federal savings association that is an operating entity, the only asset of the issuing entity is its investment in the capital of the national bank or Federal savings association, and proceeds must be immediately available without limitation to the national bank or Federal savings association or the national bank's or Federal savings association's top-tier holding company in a form that meets or exceeds all the other criteria for tier 2 capital instruments under this section.[9]
+
+(x) Redemption of the instrument prior to maturity or repurchase requires the prior approval of the OCC.
+
+(xi) For an advanced approaches national bank or Federal savings association, the governing agreement, offering circular, or prospectus of an instrument issued after the date on which the advanced approaches national bank or Federal savings association becomes subject to this part under § 3.1(f) must disclose that the holders of the instrument may be fully subordinated to interests held by the U.S. government in the event that the national bank or Federal savings association enters into a receivership, insolvency, liquidation, or similar proceeding.
+
+(2) Total capital minority interest, subject to the limitations set forth in § 3.21, that is not included in the national bank's or Federal savings association's tier 1 capital.
+
+(3) ALLL or AACL, as applicable, up to 1.25 percent of the national bank's or Federal savings association's standardized total risk-weighted assets not including any amount of the ALLL or AACL, as applicable (and excluding in the case of a market risk national bank or Federal savings association, its standardized market risk-weighted assets).
+
+(4)
+
+(i) Any instrument that qualified as tier 2 capital under the OCC's general risk-based capital rules under appendix A to this part, 12 CFR part 167 as then in effect, that were issued under the Small Business Jobs Act of 2010,[10] or prior to October 4, 2010, under the Emergency Economic Stabilization Act of 2008.[11]
+
+(ii) Any debt instruments issued under the U.S. Department of the Treasury's Emergency Capital Investment Program pursuant to section 104A of the Community Development Banking and Financial Institutions Act of 1994, added by the Consolidated Appropriations Act, 2021.[12]
+
+(5) For a national bank or Federal savings association that makes an AOCI opt-out election (as defined in paragraph (b)(2) of § 3.22), 45 percent of pretax net unrealized gains on available-for-sale preferred stock classified as an equity security under GAAP and available-for-sale equity exposures.
+
+(6) Notwithstanding the criteria for tier 2 capital instruments referenced above, an instrument with terms that provide that the instrument may be called earlier than five years upon the occurrence of a rating agency event does not violate the criterion in paragraph (d)(1)(v) of this section provided that the instrument was issued and included in a national bank's or Federal savings association's tier 1 or tier 2 capital prior to January 1, 2014, and that such instrument satisfies all other criteria under this paragraph (d).
+
+(e) OCC approval of a capital element.
+
+(1) A national bank or Federal savings association must receive OCC prior approval to include a capital element (as listed in this section) in its common equity tier 1 capital, additional tier 1 capital, or tier 2 capital unless the element:
+
+(i) Was included in a national bank's or Federal savings association's tier 1 capital or tier 2 capital prior to May 19, 2010 in accordance with the OCC's risk-based capital rules that were effective as of that date and the underlying instrument may continue to be included under the criteria set forth in this section; or
+
+(ii) Is equivalent, in terms of capital quality and ability to absorb losses with respect to all material terms, to a regulatory capital element the OCC determined may be included in regulatory capital pursuant to paragraph (e)(3) of this section.
+
+(2) When considering whether a national bank or Federal savings association may include a regulatory capital element in its common equity tier 1 capital, additional tier 1 capital, or tier 2 capital, the OCC will consult with the Federal Deposit Insurance Corporation and Federal Reserve Board.
+
+(3) After determining that a regulatory capital element may be included in a national bank's or Federal savings association's common equity tier 1 capital, additional tier 1 capital, or tier 2 capital, the OCC will make its decision publicly available, including a brief description of the material terms of the regulatory capital element and the rationale for the determination.
+
+[78 FR 62157, 62273, Oct. 11, 2013, as amended at 84 FR 4238, Feb. 14, 2019; 84 FR 35249, July 22, 2019; 86 FR 15080, Mar. 22, 2021]
+
+Footnotes -
+3.20
+
+[1] See § 3.22 for specific adjustments related to AOCI.
+
+[2] Replacement can be concurrent with redemption of existing additional tier 1 capital instruments.
+
+[3] De minimis assets related to the operation of the issuing entity can be disregarded for purposes of this criterion.
+
+[4] Public Law 111-240; 124 Stat. 2504 (2010).
+
+[5] Public Law 110-343, 122 Stat. 3765 (2008).
+
+[6] Public Law 116-260.
+
+[7] An instrument that by its terms automatically converts into a tier 1 capital instrument prior to five years after issuance complies with the five-year maturity requirement of this criterion.
+
+[8] A national bank or Federal savings association may replace tier 2 capital instruments concurrent with the redemption of existing tier 2 capital instruments.
+
+[9] A national bank or Federal savings association may disregard de minimis assets related to the operation of the issuing entity for purposes of this criterion.
+
+[10] Public Law 111-240; 124 Stat. 2504 (2010).
+
+[11] Public Law 110-343, 122 Stat. 3765 (2008).
+
+[12] Public Law 116-260.
+
+§ 3.21 Minority interest.
+
+(a)
+
+(1) Applicability. For purposes of § 3.20, a national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association is subject to the minority interest limitations in this paragraph (a) if a consolidated subsidiary of the national bank or Federal savings association has issued regulatory capital that is not owned by the national bank or Federal savings association.
+
+(2) Common equity tier 1 minority interest includable in the common equity tier 1 capital of the national bank or Federal savings association. The amount of common equity tier 1 minority interest that a national bank or Federal savings association may include in common equity tier 1 capital must be no greater than 10 percent of the sum of all common equity tier 1 capital elements of the national bank or Federal savings association (not including the common equity tier 1 minority interest itself), less any common equity tier 1 capital regulatory adjustments and deductions in accordance with § 3.22(a) and (b).
+
+(3) Tier 1 minority interest includable in the tier 1 capital of the national bank or Federal savings association. The amount of tier 1 minority interest that a national bank or Federal savings association may include in tier 1 capital must be no greater than 10 percent of the sum of all tier 1 capital elements of the national bank or Federal savings association (not including the tier 1 minority interest itself), less any tier 1 capital regulatory adjustments and deductions in accordance with § 3.22(a) and (b).
+
+(4) Total capital minority interest includable in the total capital of the national bank or Federal savings association. The amount of total capital minority interest that a national bank or Federal savings association may include in total capital must be no greater than 10 percent of the sum of all total capital elements of the national bank or Federal savings association (not including the total capital minority interest itself), less any total capital regulatory adjustments and deductions in accordance with § 3.22(a) and (b).
+
+(b)
+
+(1) Applicability. For purposes of § 3.20, an advanced approaches national bank or Federal savings association is subject to the minority interest limitations in this paragraph (b) if:
+
+(i) A consolidated subsidiary of the advanced approaches national bank or Federal savings association has issued regulatory capital that is not owned by the national bank or Federal savings association; and
+
+(ii) For each relevant regulatory capital ratio of the consolidated subsidiary, the ratio exceeds the sum of the subsidiary's minimum regulatory capital requirements plus its capital conservation buffer.
+
+(2) Difference in capital adequacy standards at the subsidiary level. For purposes of the minority interest calculations in this section, if the consolidated subsidiary issuing the capital is not subject to capital adequacy standards similar to those of the advanced approaches national bank or Federal savings association, the advanced approaches national bank or Federal savings association must assume that the capital adequacy standards of the advanced approaches national bank or Federal savings association apply to the subsidiary.
+
+(3) Common equity tier 1 minority interest includable in the common equity tier 1 capital of the national bank or Federal savings association. For each consolidated subsidiary of an advanced approaches national bank or Federal savings association, the amount of common equity tier 1 minority interest the advanced approaches national bank or Federal savings association may include in common equity tier 1 capital is equal to:
+
+(i) The common equity tier 1 minority interest of the subsidiary; minus
+
+(ii) The percentage of the subsidiary's common equity tier 1 capital that is not owned by the advanced approaches national bank or Federal savings association, multiplied by the difference between the common equity tier 1 capital of the subsidiary and the lower of:
+
+(A) The amount of common equity tier 1 capital the subsidiary must hold, or would be required to hold pursuant to this paragraph (b), to avoid restrictions on distributions and discretionary bonus payments under § 3.11 or equivalent standards established by the subsidiary's home country supervisor; or
+
+(B)
+
+(1) The standardized total risk-weighted assets of the advanced approaches national bank or Federal savings association that relate to the subsidiary multiplied by
+
+(2) The common equity tier 1 capital ratio the subsidiary must maintain to avoid restrictions on distributions and discretionary bonus payments under § 3.11 or equivalent standards established by the subsidiary's home country supervisor.
+
+(4) Tier 1 minority interest includable in the tier 1 capital of the advanced approaches national bank or Federal savings association. For each consolidated subsidiary of the advanced approaches national bank or Federal savings association, the amount of tier 1 minority interest the advanced approaches national bank or Federal savings association may include in tier 1 capital is equal to:
+
+(i) The tier 1 minority interest of the subsidiary; minus
+
+(ii) The percentage of the subsidiary's tier 1 capital that is not owned by the advanced approaches national bank or Federal savings association multiplied by the difference between the tier 1 capital of the subsidiary and the lower of:
+
+(A) The amount of tier 1 capital the subsidiary must hold, or would be required to hold pursuant to this paragraph (b), to avoid restrictions on distributions and discretionary bonus payments under § 3.11 or equivalent standards established by the subsidiary's home country supervisor, or
+
+(B)
+
+(1) The standardized total risk-weighted assets of the advanced approaches national bank or Federal savings association that relate to the subsidiary multiplied by
+
+(2) The tier 1 capital ratio the subsidiary must maintain to avoid restrictions on distributions and discretionary bonus payments under § 3.11 or equivalent standards established by the subsidiary's home country supervisor.
+
+(5) Total capital minority interest includable in the total capital of the national bank or Federal savings association. For each consolidated subsidiary of the advanced approaches national bank or Federal savings association, the amount of total capital minority interest the advanced approaches national bank or Federal savings association may include in total capital is equal to:
+
+(i) The total capital minority interest of the subsidiary; minus
+
+(ii) The percentage of the subsidiary's total capital that is not owned by the advanced approaches national bank or Federal savings association multiplied by the difference between the total capital of the subsidiary and the lower of:
+
+(A) The amount of total capital the subsidiary must hold, or would be required to hold pursuant to this paragraph (b), to avoid restrictions on distributions and discretionary bonus payments under § 3.11 or equivalent standards established by the subsidiary's home country supervisor, or
+
+(B)
+
+(1) The standardized total risk-weighted assets of the advanced approaches national bank or Federal savings association that relate to the subsidiary multiplied by
+
+(2) The total capital ratio the subsidiary must maintain to avoid restrictions on distributions and discretionary bonus payments under § 3.11 or equivalent standards established by the subsidiary's home country supervisor.
+
+[84 FR 35249, July 22, 2019]
+
+§ 3.22 Regulatory capital adjustments and deductions.
+
+(a) Regulatory capital deductions from common equity tier 1 capital. A national bank or Federal savings association must deduct from the sum of its common equity tier 1 capital elements the items set forth in this paragraph (a):
+
+(1)
+
+(i) Goodwill, net of associated deferred tax liabilities (DTLs) in accordance with paragraph (e) of this section; and
+
+(ii) For an advanced approaches national bank or Federal savings association, goodwill that is embedded in the valuation of a significant investment in the capital of an unconsolidated financial institution in the form of common stock (and that is reflected in the consolidated financial statements of the advanced approaches national bank or Federal savings association), in accordance with paragraph (d) of this section;
+
+(2) Intangible assets, other than MSAs, net of associated DTLs in accordance with paragraph (e) of this section;
+
+(3) Deferred tax assets (DTAs) that arise from net operating loss and tax credit carryforwards net of any related valuation allowances and net of DTLs in accordance with paragraph (e) of this section;
+
+(4) Any gain-on-sale in connection with a securitization exposure;
+
+(5)
+
+(i) Any defined benefit pension fund net asset, net of any associated DTL in accordance with paragraph (e) of this section, held by a depository institution holding company. With the prior approval of the OCC, this deduction is not required for any defined benefit pension fund net asset to the extent the depository institution holding company has unrestricted and unfettered access to the assets in that fund.
+
+(ii) For an insured depository institution, no deduction is required.
+
+(iii) A national bank or Federal savings association must risk weight any portion of the defined benefit pension fund asset that is not deducted under paragraphs (a)(5)(i) or (a)(5)(ii) of this section as if the national bank or Federal savings association directly holds a proportional ownership share of each exposure in the defined benefit pension fund.
+
+(6) For an advanced approaches national bank or Federal savings association that has completed the parallel run process and that has received notification from the OCC pursuant to § 3.121(d), the amount of expected credit loss that exceeds its eligible credit reserves; and
+
+(7) With respect to a financial subsidiary, the aggregate amount of the national bank's or Federal savings association's outstanding equity investment, including retained earnings, in its financial subsidiaries (as defined in [12 CFR 5.39 (OCC); 12 CFR 208.77 (Board))]. A national bank or Federal savings association must not consolidate the assets and liabilities of a financial subsidiary with those of the parent bank, and no other deduction is required under paragraph (c) of this section for investments in the capital instruments of financial subsidiaries.
+
+(8)
+
+(i) A Federal savings association must deduct the aggregate amount of its outstanding investments (both equity and debt) in, and extensions of credit to, subsidiaries that are not includable subsidiaries as defined in paragraph (a)(8)(iv) of this section and may not consolidate the assets and liabilities of the subsidiary with those of the Federal savings association. Any such deductions shall be deducted from assets and common equity tier 1 except as provided in paragraphs (a)(8)(ii) and (iii) of this section.
+
+(ii) If a Federal savings association has any investments (both debt and equity) in, or extensions or credit to, one or more subsidiaries engaged in any activity that would not fall within the scope of activities in which includable subsidiaries as defined in paragraph (a)(8)(iv) of this section may engage, it must deduct such investments and extensions of credit from assets and, thus, common equity tier 1 in accordance with paragraph (a)(8)(i) of this section.
+
+(iii) If a Federal savings association holds a subsidiary (either directly or through a subsidiary) that is itself a domestic depository institution, the OCC may, in its sole discretion upon determining that the amount of common equity tier 1 that would be required would be higher if the assets and liabilities of such subsidiary were consolidated with those of the parent Federal savings association than the amount that would be required if the parent Federal savings association's investment were deducted pursuant to paragraphs (a)(8)(i) and (ii) of this section, consolidate the assets and liabilities of that subsidiary with those of the parent Federal savings association in calculating the capital adequacy of the parent Federal savings association, regardless of whether the subsidiary would otherwise be an includable subsidiary as defined in paragraph (a)(8)(iv) of this section.
+
+(iv) For purposes of this section, the term includable subsidiary means a subsidiary of a Federal savings association that:
+
+(A) Is engaged solely in activities not impermissible for a national bank;
+
+(B) Is engaged in activities not permissible for a national bank, but only if acting solely as agent for its customers and such agency position is clearly documented in the Federal savings association's files;
+
+(C) Is engaged solely in mortgage-banking activities;
+
+(D)
+
+(1) Is itself an insured depository institution or a company the sole investment of which is an insured depository institution; and
+
+(2) Was acquired by the parent Federal savings association prior to May 1, 1989; or
+
+(E) Was a subsidiary of any Federal savings association existing as a Federal savings association on August 9, 1989:
+
+(1) That was chartered prior to October 15, 1982, as a savings bank or a cooperative bank under state law; or
+
+(2) That acquired its principal assets from an association that was chartered prior to October 15, 1982, as a savings bank or a cooperative bank under state law.
+
+(b) Regulatory adjustments to common equity tier 1 capital.
+
+(1) A national bank or Federal savings association must adjust the sum of common equity tier 1 capital elements pursuant to the requirements set forth in this paragraph (b). Such adjustments to common equity tier 1 capital must be made net of the associated deferred tax effects.
+
+(i) A national bank or Federal savings association that makes an AOCI opt-out election (as defined in paragraph (b)(2) of this section), must make the adjustments required under § 3.22(b)(2)(i).
+
+(ii) A national bank or Federal savings association that is an advanced approaches national bank or Federal savings association, and a national bank or Federal savings association that has not made an AOCI opt-out election (as defined in paragraph (b)(2) of this section), must deduct any accumulated net gains and add any accumulated net losses on cash flow hedges included in AOCI that relate to the hedging of items that are not recognized at fair value on the balance sheet.
+
+(iii) A national bank or Federal savings association must deduct any net gain and add any net loss related to changes in the fair value of liabilities that are due to changes in the national bank's or Federal savings association's own credit risk. An advanced approaches national bank or Federal savings association must deduct the difference between its credit spread premium and the risk-free rate for derivatives that are liabilities as part of this adjustment.
+
+(2) AOCI opt-out election.
+
+(i) A national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association may make a one-time election to opt out of the requirement to include all components of AOCI (with the exception of accumulated net gains and losses on cash flow hedges related to items that are not fair-valued on the balance sheet) in common equity tier 1 capital (AOCI opt-out election). A national bank or Federal savings association that makes an AOCI opt-out election in accordance with this paragraph (b)(2) must adjust common equity tier 1 capital as follows:
+
+(A) Subtract any net unrealized gains and add any net unrealized losses on available-for-sale securities;
+
+(B) Subtract any net unrealized losses on available-for-sale preferred stock classified as an equity security under GAAP and available-for-sale equity exposures;
+
+(C) Subtract any accumulated net gains and add any accumulated net losses on cash flow hedges;
+
+(D) Subtract any amounts recorded in AOCI attributed to defined benefit postretirement plans resulting from the initial and subsequent application of the relevant GAAP standards that pertain to such plans (excluding, at the national bank's or Federal savings association's option, the portion relating to pension assets deducted under paragraph (a)(5) of this section); and
+
+(E) Subtract any net unrealized gains and add any net unrealized losses on held-to-maturity securities that are included in AOCI.
+
+(ii) A national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association must make its AOCI opt-out election in the Call Report:
+
+(A) If the national bank or Federal savings association is a Category III national bank or Federal savings association, during the first reporting period after the national bank or Federal savings association meets the definition of a Category III national bank or Federal savings association in § 3.2; or
+
+(B) If the national bank or Federal savings association is not a Category III national bank or Federal savings association, during the first reporting period after the national bank or Federal savings association is required to comply with subpart A of this part as set forth in § 3.1(f).
+
+(iii) With respect to a national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association, each of its subsidiary banking organizations that is subject to regulatory capital requirements issued by the Board of Governors of the Federal Reserve, the Federal Deposit Insurance Corporation, or the Office of the Comptroller of the Currency[21] must elect the same option as the national bank or Federal savings association pursuant to this paragraph (b)(2).
+
+(iv) With prior notice to the OCC, a national bank or Federal savings association resulting from a merger, acquisition, or purchase transaction and that is not an advanced approaches national bank or Federal savings association may change its AOCI opt-out election in its Call Report filed for the first reporting period after the date required for such national bank or Federal savings association to comply with subpart A of this part as set forth in § 3.1(f) if:
+
+(A) Other than as set forth in paragraph (b)(2)(iv)(C) of this section, the merger, acquisition, or purchase transaction involved the acquisition or purchase of all or substantially all of either the assets or voting stock of another banking organization that is subject to regulatory capital requirements issued by the Board of Governors of the Federal Reserve, the Federal Deposit Insurance Corporation, or the Office of the Comptroller of the Currency;[22]
+
+(B) Prior to the merger, acquisition, or purchase transaction, only one of the banking organizations involved in the transaction made an AOCI opt-out election under this section; and
+
+(C) A national bank or Federal savings association may, with the prior approval of the OCC, change its AOCI opt-out election under this paragraph (b) in the case of a merger, acquisition, or purchase transaction that meets the requirements set forth at paragraph (b)(2)(iv)(B) of this section, but does not meet the requirements of paragraph (b)(2)(iv)(A). In making such a determination, the OCC may consider the terms of the merger, acquisition, or purchase transaction, as well as the extent of any changes to the risk profile, complexity, and scope of operations of the national bank or Federal savings association resulting from the merger, acquisition, or purchase transaction.
+
+(c) Deductions from regulatory capital related to investments in capital instruments or covered debt instruments[23] —
+
+(1) Investment in the national bank's or Federal savings association's own capital instruments. A national bank or Federal savings association must deduct an investment in the national bank's or Federal savings association's own capital instruments, as follows:
+
+(i) A national bank or Federal savings association must deduct an investment in the national bank's or Federal savings association's own common stock instruments from its common equity tier 1 capital elements to the extent such instruments are not excluded from regulatory capital under § 3.20(b)(1);
+
+(ii) A national bank or Federal savings association must deduct an investment in the national bank's or Federal savings association's own additional tier 1 capital instruments from its additional tier 1 capital elements; and
+
+(iii) A national bank or Federal savings association must deduct an investment in the national bank's or Federal savings association's own tier 2 capital instruments from its tier 2 capital elements.
+
+(2) Corresponding deduction approach. For purposes of subpart C of this part, the corresponding deduction approach is the methodology used for the deductions from regulatory capital related to reciprocal cross holdings (as described in paragraph (c)(3) of this section), investments in the capital of unconsolidated financial institutions for a national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association (as described in paragraph (c)(4) of this section), non-significant investments in the capital of unconsolidated financial institutions for an advanced approaches national bank or Federal savings association (as described in paragraph (c)(5) of this section), and non-common stock significant investments in the capital of unconsolidated financial institutions for an advanced approaches national bank or Federal savings association (as described in paragraph (c)(6) of this section). Under the corresponding deduction approach, a national bank or Federal savings association must make deductions from the component of capital for which the underlying instrument would qualify if it were issued by the national bank or Federal savings association itself, as described in paragraphs (c)(2)(i) through (iii) of this section. If the national bank or Federal savings association does not have a sufficient amount of a specific component of capital to effect the required deduction, the shortfall must be deducted according to paragraph (f) of this section.
+
+(i) If an investment is in the form of an instrument issued by a financial institution that is not a regulated financial institution, the national bank or Federal savings association must treat the instrument as:
+
+(A) A common equity tier 1 capital instrument if it is common stock or represents the most subordinated claim in a liquidation of the financial institution; and
+
+(B) An additional tier 1 capital instrument if it is subordinated to all creditors of the financial institution and is senior in liquidation only to common shareholders.
+
+(ii) If an investment is in the form of an instrument issued by a regulated financial institution and the instrument does not meet the criteria for common equity tier 1, additional tier 1 or tier 2 capital instruments under § 3.20, the national bank or Federal savings association must treat the instrument as:
+
+(A) A common equity tier 1 capital instrument if it is common stock included in GAAP equity or represents the most subordinated claim in liquidation of the financial institution;
+
+(B) An additional tier 1 capital instrument if it is included in GAAP equity, subordinated to all creditors of the financial institution, and senior in a receivership, insolvency, liquidation, or similar proceeding only to common shareholders;
+
+(C) A tier 2 capital instrument if it is not included in GAAP equity but considered regulatory capital by the primary supervisor of the financial institution; and
+
+(D) For an advanced approaches national bank or Federal savings association, a tier 2 capital instrument if it is a covered debt instrument.
+
+(iii) If an investment is in the form of a non-qualifying capital instrument (as defined in § 3.300(c)), the national bank or Federal savings association must treat the instrument as:
+
+(A) An additional tier 1 capital instrument if such instrument was included in the issuer's tier 1 capital prior to May 19, 2010; or
+
+(B) A tier 2 capital instrument if such instrument was included in the issuer's tier 2 capital (but not includable in tier 1 capital) prior to May 19, 2010.
+
+(3) Reciprocal cross holdings in the capital of financial institutions.
+
+(i) A national bank or Federal savings association must deduct an investment in the capital of other financial institutions that it holds reciprocally with another financial institution, where such reciprocal cross holdings result from a formal or informal arrangement to swap, exchange, or otherwise intend to hold each other's capital instruments, by applying the corresponding deduction approach in paragraph (c)(2) of this section.
+
+(ii) An advanced approaches national bank or Federal savings association must deduct an investment in any covered debt instrument that the institution holds reciprocally with another financial institution, where such reciprocal cross holdings result from a formal or informal arrangement to swap, exchange, or otherwise intend to hold each other's capital or covered debt instruments, by applying the corresponding deduction approach in paragraph (c)(2) of this section.
+
+(4) Investments in the capital of unconsolidated financial institutions. A national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association must deduct its investments in the capital of unconsolidated financial institutions (as defined in § 3.2) that exceed 25 percent of the sum of the national bank or Federal savings association's common equity tier 1 capital elements minus all deductions from and adjustments to common equity tier 1 capital elements required under paragraphs (a) through (c)(3) of this section by applying the corresponding deduction approach in paragraph (c)(2) of this section.[24] The deductions described in this section are net of associated DTLs in accordance with paragraph (e) of this section. In addition, with the prior written approval of the OCC, a national bank or Federal savings association that underwrites a failed underwriting, for the period of time stipulated by the OCC, is not required to deduct an investment in the capital of an unconsolidated financial institution pursuant to this paragraph (c) to the extent the investment is related to the failed underwriting.[25]
+
+(5) Non-significant investments in the capital of unconsolidated financial institutions.
+
+(i) An advanced approaches national bank or Federal savings association must deduct its non-significant investments in the capital of unconsolidated financial institutions (as defined in § 3.2) that, in the aggregate and together with any investment in a covered debt instrument (as defined in § 3.2) issued by a financial institution in which the national bank or Federal savings association does not have a significant investment in the capital of the unconsolidated financial institution (as defined in § 3.2), exceeds 10 percent of the sum of the advanced approaches national bank's or Federal savings association's common equity tier 1 capital elements minus all deductions from and adjustments to common equity tier 1 capital elements required under paragraphs (a) through (c)(3) of this section (the 10 percent threshold for non-significant investments) by applying the corresponding deduction approach in paragraph (c)(2) of this section.[26] The deductions described in this paragraph are net of associated DTLs in accordance with paragraph (e) of this section. In addition, with the prior written approval of the OCC, an advanced approaches national bank or Federal savings association that underwrites a failed underwriting, for the period of time stipulated by the OCC, is not required to deduct from capital a non-significant investment in the capital of an unconsolidated financial institution or an investment in a covered debt instrument pursuant to this paragraph (c)(5) to the extent the investment is related to the failed underwriting.[27] For any calculation under this paragraph (c)(5)(i), an advanced approaches national bank or Federal savings association may exclude the amount of an investment in a covered debt instrument under paragraph (c)(5)(iii) or (iv) of this section, as applicable.
+
+(ii) For an advanced approaches national bank or Federal savings association, the amount to be deducted under this paragraph (c)(5) from a specific capital component is equal to:
+
+(A) The advanced approaches national bank's or Federal savings association's aggregate non-significant investments in the capital of an unconsolidated financial institution and, if applicable, any investments in a covered debt instrument subject to deduction under this paragraph (c)(5), exceeding the 10 percent threshold for non-significant investments, multiplied by
+
+(B) The ratio of the advanced approaches national bank's or Federal savings association's aggregate non-significant investments in the capital of an unconsolidated financial institution (in the form of such capital component) to the national bank's or Federal savings association's total non-significant investments in unconsolidated financial institutions, with an investment in a covered debt instrument being treated as tier 2 capital for this purpose.
+
+(iii) For purposes of applying the deduction under paragraph (c)(5)(i) of this section, an advanced approaches national bank or Federal savings association that is not a subsidiary of a global systemically important banking organization, as defined in 12 CFR 252.2, may exclude from the deduction the amount of the national bank's or Federal savings association's gross long position, in accordance with § 3.22(h)(2), in investments in covered debt instruments issued by financial institutions in which the national bank or Federal savings association does not have a significant investment in the capital of the unconsolidated financial institutions up to an amount equal to 5 percent of the sum of the national bank's or Federal savings association's common equity tier 1 capital elements minus all deductions from and adjustments to common equity tier 1 capital elements required under paragraphs (a) through (c)(3) of this section, net of associated DTLs in accordance with paragraph (e) of this section.
+
+(iv) Prior to applying the deduction under paragraph (c)(5)(i) of this section:
+
+(A) A national bank or Federal savings association that is a subsidiary of a global systemically important BHC, as defined in 12 CFR 252.2, may designate any investment in a covered debt instrument as an excluded covered debt instrument, as defined in § 3.2.
+
+(B) A national bank or Federal savings association that is a subsidiary of a global systemically important BHC, as defined in 12 CFR 252.2, must deduct according to the corresponding deduction approach in paragraph (c)(2) of this section, its gross long position, calculated in accordance with paragraph (h)(2) of this section, in a covered debt instrument that was originally designated as an excluded covered debt instrument, in accordance with paragraph (c)(5)(iv)(A) of this section, but no longer qualifies as an excluded covered debt instrument.
+
+(C) A national bank or Federal savings association that is a subsidiary of a global systemically important BHC, as defined in 12 CFR 252.2, must deduct according to the corresponding deduction approach in paragraph (c)(2) of this section the amount of its gross long position, calculated in accordance with paragraph (h)(2) of this section, in a direct or indirect investment in a covered debt instrument that was originally designated as an excluded covered debt instrument, in accordance with paragraph (c)(5)(iv)(A) of this section, and has been held for more than thirty business days.
+
+(D) A national bank or Federal savings association that is a subsidiary of a global systemically important BHC, as defined in 12 CFR 252.2, must deduct according to the corresponding deduction approach in paragraph (c)(2) of this section its gross long position, calculated in accordance with paragraph (h)(2) of this section, of its aggregate investment in excluded covered debt instruments that exceeds 5 percent of the sum of the national bank's or Federal savings association's common equity tier 1 capital elements minus all deductions from and adjustments to common equity tier 1 capital elements required under paragraphs (a) through (c)(3) of this section, net of associated DTLs in accordance with paragraph (e) of this section.
+
+(6) Significant investments in the capital of unconsolidated financial institutions that are not in the form of common stock. If an advanced approaches national bank or Federal savings association has a significant investment in the capital of an unconsolidated financial institution, the advanced approaches national bank or Federal savings association must deduct from capital any such investment issued by the unconsolidated financial institution that is held by the national bank or Federal savings association other than an investment in the form of common stock, as well as any investment in a covered debt instrument issued by the unconsolidated financial institution, by applying the corresponding deduction approach in paragraph (c)(2) of this section.[28] The deductions described in this section are net of associated DTLs in accordance with paragraph (e) of this section. In addition, with the prior written approval of the OCC, for the period of time stipulated by the OCC, an advanced approaches national bank or Federal savings association that underwrites a failed underwriting is not required to deduct the significant investment in the capital of an unconsolidated financial institution or an investment in a covered debt instrument pursuant to this paragraph (c)(6) if such investment is related to such failed underwriting.
+
+(d) MSAs and certain DTAs subject to common equity tier 1 capital deduction thresholds.
+
+(1) A national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association must make deductions from regulatory capital as described in this paragraph (d)(1).
+
+(i) The national bank or Federal savings association must deduct from common equity tier 1 capital elements the amount of each of the items set forth in this paragraph (d)(1) that, individually, exceeds 25 percent of the sum of the national bank's or Federal savings association's common equity tier 1 capital elements, less adjustments to and deductions from common equity tier 1 capital required under paragraphs (a) through (c)(3) of this section (the 25 percent common equity tier 1 capital deduction threshold).[29]
+
+(ii) The national bank or Federal savings association must deduct from common equity tier 1 capital elements the amount of DTAs arising from temporary differences that the national bank or Federal savings association could not realize through net operating loss carrybacks, net of any related valuation allowances and net of DTLs, in accordance with paragraph (e) of this section. A national bank or Federal savings association is not required to deduct from the sum of its common equity tier 1 capital elements DTAs (net of any related valuation allowances and net of DTLs, in accordance with § 3.22(e)) arising from timing differences that the national bank or Federal savings association could realize through net operating loss carrybacks. The national bank or Federal savings association must risk weight these assets at 100 percent. For a national bank or Federal savings association that is a member of a consolidated group for tax purposes, the amount of DTAs that could be realized through net operating loss carrybacks may not exceed the amount that the national bank or Federal savings association could reasonably expect to have refunded by its parent holding company.
+
+(iii) The national bank or Federal savings association must deduct from common equity tier 1 capital elements the amount of MSAs net of associated DTLs, in accordance with paragraph (e) of this section.
+
+(iv) For purposes of calculating the amount of DTAs subject to deduction pursuant to paragraph (d)(1) of this section, a national bank or Federal savings association may exclude DTAs and DTLs relating to adjustments made to common equity tier 1 capital under paragraph (b) of this section. A national bank or Federal savings association that elects to exclude DTAs relating to adjustments under paragraph (b) of this section also must exclude DTLs and must do so consistently in all future calculations. A national bank or Federal savings association may change its exclusion preference only after obtaining the prior approval of the OCC.
+
+(2) An advanced approaches national bank or Federal savings association must make deductions from regulatory capital as described in this paragraph (d)(2).
+
+(i) An advanced approaches national bank or Federal savings association must deduct from common equity tier 1 capital elements the amount of each of the items set forth in this paragraph (d)(2) that, individually, exceeds 10 percent of the sum of the advanced approaches national bank's or Federal savings association's common equity tier 1 capital elements, less adjustments to and deductions from common equity tier 1 capital required under paragraphs (a) through (c) of this section (the 10 percent common equity tier 1 capital deduction threshold).
+
+(A) DTAs arising from temporary differences that the advanced approaches national bank or Federal savings association could not realize through net operating loss carrybacks, net of any related valuation allowances and net of DTLs, in accordance with paragraph (e) of this section. An advanced approaches national bank or Federal savings association is not required to deduct from the sum of its common equity tier 1 capital elements DTAs (net of any related valuation allowances and net of DTLs, in accordance with § 3.22(e)) arising from timing differences that the advanced approaches national bank or Federal savings association could realize through net operating loss carrybacks. The advanced approaches national bank or Federal savings association must risk weight these assets at 100 percent. For a national bank or Federal savings association that is a member of a consolidated group for tax purposes, the amount of DTAs that could be realized through net operating loss carrybacks may not exceed the amount that the national bank or Federal savings association could reasonably expect to have refunded by its parent holding company.
+
+(B) MSAs net of associated DTLs, in accordance with paragraph (e) of this section.
+
+(C) Significant investments in the capital of unconsolidated financial institutions in the form of common stock, net of associated DTLs in accordance with paragraph (e) of this section.[30] Significant investments in the capital of unconsolidated financial institutions in the form of common stock subject to the 10 percent common equity tier 1 capital deduction threshold may be reduced by any goodwill embedded in the valuation of such investments deducted by the advanced approaches national bank or Federal savings association pursuant to paragraph (a)(1) of this section. In addition, with the prior written approval of the OCC, for the period of time stipulated by the OCC, an advanced approaches national bank or Federal savings association that underwrites a failed underwriting is not required to deduct a significant investment in the capital of an unconsolidated financial institution in the form of common stock pursuant to this paragraph (d)(2) if such investment is related to such failed underwriting.
+
+(ii) An advanced approaches national bank or Federal savings association must deduct from common equity tier 1 capital elements the items listed in paragraph (d)(2)(i) of this section that are not deducted as a result of the application of the 10 percent common equity tier 1 capital deduction threshold, and that, in aggregate, exceed 17.65 percent of the sum of the advanced approaches national bank's or Federal savings association's common equity tier 1 capital elements, minus adjustments to and deductions from common equity tier 1 capital required under paragraphs (a) through (c) of this section, minus the items listed in paragraph (d)(2)(i) of this section (the 15 percent common equity tier 1 capital deduction threshold). Any goodwill that has been deducted under paragraph (a)(1) of this section can be excluded from the significant investments in the capital of unconsolidated financial institutions in the form of common stock.[31]
+
+(iii) For purposes of calculating the amount of DTAs subject to the 10 and 15 percent common equity tier 1 capital deduction thresholds, an advanced approaches national bank or Federal savings association may exclude DTAs and DTLs relating to adjustments made to common equity tier 1 capital under paragraph (b) of this section. An advanced approaches national bank or Federal savings association that elects to exclude DTAs relating to adjustments under paragraph (b) of this section also must exclude DTLs and must do so consistently in all future calculations. An advanced approaches national bank or Federal savings association may change its exclusion preference only after obtaining the prior approval of the OCC.
+
+(e) Netting of DTLs against assets subject to deduction.
+
+(1) Except as described in paragraph (e)(3) of this section, netting of DTLs against assets that are subject to deduction under this section is permitted, but not required, if the following conditions are met:
+
+(i) The DTL is associated with the asset; and
+
+(ii) The DTL would be extinguished if the associated asset becomes impaired or is derecognized under GAAP.
+
+(2) A DTL may only be netted against a single asset.
+
+(3) For purposes of calculating the amount of DTAs subject to the threshold deduction in paragraph (d) of this section, the amount of DTAs that arise from net operating loss and tax credit carryforwards, net of any related valuation allowances, and of DTAs arising from temporary differences that the national bank or Federal savings association could not realize through net operating loss carrybacks, net of any related valuation allowances, may be offset by DTLs (that have not been netted against assets subject to deduction pursuant to paragraph (e)(1) of this section) subject to the conditions set forth in this paragraph (e).
+
+(i) Only the DTAs and DTLs that relate to taxes levied by the same taxation authority and that are eligible for offsetting by that authority may be offset for purposes of this deduction.
+
+(ii) The amount of DTLs that the national bank or Federal savings association nets against DTAs that arise from net operating loss and tax credit carryforwards, net of any related valuation allowances, and against DTAs arising from temporary differences that the national bank or Federal savings association could not realize through net operating loss carrybacks, net of any related valuation allowances, must be allocated in proportion to the amount of DTAs that arise from net operating loss and tax credit carryforwards (net of any related valuation allowances, but before any offsetting of DTLs) and of DTAs arising from temporary differences that the national bank or Federal savings association could not realize through net operating loss carrybacks (net of any related valuation allowances, but before any offsetting of DTLs), respectively.
+
+(4) A national bank or Federal savings association may offset DTLs embedded in the carrying value of a leveraged lease portfolio acquired in a business combination that are not recognized under GAAP against DTAs that are subject to paragraph (d) of this section in accordance with this paragraph (e).
+
+(5) A national bank or Federal savings association must net DTLs against assets subject to deduction under this section in a consistent manner from reporting period to reporting period. A national bank or Federal savings association may change its preference regarding the manner in which it nets DTLs against specific assets subject to deduction under this section only after obtaining the prior approval of the OCC.
+
+(f) Insufficient amounts of a specific regulatory capital component to effect deductions. Under the corresponding deduction approach, if a national bank or Federal savings association does not have a sufficient amount of a specific component of capital to effect the full amount of any deduction from capital required under paragraph (d) of this section, the national bank or Federal savings association must deduct the shortfall amount from the next higher (that is, more subordinated) component of regulatory capital. Any investment by an advanced approaches national bank or Federal savings association in a covered debt instrument must be treated as an investment in the tier 2 capital for purposes of this paragraph. Notwithstanding any other provision of this section, a qualifying community banking organization (as defined in § 3.12) that has elected to use the community bank leverage ratio framework pursuant to § 3.12 is not required to deduct any shortfall of tier 2 capital from its additional tier 1 capital or common equity tier 1 capital.
+
+(g) Treatment of assets that are deducted. A national bank or Federal savings association must exclude from standardized total risk-weighted assets and, as applicable, advanced approaches total risk-weighted assets any item that is required to be deducted from regulatory capital.
+
+(h) Net long position —
+
+(1) In general. For purposes of calculating the amount of a national bank's or Federal savings association's investment in the national bank's or Federal savings association's own capital instrument, investment in the capital of an unconsolidated financial institution, and investment in a covered debt instrument under this section, the institution's net long position is the gross long position in the underlying instrument determined in accordance with paragraph (h)(2) of this section, as adjusted to recognize any short position by the national bank or Federal savings association in the same instrument subject to paragraph (h)(3) of this section.
+
+(2) Gross long position. A gross long position is determined as follows:
+
+(i) For an equity exposure that is held directly by the national bank or Federal savings association, the adjusted carrying value of the exposure as that term is defined in § 3.51(b);
+
+(ii) For an exposure that is held directly and that is not an equity exposure or a securitization exposure, the exposure amount as that term is defined in § 3.2;
+
+(iii) For each indirect exposure, the national bank's or Federal savings association's carrying value of its investment in an investment fund or, alternatively:
+
+(A) A national bank or Federal savings association may, with the prior approval of the OCC, use a conservative estimate of the amount of its indirect investment in the national bank's or Federal savings association's own capital instruments, its indirect investment in the capital of an unconsolidated financial institution, or its indirect investment in a covered debt instrument held through a position in an index, as applicable; or
+
+(B) A national bank or Federal savings association may calculate the gross long position for an indirect exposure to the national bank's or Federal savings association's own capital the capital in an unconsolidated financial institution, or a covered debt instrument by multiplying the national bank's or Federal savings association's carrying value of its investment in the investment fund by either:
+
+(1) The highest stated investment limit (in percent) for an investment in the national bank's or Federal savings association's own capital instruments, an investment in the capital of an unconsolidated financial institution, or an investment in a covered debt instrument, as applicable, as stated in the prospectus, partnership agreement, or similar contract defining permissible investments of the investment fund; or
+
+(2) The investment fund's actual holdings (in percent) of the investment in the national bank's or Federal savings association's own capital instruments, investment in the capital of an unconsolidated financial institution, or investment in a covered debt instrument, as applicable; and
+
+(iv) For a synthetic exposure, the amount of the national bank's or Federal savings association's loss on the exposure if the reference capital instrument or covered debt instrument were to have a value of zero.
+
+(3) Adjustments to reflect a short position. In order to adjust the gross long position to recognize a short position in the same instrument under paragraph (h)(1) of this section, the following criteria must be met:
+
+(i) The maturity of the short position must match the maturity of the long position, or the short position must have a residual maturity of at least one year (maturity requirement); or
+
+(ii) For a position that is a trading asset or trading liability (whether on- or off-balance sheet) as reported on the national bank's or Federal savings association's Call Report, if the national bank or Federal savings association has a contractual right or obligation to sell the long position at a specific point in time and the counterparty to the contract has an obligation to purchase the long position if the national bank or Federal savings association exercises its right to sell, this point in time may be treated as the maturity of the long position such that the maturity of the long position and short position are deemed to match for purposes of the maturity requirement, even if the maturity of the short position is less than one year; and
+
+(iii) For an investment in a national bank's or Federal savings association's own capital instrument under paragraph (c)(1) of this section, an investment in the capital of an unconsolidated financial institution under paragraphs (c)(4) through (6) and (d) of this section (as applicable), and an investment in a covered debt instrument under paragraphs (c)(1), (5), and (6) of this section:
+
+(A) The national bank or Federal savings association may only net a short position against a long position in an investment in the national bank's or Federal savings association's own capital instrument under paragraph (c)(1) of this section if the short position involves no counterparty credit risk;
+
+(B) A gross long position in an investment in the national bank's or Federal savings association's own capital instrument, an investment in the capital of an unconsolidated financial institution, or an investment in a covered debt instrument due to a position in an index may be netted against a short position in the same index;
+
+(C) Long and short positions in the same index without maturity dates are considered to have matching maturities; and
+
+(D) A short position in an index that is hedging a long cash or synthetic position in an investment in the national bank's or Federal savings association's own capital instrument, an investment in the capital instrument of an unconsolidated financial institution, or an investment in a covered debt instrument can be decomposed to provide recognition of the hedge. More specifically, the portion of the index that is composed of the same underlying instrument that is being hedged may be used to offset the long position if both the long position being hedged and the short position in the index are reported as a trading asset or trading liability (whether on- or off-balance sheet) on the national bank's or Federal savings association's Call Report, and the hedge is deemed effective by the national bank's or Federal savings association's internal control processes, which have not been found to be inadequate by the OCC.
+
+[78 FR 62157, 62273, Oct. 11, 2013, as amended at 80 FR 41415, July 15, 2015; 84 FR 4238, Feb. 14, 2019; 84 FR 35250, July 22, 2019; 84 FR 59265, Nov. 1, 2019; 84 FR 61793, Nov. 13, 2019; 86 FR 728, Jan. 6, 2021]
+
+Footnotes -
+3.22
+
+[21] These rules include the regulatory capital requirements set forth at 12 CFR part 3 (OCC); 12 CFR part 225 (Board); 12 CFR part 325, and 12 CFR part 390 (FDIC).
+
+[22] These rules include the regulatory capital requirements set forth at 12 CFR part 3 (OCC); 12 CFR part 225 (Board); 12 CFR part 325, and 12 CFR part 390 (FDIC).
+
+[23] The national bank or Federal savings association must calculate amounts deducted under paragraphs (c) through (f) of this section after it calculates the amount of ALLL or AACL, as applicable, includable in tier 2 capital under § 3.20(d)(3).
+
+[24] With the prior written approval of the OCC, for the period of time stipulated by the OCC, a national bank or Federal savings association is not required to deduct a non-significant investment in the capital instrument of an unconsolidated financial institution or an investment in a covered debt instrument pursuant to this paragraph if the financial institution is in distress and if such investment is made for the purpose of providing financial support to the financial institution, as determined by the OCC.
+
+[25] Any non-significant investments in the capital of an unconsolidated financial institution that is not required to be deducted under this paragraph (c)(4) or otherwise under this section must be assigned the appropriate risk weight under subparts D, E, or F of this part, as applicable.
+
+[26] With the prior written approval of the OCC, for the period of time stipulated by the OCC, an advanced approaches a national bank or Federal savings association is not required to deduct a non-significant investment in the capital instrument of an unconsolidated financial institution or an investment in a covered debt instrument pursuant to this paragraph if the financial institution is in distress and if such investment is made for the purpose of providing financial support to the financial institution, as determined by the OCC.
+
+[27] Any non-significant investment in the capital of an unconsolidated financial institution or any investment in a covered debt instrument that is not required to be deducted under this paragraph (c)(4) or otherwise under this section must be assigned the appropriate risk weight under subpart D, E, or F of this part, as applicable.
+
+[28] With prior written approval of the OCC, for the period of time stipulated by the OCC, an advanced approaches national bank or Federal savings association is not required to deduct an investment in a covered debt instrument under this paragraph (c)(5) or otherwise under this section if such investment is made for the purpose of providing financial support to the financial institution as determined by the OCC.
+
+[29] The amount of the items in paragraph (d)(1) of this section that is not deducted from common equity tier 1 capital must be included in the risk-weighted assets of the national bank or Federal savings association and assigned a 250 percent risk weight.
+
+[30] With the prior written approval of the OCC, for the period of time stipulated by the OCC, an advanced approaches national bank or Federal savings association is not required to deduct a significant investment in the capital instrument of an unconsolidated financial institution in distress in the form of common stock pursuant to this section if such investment is made for the purpose of providing financial support to the financial institution as determined by the OCC.
+
+[31] The amount of the items in paragraph (d)(2) of this section that is not deducted from common equity tier 1 capital pursuant to this section must be included in the risk-weighted assets of the advanced approaches national bank or Federal savings association and assigned a 250 percent risk weight.
+
+§§ 3.23-3.29 [Reserved]

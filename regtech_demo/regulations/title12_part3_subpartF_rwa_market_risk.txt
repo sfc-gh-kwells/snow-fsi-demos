@@ -1,0 +1,937 @@
+Subpart F—Risk-Weighted Assets—Market Risk
+
+Source:
+
+78 FR 62157, 62273, Oct. 11, 2013, unless otherwise noted.
+
+§ 3.201 Purpose, applicability, and reservation of authority.
+
+(a) Purpose. This subpart F establishes risk-based capital requirements for national banks or Federal savings associations with significant exposure to market risk, provides methods for these national banks or Federal savings associations to calculate their standardized measure for market risk and, if applicable, advanced measure for market risk, and establishes public disclosure requirements.
+
+(b) Applicability.
+
+(1) This subpart F applies to any national bank or Federal savings association with aggregate trading assets and trading liabilities (as reported in the national bank's or Federal savings association's most recent quarterly [regulatory report]), equal to:
+
+(i) 10 percent or more of quarter-end total assets as reported on the most recent quarterly [Call Report or FR Y-9C]; or
+
+(ii) $1 billion or more.
+
+(2) The OCC may apply this subpart to any national bank or Federal savings association if the OCC deems it necessary or appropriate because of the level of market risk of the national bank or Federal savings association or to ensure safe and sound banking practices.
+
+(3) The OCC may exclude a national bank or Federal savings association that meets the criteria of paragraph (b)(1) of this section from application of this subpart if the OCC determines that the exclusion is appropriate based on the level of market risk of the national bank or Federal savings association and is consistent with safe and sound banking practices.
+
+(c) Reservation of authority.
+
+(1) The OCC may require a national bank or Federal savings association to hold an amount of capital greater than otherwise required under this subpart if the OCC determines that the national bank's or Federal savings association's capital requirement for market risk as calculated under this subpart is not commensurate with the market risk of the national bank's or Federal savings association's covered positions. In making determinations under paragraphs (c)(1) through (c)(3) of this section, the OCC will apply notice and response procedures generally in the same manner as the notice and response procedures set forth in 12 CFR 3.404.
+
+(2) If the OCC determines that the risk-based capital requirement calculated under this subpart by the national bank or Federal savings association for one or more covered positions or portfolios of covered positions is not commensurate with the risks associated with those positions or portfolios, the OCC may require the national bank or Federal savings association to assign a different risk-based capital requirement to the positions or portfolios that more accurately reflects the risk of the positions or portfolios.
+
+(3) The OCC may also require a national bank or Federal savings association to calculate risk-based capital requirements for specific positions or portfolios under this subpart, or under subpart D or subpart E of this part, as appropriate, to more accurately reflect the risks of the positions.
+
+(4) Nothing in this subpart limits the authority of the OCC under any other provision of law or regulation to take supervisory or enforcement action, including action to address unsafe or unsound practices or conditions, deficient capital levels, or violations of law.
+
+§ 3.202 Definitions.
+
+(a) Terms set forth in § 3.2 and used in this subpart have the definitions assigned thereto in § 3.2.
+
+(b) For the purposes of this subpart, the following terms are defined as follows:
+
+Backtesting means the comparison of a national bank's or Federal savings association's internal estimates with actual outcomes during a sample period not used in model development. For purposes of this subpart, backtesting is one form of out-of-sample testing.
+
+Commodity position means a position for which price risk arises from changes in the price of a commodity.
+
+Corporate debt position means a debt position that is an exposure to a company that is not a sovereign entity, the Bank for International Settlements, the European Central Bank, the European Commission, the International Monetary Fund, the European Stability Mechanism, the European Financial Stability Facility, a multilateral development bank, a depository institution, a foreign bank, a credit union, a public sector entity, a GSE, or a securitization.
+
+Correlation trading position means:
+
+(1) A securitization position for which all or substantially all of the value of the underlying exposures is based on the credit quality of a single company for which a two-way market exists, or on commonly traded indices based on such exposures for which a two-way market exists on the indices; or
+
+(2) A position that is not a securitization position and that hedges a position described in paragraph (1) of this definition; and
+
+(3) A correlation trading position does not include:
+
+(i) A resecuritization position;
+
+(ii) A derivative of a securitization position that does not provide a pro rata share in the proceeds of a securitization tranche; or
+
+(iii) A securitization position for which the underlying assets or reference exposures are retail exposures, residential mortgage exposures, or commercial mortgage exposures.
+
+Covered position means the following positions:
+
+(1) A trading asset or trading liability (whether on- or off-balance sheet),[32] as reported on Call Report, that meets the following conditions:
+
+(i) The position is a trading position or hedges another covered position;[33] and
+
+(ii) The position is free of any restrictive covenants on its tradability or the national bank or Federal savings association is able to hedge the material risk elements of the position in a two-way market;
+
+(2) A foreign exchange or commodity position, regardless of whether the position is a trading asset or trading liability (excluding any structural foreign currency positions that the national bank or Federal savings association chooses to exclude with prior supervisory approval); and
+
+(3) Notwithstanding paragraphs (1) and (2) of this definition, a covered position does not include:
+
+(i) An intangible asset, including any servicing asset;
+
+(ii) Any hedge of a trading position that the OCC determines to be outside the scope of the national bank's or Federal savings association's hedging strategy required in paragraph (a)(2) of § 3.203;
+
+(iii) Any position that, in form or substance, acts as a liquidity facility that provides support to asset-backed commercial paper;
+
+(iv) A credit derivative the national bank or Federal savings association recognizes as a guarantee for risk-weighted asset amount calculation purposes under subpart D or subpart E of this part;
+
+(v) Any position that is recognized as a credit valuation adjustment hedge under § 3.132(e)(5) or § 3.132(e)(6), except as provided in § 3.132(e)(6)(vii);
+
+(vi) Any equity position that is not publicly traded, other than a derivative that references a publicly traded equity and other than a position in an investment company as defined in and registered with the SEC under the Investment Company Act of 1940 (15 U.S.C. 80a-1 et seq.), provided that all the underlying equities held by the investment company are publicly traded;
+
+(vii) Any equity position that is not publicly traded, other than a derivative that references a publicly traded equity and other than a position in an entity not domiciled in the United States (or a political subdivision thereof) that is supervised and regulated in a manner similar to entities described in paragraph (3)(vi) of this definition;
+
+(viii) Any position a national bank or Federal savings association holds with the intent to securitize; or
+
+(ix) Any direct real estate holding.
+
+Debt position means a covered position that is not a securitization position or a correlation trading position and that has a value that reacts primarily to changes in interest rates or credit spreads.
+
+Default by a sovereign entity has the same meaning as the term sovereign default under § 3.2.
+
+Equity position means a covered position that is not a securitization position or a correlation trading position and that has a value that reacts primarily to changes in equity prices.
+
+Event risk means the risk of loss on equity or hybrid equity positions as a result of a financial event, such as the announcement or occurrence of a company merger, acquisition, spin-off, or dissolution.
+
+Foreign exchange position means a position for which price risk arises from changes in foreign exchange rates.
+
+General market risk means the risk of loss that could result from broad market movements, such as changes in the general level of interest rates, credit spreads, equity prices, foreign exchange rates, or commodity prices.
+
+Hedge means a position or positions that offset all, or substantially all, of one or more material risk factors of another position.
+
+Idiosyncratic risk means the risk of loss in the value of a position that arises from changes in risk factors unique to that position.
+
+Incremental risk means the default risk and credit migration risk of a position. Default risk means the risk of loss on a position that could result from the failure of an obligor to make timely payments of principal or interest on its debt obligation, and the risk of loss that could result from bankruptcy, insolvency, or similar proceeding. Credit migration risk means the price risk that arises from significant changes in the underlying credit quality of the position.
+
+Market risk means the risk of loss on a position that could result from movements in market prices.
+
+Resecuritization position means a covered position that is:
+
+(1) An on- or off-balance sheet exposure to a resecuritization; or
+
+(2) An exposure that directly or indirectly references a resecuritization exposure in paragraph (1) of this definition.
+
+Securitization means a transaction in which:
+
+(1) All or a portion of the credit risk of one or more underlying exposures is transferred to one or more third parties;
+
+(2) The credit risk associated with the underlying exposures has been separated into at least two tranches that reflect different levels of seniority;
+
+(3) Performance of the securitization exposures depends upon the performance of the underlying exposures;
+
+(4) All or substantially all of the underlying exposures are financial exposures (such as loans, commitments, credit derivatives, guarantees, receivables, asset-backed securities, mortgage-backed securities, other debt securities, or equity securities);
+
+(5) For non-synthetic securitizations, the underlying exposures are not owned by an operating company;
+
+(6) The underlying exposures are not owned by a small business investment company described in section 302 of the Small Business Investment Act;
+
+(7) The underlying exposures are not owned by a firm an investment in which qualifies as a community development investment under section 24(Eleventh) of the National Bank Act;
+
+(8) The OCC may determine that a transaction in which the underlying exposures are owned by an investment firm that exercises substantially unfettered control over the size and composition of its assets, liabilities, and off-balance sheet exposures is not a securitization based on the transaction's leverage, risk profile, or economic substance;
+
+(9) The OCC may deem an exposure to a transaction that meets the definition of a securitization, notwithstanding paragraph (5), (6), or (7) of this definition, to be a securitization based on the transaction's leverage, risk profile, or economic substance; and
+
+(10) The transaction is not:
+
+(i) An investment fund;
+
+(ii) A collective investment fund (as defined in [12 CFR 208.34 (Board), 12 CFR 9.18 (OCC)]);
+
+(iii) An employee benefit plan as defined in paragraphs (3) and (32) of section 3 of ERISA, a “governmental plan” (as defined in 29 U.S.C. 1002(32)) that complies with the tax deferral qualification requirements provided in the Internal Revenue Code, or any similar employee benefit plan established under the laws of a foreign jurisdiction; or
+
+(iv) Registered with the SEC under the Investment Company Act of 1940 (15 U.S.C. 80a-1 et seq.) or foreign equivalents thereof.
+
+Securitization position means a covered position that is:
+
+(1) An on-balance sheet or off-balance sheet credit exposure (including credit-enhancing representations and warranties) that arises from a securitization (including a resecuritization); or
+
+(2) An exposure that directly or indirectly references a securitization exposure described in paragraph (1) of this definition.
+
+Sovereign debt position means a direct exposure to a sovereign entity.
+
+Specific risk means the risk of loss on a position that could result from factors other than broad market movements and includes event risk, default risk, and idiosyncratic risk.
+
+Structural position in a foreign currency means a position that is not a trading position and that is:
+
+(1) Subordinated debt, equity, or minority interest in a consolidated subsidiary that is denominated in a foreign currency;
+
+(2) Capital assigned to foreign branches that is denominated in a foreign currency;
+
+(3) A position related to an unconsolidated subsidiary or another item that is denominated in a foreign currency and that is deducted from the national bank's or Federal savings association's tier 1 or tier 2 capital; or
+
+(4) A position designed to hedge a national bank's or Federal savings association's capital ratios or earnings against the effect on paragraphs (1), (2), or (3) of this definition of adverse exchange rate movements.
+
+Term repo-style transaction means a repo-style transaction that has an original maturity in excess of one business day.
+
+Trading position means a position that is held by the national bank or Federal savings association for the purpose of short-term resale or with the intent of benefiting from actual or expected short-term price movements, or to lock in arbitrage profits.
+
+Two-way market means a market where there are independent bona fide offers to buy and sell so that a price reasonably related to the last sales price or current bona fide competitive bid and offer quotations can be determined within one day and settled at that price within a relatively short time frame conforming to trade custom.
+
+Value-at-Risk (VaR) means the estimate of the maximum amount that the value of one or more positions could decline due to market price or rate movements during a fixed holding period within a stated confidence interval.
+
+[78 FR 62157, 62273, Oct. 11, 2013, as amended at 84 FR 35258, July 22, 2019; 85 FR 4405, Jan. 24, 2020]
+
+Footnotes -
+3.202
+
+[32] Securities subject to repurchase and lending agreements are included as if they are still owned by the lender.
+
+[33] A position that hedges a trading position must be within the scope of the bank's hedging strategy as described in paragraph (a)(2) of section 203 of this subpart.
+
+§ 3.203 Requirements for application of this subpart F.
+
+(a) Trading positions —
+
+(1) Identification of trading positions. A national bank or Federal savings association must have clearly defined policies and procedures for determining which of its trading assets and trading liabilities are trading positions and which of its trading positions are correlation trading positions. These policies and procedures must take into account:
+
+(i) The extent to which a position, or a hedge of its material risks, can be marked-to-market daily by reference to a two-way market; and
+
+(ii) Possible impairments to the liquidity of a position or its hedge.
+
+(2) Trading and hedging strategies. A national bank or Federal savings association must have clearly defined trading and hedging strategies for its trading positions that are approved by senior management of the national bank or Federal savings association.
+
+(i) The trading strategy must articulate the expected holding period of, and the market risk associated with, each portfolio of trading positions.
+
+(ii) The hedging strategy must articulate for each portfolio of trading positions the level of market risk the national bank or Federal savings association is willing to accept and must detail the instruments, techniques, and strategies the national bank or Federal savings association will use to hedge the risk of the portfolio.
+
+(b) Management of covered positions —
+
+(1) Active management. A national bank or Federal savings association must have clearly defined policies and procedures for actively managing all covered positions. At a minimum, these policies and procedures must require:
+
+(i) Marking positions to market or to model on a daily basis;
+
+(ii) Daily assessment of the national bank's or Federal savings association's ability to hedge position and portfolio risks, and of the extent of market liquidity;
+
+(iii) Establishment and daily monitoring of limits on positions by a risk control unit independent of the trading business unit;
+
+(iv) Daily monitoring by senior management of information described in paragraphs (b)(1)(i) through (b)(1)(iii) of this section;
+
+(v) At least annual reassessment of established limits on positions by senior management; and
+
+(vi) At least annual assessments by qualified personnel of the quality of market inputs to the valuation process, the soundness of key assumptions, the reliability of parameter estimation in pricing models, and the stability and accuracy of model calibration under alternative market scenarios.
+
+(2) Valuation of covered positions. The national bank or Federal savings association must have a process for prudent valuation of its covered positions that includes policies and procedures on the valuation of positions, marking positions to market or to model, independent price verification, and valuation adjustments or reserves. The valuation process must consider, as appropriate, unearned credit spreads, close-out costs, early termination costs, investing and funding costs, liquidity, and model risk.
+
+(c) Requirements for internal models.
+
+(1) A national bank or Federal savings association must obtain the prior written approval of the OCC before using any internal model to calculate its risk-based capital requirement under this subpart.
+
+(2) A national bank or Federal savings association must meet all of the requirements of this section on an ongoing basis. The national bank or Federal savings association must promptly notify the OCC when:
+
+(i) The national bank or Federal savings association plans to extend the use of a model that the OCC has approved under this subpart to an additional business line or product type;
+
+(ii) The national bank or Federal savings association makes any change to an internal model approved by the OCC under this subpart that would result in a material change in the national bank's or Federal savings association's risk-weighted asset amount for a portfolio of covered positions; or
+
+(iii) The national bank or Federal savings association makes any material change to its modeling assumptions.
+
+(3) The OCC may rescind its approval of the use of any internal model (in whole or in part) or of the determination of the approach under § 3.209(a)(2)(ii) for a national bank's or Federal savings association's modeled correlation trading positions and determine an appropriate capital requirement for the covered positions to which the model would apply, if the OCC determines that the model no longer complies with this subpart or fails to reflect accurately the risks of the national bank's or Federal savings association's covered positions.
+
+(4) The national bank or Federal savings association must periodically, but no less frequently than annually, review its internal models in light of developments in financial markets and modeling technologies, and enhance those models as appropriate to ensure that they continue to meet the OCC's standards for model approval and employ risk measurement methodologies that are most appropriate for the national bank's or Federal savings association's covered positions.
+
+(5) The national bank or Federal savings association must incorporate its internal models into its risk management process and integrate the internal models used for calculating its VaR-based measure into its daily risk management process.
+
+(6) The level of sophistication of a national bank's or Federal savings association's internal models must be commensurate with the complexity and amount of its covered positions. A national bank's or Federal savings association's internal models may use any of the generally accepted approaches, including but not limited to variance-covariance models, historical simulations, or Monte Carlo simulations, to measure market risk.
+
+(7) The national bank's or Federal savings association's internal models must properly measure all the material risks in the covered positions to which they are applied.
+
+(8) The national bank's or Federal savings association's internal models must conservatively assess the risks arising from less liquid positions and positions with limited price transparency under realistic market scenarios.
+
+(9) The national bank or Federal savings association must have a rigorous and well-defined process for re-estimating, re-evaluating, and updating its internal models to ensure continued applicability and relevance.
+
+(10) If a national bank or Federal savings association uses internal models to measure specific risk, the internal models must also satisfy the requirements in paragraph (b)(1) of § 3.207.
+
+(d) Control, oversight, and validation mechanisms.
+
+(1) The national bank or Federal savings association must have a risk control unit that reports directly to senior management and is independent from the business trading units.
+
+(2) The national bank or Federal savings association must validate its internal models initially and on an ongoing basis. The national bank's or Federal savings association's validation process must be independent of the internal models' development, implementation, and operation, or the validation process must be subjected to an independent review of its adequacy and effectiveness. Validation must include:
+
+(i) An evaluation of the conceptual soundness of (including developmental evidence supporting) the internal models;
+
+(ii) An ongoing monitoring process that includes verification of processes and the comparison of the national bank's or Federal savings association's model outputs with relevant internal and external data sources or estimation techniques; and
+
+(iii) An outcomes analysis process that includes backtesting. For internal models used to calculate the VaR-based measure, this process must include a comparison of the changes in the national bank's or Federal savings association's portfolio value that would have occurred were end-of-day positions to remain unchanged (therefore, excluding fees, commissions, reserves, net interest income, and intraday trading) with VaR-based measures during a sample period not used in model development.
+
+(3) The national bank or Federal savings association must stress test the market risk of its covered positions at a frequency appropriate to each portfolio, and in no case less frequently than quarterly. The stress tests must take into account concentration risk (including but not limited to concentrations in single issuers, industries, sectors, or markets), illiquidity under stressed market conditions, and risks arising from the national bank's or Federal savings association's trading activities that may not be adequately captured in its internal models.
+
+(4) The national bank or Federal savings association must have an internal audit function independent of business-line management that at least annually assesses the effectiveness of the controls supporting the national bank's or Federal savings association's market risk measurement systems, including the activities of the business trading units and independent risk control unit, compliance with policies and procedures, and calculation of the national bank's or Federal savings association's measures for market risk under this subpart. At least annually, the internal audit function must report its findings to the national bank's or Federal savings association's board of directors (or a committee thereof).
+
+(e) Internal assessment of capital adequacy. The national bank or Federal savings association must have a rigorous process for assessing its overall capital adequacy in relation to its market risk. The assessment must take into account risks that may not be captured fully in the VaR-based measure, including concentration and liquidity risk under stressed market conditions.
+
+(f) Documentation. The national bank or Federal savings association must adequately document all material aspects of its internal models, management and valuation of covered positions, control, oversight, validation and review processes and results, and internal assessment of capital adequacy.
+
+§ 3.204 Measure for market risk.
+
+(a) General requirement.
+
+(1) A national bank or Federal savings association must calculate its standardized measure for market risk by following the steps described in paragraph (a)(2) of this section. An advanced approaches national bank or Federal savings association also must calculate an advanced measure for market risk by following the steps in paragraph (a)(2) of this section.
+
+(2) Measure for market risk. A national bank or Federal savings association must calculate the standardized measure for market risk, which equals the sum of the VaR-based capital requirement, stressed VaR-based capital requirement, specific risk add-ons, incremental risk capital requirement, comprehensive risk capital requirement, and capital requirement for de minimis exposures all as defined under this paragraph (a)(2), (except, that the national bank or Federal savings association may not use the SFA in section 210(b)(2)(vii)(B) of this subpart for purposes of this calculation)[, plus any additional capital requirement established by the OCC]. An advanced approaches national bank or Federal savings association that has completed the parallel run process and that has received notifications from the OCC pursuant to § 3.121(d) also must calculate the advanced measure for market risk, which equals the sum of the VaR-based capital requirement, stressed VaR-based capital requirement, specific risk add-ons, incremental risk capital requirement, comprehensive risk capital requirement, and capital requirement for de minimis exposures as defined under this paragraph (a)(2) [, plus any additional capital requirement established by the OCC].
+
+(i) VaR-based capital requirement. A national bank's or Federal savings association's VaR-based capital requirement equals the greater of:
+
+(A) The previous day's VaR-based measure as calculated under § 3.205; or
+
+(B) The average of the daily VaR-based measures as calculated under § 3.205 for each of the preceding 60 business days multiplied by three, except as provided in paragraph (b) of this section.
+
+(ii) Stressed VaR-based capital requirement. A national bank's or Federal savings association's stressed VaR-based capital requirement equals the greater of:
+
+(A) The most recent stressed VaR-based measure as calculated under § 3.206; or
+
+(B) The average of the stressed VaR-based measures as calculated under § 3.206 for each of the preceding 12 weeks multiplied by three, except as provided in paragraph (b) of this section.
+
+(iii) Specific risk add-ons. A national bank's or Federal savings association's specific risk add-ons equal any specific risk add-ons that are required under § 3.207 and are calculated in accordance with § 3.210.
+
+(iv) Incremental risk capital requirement. A national bank's or Federal savings association's incremental risk capital requirement equals any incremental risk capital requirement as calculated under section 208 of this subpart.
+
+(v) Comprehensive risk capital requirement. A national bank's or Federal savings association's comprehensive risk capital requirement equals any comprehensive risk capital requirement as calculated under section 209 of this subpart.
+
+(vi) Capital requirement for de minimis exposures. A national bank's or Federal savings association's capital requirement for de minimis exposures equals:
+
+(A) The absolute value of the fair value of those de minimis exposures that are not captured in the national bank's or Federal savings association's VaR-based measure or under paragraph (a)(2)(vi)(B) of this section; and
+
+(B) With the prior written approval of the OCC, the capital requirement for any de minimis exposures using alternative techniques that appropriately measure the market risk associated with those exposures.
+
+(b) Backtesting. A national bank or Federal savings association must compare each of its most recent 250 business days' trading losses (excluding fees, commissions, reserves, net interest income, and intraday trading) with the corresponding daily VaR-based measures calibrated to a one-day holding period and at a one-tail, 99.0 percent confidence level. A national bank or Federal savings association must begin backtesting as required by this paragraph (b) no later than one year after the later of January 1, 2014 and the date on which the national bank or Federal savings association becomes subject to this subpart. In the interim, consistent with safety and soundness principles, a national bank or Federal savings association subject to this subpart as of January 1, 2014 should continue to follow backtesting procedures in accordance with the OCC's supervisory expectations.
+
+(1) Once each quarter, the national bank or Federal savings association must identify the number of exceptions (that is, the number of business days for which the actual daily net trading loss, if any, exceeds the corresponding daily VaR-based measure) that have occurred over the preceding 250 business days.
+
+(2) A national bank or Federal savings association must use the multiplication factor in Table 1 to § 3.204 that corresponds to the number of exceptions identified in paragraph (b)(1) of this section to determine its VaR-based capital requirement for market risk under paragraph (a)(2)(i) of this section and to determine its stressed VaR-based capital requirement for market risk under paragraph (a)(2)(ii) of this section until it obtains the next quarter's backtesting results, unless the OCC notifies the national bank or Federal savings association in writing that a different adjustment or other action is appropriate.
+
+Table 1 to § 3.204—Multiplication Factors Based on Results of Backtesting
+
+Number of exceptions
+Multiplication factor
+
+4 or fewer
+3.00
+
+5
+3.40
+
+6
+3.50
+
+7
+3.65
+
+8
+3.75
+
+9
+3.85
+
+10 or more
+4.00
+
+§ 3.205 VaR-based measure.
+
+(a) General requirement. A national bank or Federal savings association must use one or more internal models to calculate daily a VaR-based measure of the general market risk of all covered positions. The daily VaR-based measure also may reflect the national bank's or Federal savings association's specific risk for one or more portfolios of debt and equity positions, if the internal models meet the requirements of paragraph (b)(1) of § 3.207. The daily VaR-based measure must also reflect the national bank's or Federal savings association's specific risk for any portfolio of correlation trading positions that is modeled under § 3.209. A national bank or Federal savings association may elect to include term repo-style transactions in its VaR-based measure, provided that the national bank or Federal savings association includes all such term repo-style transactions consistently over time.
+
+(1) The national bank's or Federal savings association's internal models for calculating its VaR-based measure must use risk factors sufficient to measure the market risk inherent in all covered positions. The market risk categories must include, as appropriate, interest rate risk, credit spread risk, equity price risk, foreign exchange risk, and commodity price risk. For material positions in the major currencies and markets, modeling techniques must incorporate enough segments of the yield curve—in no case less than six—to capture differences in volatility and less than perfect correlation of rates along the yield curve.
+
+(2) The VaR-based measure may incorporate empirical correlations within and across risk categories, provided the national bank or Federal savings association validates and demonstrates the reasonableness of its process for measuring correlations. If the VaR-based measure does not incorporate empirical correlations across risk categories, the national bank or Federal savings association must add the separate measures from its internal models used to calculate the VaR-based measure for the appropriate market risk categories (interest rate risk, credit spread risk, equity price risk, foreign exchange rate risk, and/or commodity price risk) to determine its aggregate VaR-based measure.
+
+(3) The VaR-based measure must include the risks arising from the nonlinear price characteristics of options positions or positions with embedded optionality and the sensitivity of the fair value of the positions to changes in the volatility of the underlying rates, prices, or other material risk factors. A national bank or Federal savings association with a large or complex options portfolio must measure the volatility of options positions or positions with embedded optionality by different maturities and/or strike prices, where material.
+
+(4) The national bank or Federal savings association must be able to justify to the satisfaction of the OCC the omission of any risk factors from the calculation of its VaR-based measure that the national bank or Federal savings association uses in its pricing models.
+
+(5) The national bank or Federal savings association must demonstrate to the satisfaction of the OCC the appropriateness of any proxies used to capture the risks of the national bank's or Federal savings association's actual positions for which such proxies are used.
+
+(b) Quantitative requirements for VaR-based measure.
+
+(1) The VaR-based measure must be calculated on a daily basis using a one-tail, 99.0 percent confidence level, and a holding period equivalent to a 10-business-day movement in underlying risk factors, such as rates, spreads, and prices. To calculate VaR-based measures using a 10-business-day holding period, the national bank or Federal savings association may calculate 10-business-day measures directly or may convert VaR-based measures using holding periods other than 10 business days to the equivalent of a 10-business-day holding period. A national bank or Federal savings association that converts its VaR-based measure in such a manner must be able to justify the reasonableness of its approach to the satisfaction of the OCC.
+
+(2) The VaR-based measure must be based on a historical observation period of at least one year. Data used to determine the VaR-based measure must be relevant to the national bank's or Federal savings association's actual exposures and of sufficient quality to support the calculation of risk-based capital requirements. The national bank or Federal savings association must update data sets at least monthly or more frequently as changes in market conditions or portfolio composition warrant. For a national bank or Federal savings association that uses a weighting scheme or other method for the historical observation period, the national bank or Federal savings association must either:
+
+(i) Use an effective observation period of at least one year in which the average time lag of the observations is at least six months; or
+
+(ii) Demonstrate to the OCC that its weighting scheme is more effective than a weighting scheme with an average time lag of at least six months representing the volatility of the national bank's or Federal savings association's trading portfolio over a full business cycle. A national bank or Federal savings association using this option must update its data more frequently than monthly and in a manner appropriate for the type of weighting scheme.
+
+(c) A national bank or Federal savings association must divide its portfolio into a number of significant subportfolios approved by the OCC for subportfolio backtesting purposes. These subportfolios must be sufficient to allow the national bank or Federal savings association and the OCC to assess the adequacy of the VaR model at the risk factor level; the OCC will evaluate the appropriateness of these subportfolios relative to the value and composition of the national bank's or Federal savings association's covered positions. The national bank or Federal savings association must retain and make available to the OCC the following information for each subportfolio for each business day over the previous two years (500 business days), with no more than a 60-day lag:
+
+(1) A daily VaR-based measure for the subportfolio calibrated to a one-tail, 99.0 percent confidence level;
+
+(2) The daily profit or loss for the subportfolio (that is, the net change in price of the positions held in the portfolio at the end of the previous business day); and
+
+(3) The p-value of the profit or loss on each day (that is, the probability of observing a profit that is less than, or a loss that is greater than, the amount reported for purposes of paragraph (c)(2) of this section based on the model used to calculate the VaR-based measure described in paragraph (c)(1) of this section).
+
+§ 3.206 Stressed VaR-based measure.
+
+(a) General requirement. At least weekly, a national bank or Federal savings association must use the same internal model(s) used to calculate its VaR-based measure to calculate a stressed VaR-based measure.
+
+(b) Quantitative requirements for stressed VaR-based measure.
+
+(1) A national bank or Federal savings association must calculate a stressed VaR-based measure for its covered positions using the same model(s) used to calculate the VaR-based measure, subject to the same confidence level and holding period applicable to the VaR-based measure under § 3.205, but with model inputs calibrated to historical data from a continuous 12-month period that reflects a period of significant financial stress appropriate to the national bank's or Federal savings association's current portfolio.
+
+(2) The stressed VaR-based measure must be calculated at least weekly and be no less than the national bank's or Federal savings association's VaR-based measure.
+
+(3) A national bank or Federal savings association must have policies and procedures that describe how it determines the period of significant financial stress used to calculate the national bank's or Federal savings association's stressed VaR-based measure under this section and must be able to provide empirical support for the period used. The national bank or Federal savings association must obtain the prior approval of the OCC for, and notify the OCC if the national bank or Federal savings association makes any material changes to, these policies and procedures. The policies and procedures must address:
+
+(i) How the national bank or Federal savings association links the period of significant financial stress used to calculate the stressed VaR-based measure to the composition and directional bias of its current portfolio; and
+
+(ii) The national bank's or Federal savings association's process for selecting, reviewing, and updating the period of significant financial stress used to calculate the stressed VaR-based measure and for monitoring the appropriateness of the period to the national bank's or Federal savings association's current portfolio.
+
+(4) Nothing in this section prevents the OCC from requiring a national bank or Federal savings association to use a different period of significant financial stress in the calculation of the stressed VaR-based measure.
+
+§ 3.207 Specific risk.
+
+(a) General requirement. A national bank or Federal savings association must use one of the methods in this section to measure the specific risk for each of its debt, equity, and securitization positions with specific risk.
+
+(b) Modeled specific risk. A national bank or Federal savings association may use models to measure the specific risk of covered positions as provided in paragraph (a) of section 205 of this subpart (therefore, excluding securitization positions that are not modeled under section 209 of this subpart). A national bank or Federal savings association must use models to measure the specific risk of correlation trading positions that are modeled under § 3.209.
+
+(1) Requirements for specific risk modeling.
+
+(i) If a national bank or Federal savings association uses internal models to measure the specific risk of a portfolio, the internal models must:
+
+(A) Explain the historical price variation in the portfolio;
+
+(B) Be responsive to changes in market conditions;
+
+(C) Be robust to an adverse environment, including signaling rising risk in an adverse environment; and
+
+(D) Capture all material components of specific risk for the debt and equity positions in the portfolio. Specifically, the internal models must:
+
+(1) Capture event risk and idiosyncratic risk; and
+
+(2) Capture and demonstrate sensitivity to material differences between positions that are similar but not identical and to changes in portfolio composition and concentrations.
+
+(ii) If a national bank or Federal savings association calculates an incremental risk measure for a portfolio of debt or equity positions under section 208 of this subpart, the national bank or Federal savings association is not required to capture default and credit migration risks in its internal models used to measure the specific risk of those portfolios.
+
+(2) Specific risk fully modeled for one or more portfolios. If the national bank's or Federal savings association's VaR-based measure captures all material aspects of specific risk for one or more of its portfolios of debt, equity, or correlation trading positions, the national bank or Federal savings association has no specific risk add-on for those portfolios for purposes of paragraph (a)(2)(iii) of § 3.204.
+
+(c) Specific risk not modeled.
+
+(1) If the national bank's or Federal savings association's VaR-based measure does not capture all material aspects of specific risk for a portfolio of debt, equity, or correlation trading positions, the national bank or Federal savings association must calculate a specific-risk add-on for the portfolio under the standardized measurement method as described in § 3.210.
+
+(2) A national bank or Federal savings association must calculate a specific risk add-on under the standardized measurement method as described in § 3.210 for all of its securitization positions that are not modeled under § 3.209.
+
+§ 3.208 Incremental risk.
+
+(a) General requirement. A national bank or Federal savings association that measures the specific risk of a portfolio of debt positions under § 3.207(b) using internal models must calculate at least weekly an incremental risk measure for that portfolio according to the requirements in this section. The incremental risk measure is the national bank's or Federal savings association's measure of potential losses due to incremental risk over a one-year time horizon at a one-tail, 99.9 percent confidence level, either under the assumption of a constant level of risk, or under the assumption of constant positions. With the prior approval of the OCC, a national bank or Federal savings association may choose to include portfolios of equity positions in its incremental risk model, provided that it consistently includes such equity positions in a manner that is consistent with how the national bank or Federal savings association internally measures and manages the incremental risk of such positions at the portfolio level. If equity positions are included in the model, for modeling purposes default is considered to have occurred upon the default of any debt of the issuer of the equity position. A national bank or Federal savings association may not include correlation trading positions or securitization positions in its incremental risk measure.
+
+(b) Requirements for incremental risk modeling. For purposes of calculating the incremental risk measure, the incremental risk model must:
+
+(1) Measure incremental risk over a one-year time horizon and at a one-tail, 99.9 percent confidence level, either under the assumption of a constant level of risk, or under the assumption of constant positions.
+
+(i) A constant level of risk assumption means that the national bank or Federal savings association rebalances, or rolls over, its trading positions at the beginning of each liquidity horizon over the one-year horizon in a manner that maintains the national bank's or Federal savings association's initial risk level. The national bank or Federal savings association must determine the frequency of rebalancing in a manner consistent with the liquidity horizons of the positions in the portfolio. The liquidity horizon of a position or set of positions is the time required for a national bank or Federal savings association to reduce its exposure to, or hedge all of its material risks of, the position(s) in a stressed market. The liquidity horizon for a position or set of positions may not be less than the shorter of three months or the contractual maturity of the position.
+
+(ii) A constant position assumption means that the national bank or Federal savings association maintains the same set of positions throughout the one-year horizon. If a national bank or Federal savings association uses this assumption, it must do so consistently across all portfolios.
+
+(iii) A national bank's or Federal savings association's selection of a constant position or a constant risk assumption must be consistent between the national bank's or Federal savings association's incremental risk model and its comprehensive risk model described in section 209 of this subpart, if applicable.
+
+(iv) A national bank's or Federal savings association's treatment of liquidity horizons must be consistent between the national bank's or Federal savings association's incremental risk model and its comprehensive risk model described in section 209, if applicable.
+
+(2) Recognize the impact of correlations between default and migration events among obligors.
+
+(3) Reflect the effect of issuer and market concentrations, as well as concentrations that can arise within and across product classes during stressed conditions.
+
+(4) Reflect netting only of long and short positions that reference the same financial instrument.
+
+(5) Reflect any material mismatch between a position and its hedge.
+
+(6) Recognize the effect that liquidity horizons have on dynamic hedging strategies. In such cases, a national bank or Federal savings association must:
+
+(i) Choose to model the rebalancing of the hedge consistently over the relevant set of trading positions;
+
+(ii) Demonstrate that the inclusion of rebalancing results in a more appropriate risk measurement;
+
+(iii) Demonstrate that the market for the hedge is sufficiently liquid to permit rebalancing during periods of stress; and
+
+(iv) Capture in the incremental risk model any residual risks arising from such hedging strategies.
+
+(7) Reflect the nonlinear impact of options and other positions with material nonlinear behavior with respect to default and migration changes.
+
+(8) Maintain consistency with the national bank's or Federal savings association's internal risk management methodologies for identifying, measuring, and managing risk.
+
+(c) Calculation of incremental risk capital requirement. The incremental risk capital requirement is the greater of:
+
+(1) The average of the incremental risk measures over the previous 12 weeks; or
+
+(2) The most recent incremental risk measure.
+
+§ 3.209 Comprehensive risk.
+
+(a) General requirement.
+
+(1) Subject to the prior approval of the OCC, a national bank or Federal savings association may use the method in this section to measure comprehensive risk, that is, all price risk, for one or more portfolios of correlation trading positions.
+
+(2) A national bank or Federal savings association that measures the price risk of a portfolio of correlation trading positions using internal models must calculate at least weekly a comprehensive risk measure that captures all price risk according to the requirements of this section. The comprehensive risk measure is either:
+
+(i) The sum of:
+
+(A) The national bank's or Federal savings association's modeled measure of all price risk determined according to the requirements in paragraph (b) of this section; and
+
+(B) A surcharge for the national bank's or Federal savings association's modeled correlation trading positions equal to the total specific risk add-on for such positions as calculated under section 210 of this subpart multiplied by 8.0 percent; or
+
+(ii) With approval of the OCC and provided the national bank or Federal savings association has met the requirements of this section for a period of at least one year and can demonstrate the effectiveness of the model through the results of ongoing model validation efforts including robust benchmarking, the greater of:
+
+(A) The national bank's or Federal savings association's modeled measure of all price risk determined according to the requirements in paragraph (b) of this section; or
+
+(B) The total specific risk add-on that would apply to the bank's modeled correlation trading positions as calculated under section 210 of this subpart multiplied by 8.0 percent.
+
+(b) Requirements for modeling all price risk. If a national bank or Federal savings association uses an internal model to measure the price risk of a portfolio of correlation trading positions:
+
+(1) The internal model must measure comprehensive risk over a one-year time horizon at a one-tail, 99.9 percent confidence level, either under the assumption of a constant level of risk, or under the assumption of constant positions.
+
+(2) The model must capture all material price risk, including but not limited to the following:
+
+(i) The risks associated with the contractual structure of cash flows of the position, its issuer, and its underlying exposures;
+
+(ii) Credit spread risk, including nonlinear price risks;
+
+(iii) The volatility of implied correlations, including nonlinear price risks such as the cross-effect between spreads and correlations;
+
+(iv) Basis risk;
+
+(v) Recovery rate volatility as it relates to the propensity for recovery rates to affect tranche prices; and
+
+(vi) To the extent the comprehensive risk measure incorporates the benefits of dynamic hedging, the static nature of the hedge over the liquidity horizon must be recognized. In such cases, a national bank or Federal savings association must:
+
+(A) Choose to model the rebalancing of the hedge consistently over the relevant set of trading positions;
+
+(B) Demonstrate that the inclusion of rebalancing results in a more appropriate risk measurement;
+
+(C) Demonstrate that the market for the hedge is sufficiently liquid to permit rebalancing during periods of stress; and
+
+(D) Capture in the comprehensive risk model any residual risks arising from such hedging strategies;
+
+(3) The national bank or Federal savings association must use market data that are relevant in representing the risk profile of the national bank's or Federal savings association's correlation trading positions in order to ensure that the national bank or Federal savings association fully captures the material risks of the correlation trading positions in its comprehensive risk measure in accordance with this section; and
+
+(4) The national bank or Federal savings association must be able to demonstrate that its model is an appropriate representation of comprehensive risk in light of the historical price variation of its correlation trading positions.
+
+(c) Requirements for stress testing.
+
+(1) A national bank or Federal savings association must at least weekly apply specific, supervisory stress scenarios to its portfolio of correlation trading positions that capture changes in:
+
+(i) Default rates;
+
+(ii) Recovery rates;
+
+(iii) Credit spreads;
+
+(iv) Correlations of underlying exposures; and
+
+(v) Correlations of a correlation trading position and its hedge.
+
+(2) Other requirements.
+
+(i) A national bank or Federal savings association must retain and make available to the OCC the results of the supervisory stress testing, including comparisons with the capital requirements generated by the national bank's or Federal savings association's comprehensive risk model.
+
+(ii) A national bank or Federal savings association must report to the OCC promptly any instances where the stress tests indicate any material deficiencies in the comprehensive risk model.
+
+(d) Calculation of comprehensive risk capital requirement. The comprehensive risk capital requirement is the greater of:
+
+(1) The average of the comprehensive risk measures over the previous 12 weeks; or
+
+(2) The most recent comprehensive risk measure.
+
+§ 3.210 Standardized measurement method for specific risk.
+
+(a) General requirement. A national bank or Federal savings association must calculate a total specific risk add-on for each portfolio of debt and equity positions for which the national bank's or Federal savings association's VaR-based measure does not capture all material aspects of specific risk and for all securitization positions that are not modeled under § 3.209. A national bank or Federal savings association must calculate each specific risk add-on in accordance with the requirements of this section. Notwithstanding any other definition or requirement in this subpart, a position that would have qualified as a debt position or an equity position but for the fact that it qualifies as a correlation trading position under paragraph (2) of the definition of correlation trading position in § 3.202, shall be considered a debt position or an equity position, respectively, for purposes of this section 210 of this subpart.
+
+(1) The specific risk add-on for an individual debt or securitization position that represents sold credit protection is capped at the notional amount of the credit derivative contract. The specific risk add-on for an individual debt or securitization position that represents purchased credit protection is capped at the current fair value of the transaction plus the absolute value of the present value of all remaining payments to the protection seller under the transaction. This sum is equal to the value of the protection leg of the transaction.
+
+(2) For debt, equity, or securitization positions that are derivatives with linear payoffs, a national bank or Federal savings association must assign a specific risk-weighting factor to the fair value of the effective notional amount of the underlying instrument or index portfolio, except for a securitization position for which the national bank or Federal savings association directly calculates a specific risk add-on using the SFA in paragraph (b)(2)(vii)(B) of this section. A swap must be included as an effective notional position in the underlying instrument or portfolio, with the receiving side treated as a long position and the paying side treated as a short position. For debt, equity, or securitization positions that are derivatives with nonlinear payoffs, a national bank or Federal savings association must risk weight the fair value of the effective notional amount of the underlying instrument or portfolio multiplied by the derivative's delta.
+
+(3) For debt, equity, or securitization positions, a national bank or Federal savings association may net long and short positions (including derivatives) in identical issues or identical indices. A national bank or Federal savings association may also net positions in depositary receipts against an opposite position in an identical equity in different markets, provided that the national bank or Federal savings association includes the costs of conversion.
+
+(4) A set of transactions consisting of either a debt position and its credit derivative hedge or a securitization position and its credit derivative hedge has a specific risk add-on of zero if:
+
+(i) The debt or securitization position is fully hedged by a total return swap (or similar instrument where there is a matching of swap payments and changes in fair value of the debt or securitization position);
+
+(ii) There is an exact match between the reference obligation of the swap and the debt or securitization position;
+
+(iii) There is an exact match between the currency of the swap and the debt or securitization position; and
+
+(iv) There is either an exact match between the maturity date of the swap and the maturity date of the debt or securitization position; or, in cases where a total return swap references a portfolio of positions with different maturity dates, the total return swap maturity date must match the maturity date of the underlying asset in that portfolio that has the latest maturity date.
+
+(5) The specific risk add-on for a set of transactions consisting of either a debt position and its credit derivative hedge or a securitization position and its credit derivative hedge that does not meet the criteria of paragraph (a)(4) of this section is equal to 20.0 percent of the capital requirement for the side of the transaction with the higher specific risk add-on when:
+
+(i) The credit risk of the position is fully hedged by a credit default swap or similar instrument;
+
+(ii) There is an exact match between the reference obligation of the credit derivative hedge and the debt or securitization position;
+
+(iii) There is an exact match between the currency of the credit derivative hedge and the debt or securitization position; and
+
+(iv) There is either an exact match between the maturity date of the credit derivative hedge and the maturity date of the debt or securitization position; or, in the case where the credit derivative hedge has a standard maturity date:
+
+(A) The maturity date of the credit derivative hedge is within 30 business days of the maturity date of the debt or securitization position; or
+
+(B) For purchased credit protection, the maturity date of the credit derivative hedge is later than the maturity date of the debt or securitization position, but is no later than the standard maturity date for that instrument that immediately follows the maturity date of the debt or securitization position. The maturity date of the credit derivative hedge may not exceed the maturity date of the debt or securitization position by more than 90 calendar days.
+
+(6) The specific risk add-on for a set of transactions consisting of either a debt position and its credit derivative hedge or a securitization position and its credit derivative hedge that does not meet the criteria of either paragraph (a)(4) or (a)(5) of this section, but in which all or substantially all of the price risk has been hedged, is equal to the specific risk add-on for the side of the transaction with the higher specific risk add-on.
+
+(b) Debt and securitization positions.
+
+(1) The total specific risk add-on for a portfolio of debt or securitization positions is the sum of the specific risk add-ons for individual debt or securitization positions, as computed under this section. To determine the specific risk add-on for individual debt or securitization positions, a national bank or Federal savings association must multiply the absolute value of the current fair value of each net long or net short debt or securitization position in the portfolio by the appropriate specific risk-weighting factor as set forth in paragraphs (b)(2)(i) through (b)(2)(vii) of this section.
+
+(2) For the purpose of this section, the appropriate specific risk-weighting factors include:
+
+(i) Sovereign debt positions.
+
+(A) In accordance with Table 1 to § 3.210, a national bank or Federal savings association must assign a specific risk-weighting factor to a sovereign debt position based on the CRC applicable to the sovereign, and, as applicable, the remaining contractual maturity of the position, or if there is no CRC applicable to the sovereign, based on whether the sovereign entity is a member of the OECD. Notwithstanding any other provision in this subpart, sovereign debt positions that are backed by the full faith and credit of the United States are treated as having a CRC of 0.
+
+Table 1 to § 3.210—Specific Risk-Weighting Factors for Sovereign Debt Positions
+
+Specific risk-weighting factor
+
+(in percent)
+
+CRC:
+
+0-1
+0.0
+
+2-3
+Remaining contractual maturity of 6 months or less
+0.25
+
+Remaining contractual maturity of greater than 6 and up to and including 24 months
+1.0
+
+Remaining contractual maturity exceeds 24 months
+1.6
+
+4-6
+8.0
+
+7
+12.0
+
+OECD Member with No CRC
+0.0
+
+Non-OECD Member with No CRC
+8.0
+
+Sovereign Default
+12.0
+
+(B) Notwithstanding paragraph (b)(2)(i)(A) of this section, a national bank or Federal savings association may assign to a sovereign debt position a specific risk-weighting factor that is lower than the applicable specific risk-weighting factor in Table 1 to § 3.210 if:
+
+(1) The position is denominated in the sovereign entity's currency;
+
+(2) The national bank or Federal savings association has at least an equivalent amount of liabilities in that currency; and
+
+(3) The sovereign entity allows banks under its jurisdiction to assign the lower specific risk-weighting factor to the same exposures to the sovereign entity.
+
+(C) A national bank or Federal savings association must assign a 12.0 percent specific risk-weighting factor to a sovereign debt position immediately upon determination a default has occurred; or if a default has occurred within the previous five years.
+
+(D) A national bank or Federal savings association must assign a 0.0 percent specific risk-weighting factor to a sovereign debt position if the sovereign entity is a member of the OECD and does not have a CRC assigned to it, except as provided in paragraph (b)(2)(i)(C) of this section.
+
+(E) A national bank or Federal savings association must assign an 8.0 percent specific risk-weighting factor to a sovereign debt position if the sovereign is not a member of the OECD and does not have a CRC assigned to it, except as provided in paragraph (b)(2)(i)(C) of this section.
+
+(ii) Certain supranational entity and multilateral development bank debt positions. A national bank or Federal savings association may assign a 0.0 percent specific risk-weighting factor to a debt position that is an exposure to the Bank for International Settlements, the European Central Bank, the European Commission, the International Monetary Fund, the European Stability Mechanism, the European Financial Stability Facility, or an MDB.
+
+(iii) GSE debt positions. A national bank or Federal savings association must assign a 1.6 percent specific risk-weighting factor to a debt position that is an exposure to a GSE. Notwithstanding the foregoing, a national bank or Federal savings association must assign an 8.0 percent specific risk-weighting factor to preferred stock issued by a GSE.
+
+(iv) Depository institution, foreign bank, and credit union debt positions.
+
+(A) Except as provided in paragraph (b)(2)(iv)(B) of this section, a national bank or Federal savings association must assign a specific risk-weighting factor to a debt position that is an exposure to a depository institution, a foreign bank, or a credit union, in accordance with Table 2 to § 3.210, based on the CRC that corresponds to that entity's home country or the OECD membership status of that entity's home country if there is no CRC applicable to the entity's home country, and, as applicable, the remaining contractual maturity of the position.
+
+Table 2 to § 3.210—Specific Risk-Weighting Factors for Depository Institution, Foreign Bank, and Credit Union Debt Positions
+
+Specific risk-weighting factor
+
+(in percent)
+
+CRC 0-2 or OECD Member with No CRC
+Remaining contractual maturity of 6 months or less
+0.25
+
+Remaining contractual maturity of greater than 6 and up to and including 24 months
+1.0
+
+Remaining contractual maturity exceeds 24 months
+1.6
+
+CRC 3
+8.0
+
+CRC 4-7
+12.0
+
+Non-OECD Member with No CRC
+8.0
+
+Sovereign Default
+12.0
+
+(B) A national bank or Federal savings association must assign a specific risk-weighting factor of 8.0 percent to a debt position that is an exposure to a depository institution or a foreign bank that is includable in the depository institution's or foreign bank's regulatory capital and that is not subject to deduction as a reciprocal holding under § 3.22.
+
+(C) A national bank or Federal savings association must assign a 12.0 percent specific risk-weighting factor to a debt position that is an exposure to a foreign bank immediately upon determination that a default by the foreign bank's home country has occurred or if a default by the foreign bank's home country has occurred within the previous five years.
+
+(v) PSE debt positions.
+
+(A) Except as provided in paragraph (b)(2)(v)(B) of this section, a national bank or Federal savings association must assign a specific risk-weighting factor to a debt position that is an exposure to a PSE in accordance with Tables 3 and 4 to § 3.210 depending on the position's categorization as a general obligation or revenue obligation based on the CRC that corresponds to the PSE's home country or the OECD membership status of the PSE's home country if there is no CRC applicable to the PSE's home country, and, as applicable, the remaining contractual maturity of the position, as set forth in Tables 3 and 4 of this section.
+
+(B) A national bank or Federal savings association may assign a lower specific risk-weighting factor than would otherwise apply under Tables 3 and 4 of this section to a debt position that is an exposure to a foreign PSE if:
+
+(1) The PSE's home country allows banks under its jurisdiction to assign a lower specific risk-weighting factor to such position; and
+
+(2) The specific risk-weighting factor is not lower than the risk weight that corresponds to the PSE's home country in accordance with Tables 3 and 4 of this section.
+
+(C) A national bank or Federal savings association must assign a 12.0 percent specific risk-weighting factor to a PSE debt position immediately upon determination that a default by the PSE's home country has occurred or if a default by the PSE's home country has occurred within the previous five years.
+
+Table 3 to § 3.210—Specific Risk-Weighting Factors for PSE General Obligation Debt Positions
+
+General obligation specific risk-weighting factor
+
+(in percent)
+
+CRC 0-2 or OECD Member with No CRC
+Remaining contractual maturity of 6 months or less
+0.25
+
+Remaining contractual maturity of greater than 6 and up to and including 24 months
+1.0
+
+Remaining contractual maturity exceeds 24 months
+1.6
+
+CRC 3
+8.0
+
+CRC 4-7
+12.0
+
+Non-OECD Member with No CRC
+8.0
+
+Sovereign Default
+12.0
+
+Table 4 to § 3.210—Specific Risk-Weighting Factors for PSE Revenue Obligation Debt Positions
+
+Revenue obligation specific risk-weighting factor
+
+(in percent)
+
+CRC 0-1 or OECD Member with No CRC
+Remaining contractual maturity of 6 months or less
+0.25
+
+Remaining contractual maturity of greater than 6 and up to and including 24 months
+1.0
+
+Remaining contractual maturity exceeds 24 months
+1.6
+
+CRC 2-3
+8.0
+
+CRC 4-7
+12.0
+
+Non-OECD Member with No CRC
+8.0
+
+Sovereign Default
+12.0
+
+(vi) Corporate debt positions. Except as otherwise provided in paragraph (b)(2)(vi)(B) of this section, a national bank or Federal savings association must assign a specific risk-weighting factor to a corporate debt position in accordance with the investment grade methodology in paragraph (b)(2)(vi)(A) of this section.
+
+(A) Investment grade methodology.
+
+(1) For corporate debt positions that are exposures to entities that have issued and outstanding publicly traded instruments, a national bank or Federal savings association must assign a specific risk-weighting factor based on the category and remaining contractual maturity of the position, in accordance with Table 5 to § 3.210. For purposes of this paragraph (b)(2)(vi)(A)(1), the national bank or Federal savings association must determine whether the position is in the investment grade or not investment grade category.
+
+Table 5 to § 3.210—Specific Risk-Weighting Factors for Corporate Debt Positions Under the Investment Grade Methodology
+
+Category
+Remaining contractual maturity
+Specific risk-weighting factor
+(in percent)
+
+Investment Grade
+6 months or less
+0.50
+
+Greater than 6 and up to and including 24 months
+2.00
+
+Greater than 24 months
+4.00
+
+Non-investment Grade
+12.00
+
+(2) A national bank or Federal savings association must assign an 8.0 percent specific risk-weighting factor for corporate debt positions that are exposures to entities that do not have publicly traded instruments outstanding.
+
+(B) Limitations.
+
+(1) A national bank or Federal savings association must assign a specific risk-weighting factor of at least 8.0 percent to an interest-only mortgage-backed security that is not a securitization position.
+
+(2) A national bank or Federal savings association shall not assign a corporate debt position a specific risk-weighting factor that is lower than the specific risk-weighting factor that corresponds to the CRC of the issuer's home country, if applicable, in table 1 of this section.
+
+(vii) Securitization positions.
+
+(A) General requirements.
+
+(1) A national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association must assign a specific risk-weighting factor to a securitization position using either the simplified supervisory formula approach (SSFA) in paragraph (b)(2)(vii)(C) of this section (and § 3.211) or assign a specific risk-weighting factor of 100 percent to the position.
+
+(2) A national bank or Federal savings association that is an advanced approaches national bank or Federal savings association must calculate a specific risk add-on for a securitization position in accordance with paragraph (b)(2)(vii)(B) of this section if the national bank or Federal savings association and the securitization position each qualifies to use the SFA in § 3.143. A national bank or Federal savings association that is an advanced approaches national bank or Federal savings association with a securitization position that does not qualify for the SFA under paragraph (b)(2)(vii)(B) of this section may assign a specific risk-weighting factor to the securitization position using the SSFA in accordance with paragraph (b)(2)(vii)(C) of this section or assign a specific risk-weighting factor of 100 percent to the position.
+
+(3) A national bank or Federal savings association must treat a short securitization position as if it is a long securitization position solely for calculation purposes when using the SFA in paragraph (b)(2)(vii)(B) of this section or the SSFA in paragraph (b)(2)(vii)(C) of this section.
+
+(B) SFA. To calculate the specific risk add-on for a securitization position using the SFA, a national bank or Federal savings association that is an advanced approaches national bank or Federal savings association must set the specific risk add-on for the position equal to the risk-based capital requirement as calculated under § 3.143.
+
+(C) SSFA. To use the SSFA to determine the specific risk-weighting factor for a securitization position, a national bank or Federal savings association must calculate the specific risk-weighting factor in accordance with § 3.211.
+
+(D) Nth-to-default credit derivatives. A national bank or Federal savings association must determine a specific risk add-on using the SFA in paragraph (b)(2)(vii)(B) of this section, or assign a specific risk-weighting factor using the SSFA in paragraph (b)(2)(vii)(C) of this section to an nth-to-default credit derivative in accordance with this paragraph (b)(2)(vii)(D), regardless of whether the national bank or Federal savings association is a net protection buyer or net protection seller. A national bank or Federal savings association must determine its position in the nth-to-default credit derivative as the largest notional amount of all the underlying exposures.
+
+(1) For purposes of determining the specific risk add-on using the SFA in paragraph (b)(2)(vii)(B) of this section or the specific risk-weighting factor for an nth-to-default credit derivative using the SSFA in paragraph (b)(2)(vii)(C) of this section the national bank or Federal savings association must calculate the attachment point and detachment point of its position as follows:
+
+(i) The attachment point (parameter A) is the ratio of the sum of the notional amounts of all underlying exposures that are subordinated to the national bank's or Federal savings association's position to the total notional amount of all underlying exposures. For purposes of the SSFA, parameter A is expressed as a decimal value between zero and one. For purposes of using the SFA in paragraph (b)(2)(vii)(B) of this section to calculate the specific add-on for its position in an nth-to-default credit derivative, parameter A must be set equal to the credit enhancement level (L) input to the SFA formula in section 143 of this subpart. In the case of a first-to-default credit derivative, there are no underlying exposures that are subordinated to the national bank's or Federal savings association's position. In the case of a second-or-subsequent-to-default credit derivative, the smallest (n-1) notional amounts of the underlying exposure(s) are subordinated to the national bank's or Federal savings association's position.
+
+(ii) The detachment point (parameter D) equals the sum of parameter A plus the ratio of the notional amount of the national bank's or Federal savings association's position in the nth-to-default credit derivative to the total notional amount of all underlying exposures. For purposes of the SSFA, parameter A is expressed as a decimal value between zero and one. For purposes of using the SFA in paragraph (b)(2)(vii)(B) of this section to calculate the specific risk add-on for its position in an nth-to-default credit derivative, parameter D must be set to equal the L input plus the thickness of tranche T input to the SFA formula in § 3.143 of this subpart.
+
+(2) A national bank or Federal savings association that does not use the SFA in paragraph (b)(2)(vii)(B) of this section to determine a specific risk-add on, or the SSFA in paragraph (b)(2)(vii)(C) of this section to determine a specific risk-weighting factor for its position in an nth-to-default credit derivative must assign a specific risk-weighting factor of 100 percent to the position.
+
+(c) Modeled correlation trading positions. For purposes of calculating the comprehensive risk measure for modeled correlation trading positions under either paragraph (a)(2)(i) or (a)(2)(ii) of § 3.209, the total specific risk add-on is the greater of:
+
+(1) The sum of the national bank's or Federal savings association's specific risk add-ons for each net long correlation trading position calculated under this section; or
+
+(2) The sum of the national bank's or Federal savings association's specific risk add-ons for each net short correlation trading position calculated under this section.
+
+(d) Non-modeled securitization positions. For securitization positions that are not correlation trading positions and for securitizations that are correlation trading positions not modeled under § 3.209, the total specific risk add-on is the greater of:
+
+(1) The sum of the national bank's or Federal savings association's specific risk add-ons for each net long securitization position calculated under this section; or
+
+(2) The sum of the national bank's or Federal savings association's specific risk add-ons for each net short securitization position calculated under this section.
+
+(e) Equity positions. The total specific risk add-on for a portfolio of equity positions is the sum of the specific risk add-ons of the individual equity positions, as computed under this section. To determine the specific risk add-on of individual equity positions, a national bank or Federal savings association must multiply the absolute value of the current fair value of each net long or net short equity position by the appropriate specific risk-weighting factor as determined under this paragraph (e):
+
+(1) The national bank or Federal savings association must multiply the absolute value of the current fair value of each net long or net short equity position by a specific risk-weighting factor of 8.0 percent. For equity positions that are index contracts comprising a well-diversified portfolio of equity instruments, the absolute value of the current fair value of each net long or net short position is multiplied by a specific risk-weighting factor of 2.0 percent.[34]
+
+(2) For equity positions arising from the following futures-related arbitrage strategies, a national bank or Federal savings association may apply a 2.0 percent specific risk-weighting factor to one side (long or short) of each position with the opposite side exempt from an additional capital requirement:
+
+(i) Long and short positions in exactly the same index at different dates or in different market centers; or
+
+(ii) Long and short positions in index contracts at the same date in different, but similar indices.
+
+(3) For futures contracts on main indices that are matched by offsetting positions in a basket of stocks comprising the index, a national bank or Federal savings association may apply a 2.0 percent specific risk-weighting factor to the futures and stock basket positions (long and short), provided that such trades are deliberately entered into and separately controlled, and that the basket of stocks is comprised of stocks representing at least 90.0 percent of the capitalization of the index. A main index refers to the Standard & Poor's 500 Index, the FTSE All-World Index, and any other index for which the national bank or Federal savings association can demonstrate to the satisfaction of the OCC that the equities represented in the index have liquidity, depth of market, and size of bid-ask spreads comparable to equities in the Standard & Poor's 500 Index and FTSE All-World Index.
+
+(f) Due diligence requirements for securitization positions.
+
+(1) A national bank or Federal savings association must demonstrate to the satisfaction of the OCC a comprehensive understanding of the features of a securitization position that would materially affect the performance of the position by conducting and documenting the analysis set forth in paragraph (f)(2) of this section. The national bank's or Federal savings association's analysis must be commensurate with the complexity of the securitization position and the materiality of the position in relation to capital.
+
+(2) A national bank or Federal savings association must demonstrate its comprehensive understanding for each securitization position by:
+
+(i) Conducting an analysis of the risk characteristics of a securitization position prior to acquiring the position and document such analysis within three business days after acquiring position, considering:
+
+(A) Structural features of the securitization that would materially impact the performance of the position, for example, the contractual cash flow waterfall, waterfall-related triggers, credit enhancements, liquidity enhancements, fair value triggers, the performance of organizations that service the position, and deal-specific definitions of default;
+
+(B) Relevant information regarding the performance of the underlying credit exposure(s), for example, the percentage of loans 30, 60, and 90 days past due; default rates; prepayment rates; loans in foreclosure; property types; occupancy; average credit score or other measures of creditworthiness; average loan-to-value ratio; and industry and geographic diversification data on the underlying exposure(s);
+
+(C) Relevant market data of the securitization, for example, bid-ask spreads, most recent sales price and historical price volatility, trading volume, implied market rating, and size, depth and concentration level of the market for the securitization; and
+
+(D) For resecuritization positions, performance information on the underlying securitization exposures, for example, the issuer name and credit quality, and the characteristics and performance of the exposures underlying the securitization exposures.
+
+(ii) On an on-going basis (no less frequently than quarterly), evaluating, reviewing, and updating as appropriate the analysis required under paragraph (f)(1) of this section for each securitization position.
+
+[78 FR 62157, 62273, Oct. 11, 2013, as amended at 84 FR 35258, July 22, 2019; 85 FR 4405, Jan. 24, 2020]
+
+Footnotes -
+3.210
+
+[34] A portfolio is well-diversified if it contains a large number of individual equity positions, with no single position representing a substantial portion of the portfolio's total fair value.
+
+§ 3.211 Simplified supervisory formula approach (SSFA).
+
+(a) General requirements. To use the SSFA to determine the specific risk-weighting factor for a securitization position, a national bank or Federal savings association must have data that enables it to assign accurately the parameters described in paragraph (b) of this section. Data used to assign the parameters described in paragraph (b) of this section must be the most currently available data; if the contracts governing the underlying exposures of the securitization require payments on a monthly or quarterly basis, the data used to assign the parameters described in paragraph (b) of this section must be no more than 91 calendar days old. A national bank or Federal savings association that does not have the appropriate data to assign the parameters described in paragraph (b) of this section must assign a specific risk-weighting factor of 100 percent to the position.
+
+(b) SSFA parameters. To calculate the specific risk-weighting factor for a securitization position using the SSFA, a national bank or Federal savings association must have accurate information on the five inputs to the SSFA calculation described in paragraphs (b)(1) through (b)(5) of this section.
+
+(1) KG is the weighted-average (with unpaid principal used as the weight for each exposure) total capital requirement of the underlying exposures calculated using subpart D. KG is expressed as a decimal value between zero and one (that is, an average risk weight of 100 percent represents a value of KG equal to 0.08).
+
+(2) Parameter W is expressed as a decimal value between zero and one. Parameter W is the ratio of the sum of the dollar amounts of any underlying exposures of the securitization that meet any of the criteria as set forth in paragraphs (b)(2)(i) through (vi) of this section to the balance, measured in dollars, of underlying exposures:
+
+(i) Ninety days or more past due;
+
+(ii) Subject to a bankruptcy or insolvency proceeding;
+
+(iii) In the process of foreclosure;
+
+(iv) Held as real estate owned;
+
+(v) Has contractually deferred payments for 90 days or more, other than principal or interest payments deferred on:
+
+(A) Federally-guaranteed student loans, in accordance with the terms of those guarantee programs; or
+
+(B) Consumer loans, including non-federally-guaranteed student loans, provided that such payments are deferred pursuant to provisions included in the contract at the time funds are disbursed that provide for period(s) of deferral that are not initiated based on changes in the creditworthiness of the borrower; or
+
+(vi) Is in default.
+
+(3) Parameter A is the attachment point for the position, which represents the threshold at which credit losses will first be allocated to the position. Except as provided in § 3.210(b)(2)(vii)(D) for nth-to-default credit derivatives, parameter A equals the ratio of the current dollar amount of underlying exposures that are subordinated to the position of the national bank or Federal savings association to the current dollar amount of underlying exposures. Any reserve account funded by the accumulated cash flows from the underlying exposures that is subordinated to the position that contains the national bank's or Federal savings association's securitization exposure may be included in the calculation of parameter A to the extent that cash is present in the account. Parameter A is expressed as a decimal value between zero and one.
+
+(4) Parameter D is the detachment point for the position, which represents the threshold at which credit losses of principal allocated to the position would result in a total loss of principal. Except as provided in § 3.210(b)(2)(vii)(D) for nth-to-default credit derivatives, parameter D equals parameter A plus the ratio of the current dollar amount of the securitization positions that are pari passu with the position (that is, have equal seniority with respect to credit risk) to the current dollar amount of the underlying exposures. Parameter D is expressed as a decimal value between zero and one.
+
+(5) A supervisory calibration parameter, p, is equal to 0.5 for securitization positions that are not resecuritization positions and equal to 1.5 for resecuritization positions.
+
+(c) Mechanics of the SSFA. KG and W are used to calculate KA, the augmented value of KG, which reflects the observed credit quality of the underlying exposures. KA is defined in paragraph (d) of this section. The values of parameters A and D, relative to KA determine the specific risk-weighting factor assigned to a position as described in this paragraph (c) and paragraph (d) of this section. The specific risk-weighting factor assigned to a securitization position, or portion of a position, as appropriate, is the larger of the specific risk-weighting factor determined in accordance with this paragraph (c), paragraph (d) of this section, and a specific risk-weighting factor of 1.6 percent.
+
+(1) When the detachment point, parameter D, for a securitization position is less than or equal to KA, the position must be assigned a specific risk-weighting factor of 100 percent.
+
+(2) When the attachment point, parameter A, for a securitization position is greater than or equal to KA, the national bank or Federal savings association must calculate the specific risk-weighting factor in accordance with paragraph (d) of this section.
+
+(3) When A is less than KA and D is greater than KA, the specific risk-weighting factor is a weighted-average of 1.00 and KSSFA calculated under paragraphs (c)(3)(i) and (c)(3)(ii) of this section. For the purpose of this calculation:
+
+(i) The weight assigned to 1.00 equals
+
+§ 3.212 Market risk disclosures.
+
+(a) Scope. A national bank or Federal savings association must comply with this section unless it is a consolidated subsidiary of a bank holding company or a depository institution that is subject to these requirements or of a non-U.S. banking organization that is subject to comparable public disclosure requirements in its home jurisdiction. A national bank or Federal savings association must make timely public disclosures each calendar quarter. If a significant change occurs, such that the most recent reporting amounts are no longer reflective of the national bank's or Federal savings association's capital adequacy and risk profile, then a brief discussion of this change and its likely impact must be provided as soon as practicable thereafter. Qualitative disclosures that typically do not change each quarter may be disclosed annually, provided any significant changes are disclosed in the interim. If a national bank or Federal savings association believes that disclosure of specific commercial or financial information would prejudice seriously its position by making public certain information that is either proprietary or confidential in nature, the national bank or Federal savings association is not required to disclose these specific items, but must disclose more general information about the subject matter of the requirement, together with the fact that, and the reason why, the specific items of information have not been disclosed. The national bank's or Federal savings association's management may provide all of the disclosures required by this section in one place on the national bank's or Federal savings association's public Web site or may provide the disclosures in more than one public financial report or other regulatory reports, provided that the national bank or Federal savings association publicly provides a summary table specifically indicating the location(s) of all such disclosures.
+
+(b) Disclosure policy. The national bank or Federal savings association must have a formal disclosure policy approved by the board of directors that addresses the national bank's or Federal savings association's approach for determining its market risk disclosures. The policy must address the associated internal controls and disclosure controls and procedures. The board of directors and senior management must ensure that appropriate verification of the disclosures takes place and that effective internal controls and disclosure controls and procedures are maintained. One or more senior officers of the national bank or Federal savings association must attest that the disclosures meet the requirements of this subpart, and the board of directors and senior management are responsible for establishing and maintaining an effective internal control structure over financial reporting, including the disclosures required by this section.
+
+(c) Quantitative disclosures.
+
+(1) For each material portfolio of covered positions, the national bank or Federal savings association must provide timely public disclosures of the following information at least quarterly:
+
+(i) The high, low, and mean VaR-based measures over the reporting period and the VaR-based measure at period-end;
+
+(ii) The high, low, and mean stressed VaR-based measures over the reporting period and the stressed VaR-based measure at period-end;
+
+(iii) The high, low, and mean incremental risk capital requirements over the reporting period and the incremental risk capital requirement at period-end;
+
+(iv) The high, low, and mean comprehensive risk capital requirements over the reporting period and the comprehensive risk capital requirement at period-end, with the period-end requirement broken down into appropriate risk classifications (for example, default risk, migration risk, correlation risk);
+
+(v) Separate measures for interest rate risk, credit spread risk, equity price risk, foreign exchange risk, and commodity price risk used to calculate the VaR-based measure; and
+
+(vi) A comparison of VaR-based estimates with actual gains or losses experienced by the national bank or Federal savings association, with an analysis of important outliers.
+
+(2) In addition, the national bank or Federal savings association must disclose publicly the following information at least quarterly:
+
+(i) The aggregate amount of on-balance sheet and off-balance sheet securitization positions by exposure type; and
+
+(ii) The aggregate amount of correlation trading positions.
+
+(d) Qualitative disclosures. For each material portfolio of covered positions, the national bank or Federal savings association must provide timely public disclosures of the following information at least annually after the end of the fourth calendar quarter, or more frequently in the event of material changes for each portfolio:
+
+(1) The composition of material portfolios of covered positions;
+
+(2) The national bank's or Federal savings association's valuation policies, procedures, and methodologies for covered positions including, for securitization positions, the methods and key assumptions used for valuing such positions, any significant changes since the last reporting period, and the impact of such change;
+
+(3) The characteristics of the internal models used for purposes of this subpart. For the incremental risk capital requirement and the comprehensive risk capital requirement, this must include:
+
+(i) The approach used by the national bank or Federal savings association to determine liquidity horizons;
+
+(ii) The methodologies used to achieve a capital assessment that is consistent with the required soundness standard; and
+
+(iii) The specific approaches used in the validation of these models;
+
+(4) A description of the approaches used for validating and evaluating the accuracy of internal models and modeling processes for purposes of this subpart;
+
+(5) For each market risk category (that is, interest rate risk, credit spread risk, equity price risk, foreign exchange risk, and commodity price risk), a description of the stress tests applied to the positions subject to the factor;
+
+(6) The results of the comparison of the national bank's or Federal savings association's internal estimates for purposes of this subpart with actual outcomes during a sample period not used in model development;
+
+(7) The soundness standard on which the national bank's or Federal savings association's internal capital adequacy assessment under this subpart is based, including a description of the methodologies used to achieve a capital adequacy assessment that is consistent with the soundness standard;
+
+(8) A description of the national bank's or Federal savings association's processes for monitoring changes in the credit and market risk of securitization positions, including how those processes differ for resecuritization positions; and
+
+(9) A description of the national bank's or Federal savings association's policy governing the use of credit risk mitigation to mitigate the risks of securitization and resecuritization positions.
+
+§§ 3.213-3.299 [Reserved]

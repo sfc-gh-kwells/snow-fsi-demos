@@ -1,0 +1,422 @@
+Subpart B—Capital Ratio Requirements and Buffers
+
+Source:
+
+78 FR 62157, 62273, Oct. 11, 2013, unless otherwise noted.
+
+§ 3.10 Minimum capital requirements.
+
+(a) Minimum capital requirements.
+
+(1) A national bank or Federal savings association must maintain the following minimum capital ratios:
+
+(i) A common equity tier 1 capital ratio of 4.5 percent.
+
+(ii) A tier 1 capital ratio of 6 percent.
+
+(iii) A total capital ratio of 8 percent.
+
+(iv) A leverage ratio of 4 percent.
+
+(v) For advanced approaches national banks or Federal savings associations or, for Category III OCC-regulated institutions, a supplementary leverage ratio of 3 percent.
+
+(vi) For Federal savings associations, a tangible capital ratio of 1.5 percent.
+
+(2) A qualifying community banking organization (as defined in § 3.12), that is subject to the community bank leverage ratio framework (as defined in § 3.12), is considered to have met the minimum capital requirements in this paragraph (a).
+
+(b) Standardized capital ratio calculations. Other than as provided in paragraph (c) of this section:
+
+(1) Common equity tier 1 capital ratio. A national bank's or Federal savings association's common equity tier 1 capital ratio is the ratio of the national bank's or Federal savings association's common equity tier 1 capital to standardized total risk-weighted assets;
+
+(2) Tier 1 capital ratio. A national bank's or Federal savings association's tier 1 capital ratio is the ratio of the national bank's or Federal savings association's tier 1 capital to standardized total risk-weighted assets;
+
+(3) Total capital ratio. A national bank's or Federal savings association's total capital ratio is the ratio of the national bank's or Federal savings association's total capital to standardized total risk-weighted assets; and
+
+(4) Leverage ratio. A national bank's or Federal savings association's leverage ratio is the ratio of the national bank's or Federal savings association's tier 1 capital to the national bank's or Federal savings association's average total consolidated assets as reported on the national bank's or Federal savings association's Call Report minus amounts deducted from tier 1 capital under § 3.22(a), (c) and (d).
+
+(5) Federal savings association tangible capital ratio. A Federal savings association's tangible capital ratio is the ratio of the Federal savings association's core capital (tier 1 capital) to average total assets as calculated under this subpart B. For purposes of this paragraph (b)(5), the term “total assets” means “total assets” as defined in part 6, subpart A of this chapter, subject to subpart G of this part.
+
+(c) Supplementary leverage ratio.
+
+(1) A Category III national bank or Federal savings association or advanced approaches national bank or Federal savings association must determine its supplementary leverage ratio in accordance with this paragraph, beginning with the calendar quarter immediately following the quarter in which the national bank or Federal savings association is identified as a Category III national bank or Federal savings association. An advanced approaches national bank's or Federal savings association's or a Category III national bank's or Federal savings association's supplementary leverage ratio is the ratio of its tier 1 capital to total leverage exposure, the latter of which is calculated as the sum of:
+
+(i) The mean of the on-balance sheet assets calculated as of each day of the reporting quarter; and
+
+(ii) The mean of the off-balance sheet exposures calculated as of the last day of each of the most recent three months, minus the applicable deductions under § 3.22(a), (c), and (d).
+
+(2) For purposes of this part, total leverage exposure means the sum of the items described in paragraphs (c)(2)(i) through (viii) of this section, as adjusted pursuant to paragraph (c)(2)(ix) of this section for a clearing member national bank and Federal savings association and paragraph (c)(2)(x) of this section for a custody bank:
+
+(i) The balance sheet carrying value of all of the national bank or Federal savings association's on-balance sheet assets, plus the value of securities sold under a repurchase transaction or a securities lending transaction that qualifies for sales treatment under GAAP, less amounts deducted from tier 1 capital under § 3.22(a), (c), and (d), and less the value of securities received in security-for-security repo-style transactions, where the national bank or Federal savings association acts as a securities lender and includes the securities received in its on-balance sheet assets but has not sold or re-hypothecated the securities received, and, for a national bank or Federal savings association that uses the standardized approach for counterparty credit risk under § 3.132(c) for its standardized risk-weighted assets, less the fair value of any derivative contracts;
+
+(ii)
+
+(A) For a national bank or Federal savings association that uses the current exposure methodology under § 3.34(b) for its standardized risk-weighted assets, the potential future credit exposure (PFE) for each derivative contract or each single-product netting set of derivative contracts (including a cleared transaction except as provided in paragraph (c)(2)(ix) of this section and, at the discretion of the national bank or Federal savings association, excluding a forward agreement treated as a derivative contract that is part of a repurchase or reverse repurchase or a securities borrowing or lending transaction that qualifies for sales treatment under GAAP), to which the national bank or Federal savings association is a counterparty as determined under § 3.34, but without regard to § 3.34(c), provided that:
+
+(1) A national bank or Federal savings association may choose to exclude the PFE of all credit derivatives or other similar instruments through which it provides credit protection when calculating the PFE under § 3.34, but without regard to § 3.34(c), provided that it does not adjust the net-to-gross ratio (NGR); and
+
+(2) A national bank or Federal savings association that chooses to exclude the PFE of credit derivatives or other similar instruments through which it provides credit protection pursuant to this paragraph (c)(2)(ii)(A) must do so consistently over time for the calculation of the PFE for all such instruments; or
+
+(B)
+
+(1) For a national bank or Federal savings association that uses the standardized approach for counterparty credit risk under section § 3.132(c) for its standardized risk-weighted assets, the PFE for each netting set to which the national bank or Federal savings association is a counterparty (including cleared transactions except as provided in paragraph (c)(2)(ix) of this section and, at the discretion of the national bank or Federal savings association, excluding a forward agreement treated as a derivative contract that is part of a repurchase or reverse repurchase or a securities borrowing or lending transaction that qualifies for sales treatment under GAAP), as determined under § 3.132(c)(7), in which the term C in § 3.132(c)(7)(i) equals zero, and, for any counterparty that is not a commercial end-user, multiplied by 1.4. For purposes of this paragraph (c)(2)(ii)(B)(1), a national bank or Federal savings association may set the value of the term C in § 3.132(c)(7)(i) equal to the amount of collateral posted by a clearing member client of the national bank or Federal savings association in connection with the client-facing derivative transactions within the netting set; and
+
+(2) A national bank or Federal savings association may choose to exclude the PFE of all credit derivatives or other similar instruments through which it provides credit protection when calculating the PFE under § 3.132(c), provided that it does so consistently over time for the calculation of the PFE for all such instruments;
+
+(iii)
+
+(A)
+
+(1) For a national bank or Federal savings association that uses the current exposure methodology under § 3.34(b) for its standardized risk-weighted assets, the amount of cash collateral that is received from a counterparty to a derivative contract and that has offset the mark-to-fair value of the derivative asset, or cash collateral that is posted to a counterparty to a derivative contract and that has reduced the national bank or Federal savings association's on-balance sheet assets, unless such cash collateral is all or part of variation margin that satisfies the conditions in paragraphs (c)(2)(iii)(C) through (G) of this section; and
+
+(2) The variation margin is used to reduce the current credit exposure of the derivative contract, calculated as described in § 3.34(b), and not the PFE; and
+
+(3) For the purpose of the calculation of the NGR described in § 3.34(b)(2)(ii)(B), variation margin described in paragraph (c)(2)(iii)(A)(2) of this section may not reduce the net current credit exposure or the gross current credit exposure; or
+
+(B)
+
+(1) For a national bank or Federal savings association that uses the standardized approach for counterparty credit risk under § 3.132(c) for its standardized risk-weighted assets, the replacement cost of each derivative contract or single product netting set of derivative contracts to which the national bank or Federal savings association is a counterparty, calculated according to the following formula, and, for any counterparty that is not a commercial end-user, multiplied by 1.4:
+
+Replacement Cost = max{V−CVMr + CVMp;0}
+
+Where:
+
+V equals the fair value for each derivative contract or each single-product netting set of derivative contracts (including a cleared transaction except as provided in paragraph (c)(2)(ix) of this section and, at the discretion of the national bank or Federal savings association, excluding a forward agreement treated as a derivative contract that is part of a repurchase or reverse repurchase or a securities borrowing or lending transaction that qualifies for sales treatment under GAAP);
+
+CVMr equals the amount of cash collateral received from a counterparty to a derivative contract and that satisfies the conditions in paragraphs (c)(2)(iii)(C) through (G) of this section, or, in the case of a client-facing derivative transaction, the amount of collateral received from the clearing member client; and
+
+CVMp equals the amount of cash collateral that is posted to a counterparty to a derivative contract and that has not offset the fair value of the derivative contract and that satisfies the conditions in paragraphs (c)(2)(iii)(C) through (G) of this section, or, in the case of a client-facing derivative transaction, the amount of collateral posted to the clearing member client;
+
+(2) Notwithstanding paragraph (c)(2)(iii)(B)(1) of this section, where multiple netting sets are subject to a single variation margin agreement, a national bank or Federal savings association must apply the formula for replacement cost provided in § 3.132(c)(10)(i), in which the term CMA may only include cash collateral that satisfies the conditions in paragraphs (c)(2)(iii)(C) through (G) of this section; and
+
+(3) For purposes of paragraph (c)(2)(iii)(B)(1), a national bank or Federal savings association must treat a derivative contract that references an index as if it were multiple derivative contracts each referencing one component of the index if the national bank or Federal savings association elected to treat the derivative contract as multiple derivative contracts under § 3.132(c)(5)(vi);
+
+(C) For derivative contracts that are not cleared through a QCCP, the cash collateral received by the recipient counterparty is not segregated (by law, regulation, or an agreement with the counterparty);
+
+(D) Variation margin is calculated and transferred on a daily basis based on the mark-to-fair value of the derivative contract;
+
+(E) The variation margin transferred under the derivative contract or the governing rules of the CCP or QCCP for a cleared transaction is the full amount that is necessary to fully extinguish the net current credit exposure to the counterparty of the derivative contracts, subject to the threshold and minimum transfer amounts applicable to the counterparty under the terms of the derivative contract or the governing rules for a cleared transaction;
+
+(F) The variation margin is in the form of cash in the same currency as the currency of settlement set forth in the derivative contract, provided that for the purposes of this paragraph (c)(2)(iii)(F), currency of settlement means any currency for settlement specified in the governing qualifying master netting agreement and the credit support annex to the qualifying master netting agreement, or in the governing rules for a cleared transaction; and
+
+(G) The derivative contract and the variation margin are governed by a qualifying master netting agreement between the legal entities that are the counterparties to the derivative contract or by the governing rules for a cleared transaction, and the qualifying master netting agreement or the governing rules for a cleared transaction must explicitly stipulate that the counterparties agree to settle any payment obligations on a net basis, taking into account any variation margin received or provided under the contract if a credit event involving either counterparty occurs;
+
+(iv) The effective notional principal amount (that is, the apparent or stated notional principal amount multiplied by any multiplier in the derivative contract) of a credit derivative, or other similar instrument, through which the national bank or Federal savings association provides credit protection, provided that:
+
+(A) The national bank or Federal savings association may reduce the effective notional principal amount of the credit derivative by the amount of any reduction in the mark-to-fair value of the credit derivative if the reduction is recognized in common equity tier 1 capital;
+
+(B) The national bank or Federal savings association may reduce the effective notional principal amount of the credit derivative by the effective notional principal amount of a purchased credit derivative or other similar instrument, provided that the remaining maturity of the purchased credit derivative is equal to or greater than the remaining maturity of the credit derivative through which the national bank or Federal savings association provides credit protection and that:
+
+(1) With respect to a credit derivative that references a single exposure, the reference exposure of the purchased credit derivative is to the same legal entity and ranks pari passu with, or is junior to, the reference exposure of the credit derivative through which the national bank or Federal savings association provides credit protection; or
+
+(2) With respect to a credit derivative that references multiple exposures, the reference exposures of the purchased credit derivative are to the same legal entities and rank pari passu with the reference exposures of the credit derivative through which the national bank or Federal savings association provides credit protection, and the level of seniority of the purchased credit derivative ranks pari passu to the level of seniority of the credit derivative through which the national bank or Federal savings association provides credit protection;
+
+(3) Where a national bank or Federal savings association has reduced the effective notional amount of a credit derivative through which the national bank or Federal savings association provides credit protection in accordance with paragraph (c)(2)(iv)(A) of this section, the national bank or Federal savings association must also reduce the effective notional principal amount of a purchased credit derivative used to offset the credit derivative through which the national bank or Federal savings association provides credit protection, by the amount of any increase in the mark-to-fair value of the purchased credit derivative that is recognized in common equity tier 1 capital; and
+
+(4) Where the national bank or Federal savings association purchases credit protection through a total return swap and records the net payments received on a credit derivative through which the national bank or Federal savings association provides credit protection in net income, but does not record offsetting deterioration in the mark-to-fair value of the credit derivative through which the national bank or Federal savings association provides credit protection in net income (either through reductions in fair value or by additions to reserves), the national bank or Federal savings association may not use the purchased credit protection to offset the effective notional principal amount of the related credit derivative through which the national bank or Federal savings association provides credit protection;
+
+(v) Where a national bank or Federal savings association acting as a principal has more than one repo-style transaction with the same counterparty and has offset the gross value of receivables due from a counterparty under reverse repurchase transactions by the gross value of payables under repurchase transactions due to the same counterparty, the gross value of receivables associated with the repo-style transactions less any on-balance sheet receivables amount associated with these repo-style transactions included under paragraph (c)(2)(i) of this section, unless the following criteria are met:
+
+(A) The offsetting transactions have the same explicit final settlement date under their governing agreements;
+
+(B) The right to offset the amount owed to the counterparty with the amount owed by the counterparty is legally enforceable in the normal course of business and in the event of receivership, insolvency, liquidation, or similar proceeding; and
+
+(C) Under the governing agreements, the counterparties intend to settle net, settle simultaneously, or settle according to a process that is the functional equivalent of net settlement, (that is, the cash flows of the transactions are equivalent, in effect, to a single net amount on the settlement date), where both transactions are settled through the same settlement system, the settlement arrangements are supported by cash or intraday credit facilities intended to ensure that settlement of both transactions will occur by the end of the business day, and the settlement of the underlying securities does not interfere with the net cash settlement;
+
+(vi) The counterparty credit risk of a repo-style transaction, including where the national bank or Federal savings association acts as an agent for a repo-style transaction and indemnifies the customer with respect to the performance of the customer's counterparty in an amount limited to the difference between the fair value of the security or cash its customer has lent and the fair value of the collateral the borrower has provided, calculated as follows:
+
+(A) If the transaction is not subject to a qualifying master netting agreement, the counterparty credit risk (E*) for transactions with a counterparty must be calculated on a transaction by transaction basis, such that each transaction i is treated as its own netting set, in accordance with the following formula, where Ei is the fair value of the instruments, gold, or cash that the national bank or Federal savings association has lent, sold subject to repurchase, or provided as collateral to the counterparty, and Ci is the fair value of the instruments, gold, or cash that the national bank or Federal savings association has borrowed, purchased subject to resale, or received as collateral from the counterparty:
+
+Ei* = max {0, [Ei − Ci]}; and
+
+(B) If the transaction is subject to a qualifying master netting agreement, the counterparty credit risk (E*) must be calculated as the greater of zero and the total fair value of the instruments, gold, or cash that the national bank or Federal savings association has lent, sold subject to repurchase or provided as collateral to a counterparty for all transactions included in the qualifying master netting agreement (ΣEi), less the total fair value of the instruments, gold, or cash that the national bank or Federal savings association borrowed, purchased subject to resale or received as collateral from the counterparty for those transactions (ΣCi), in accordance with the following formula:
+
+E* = max {0, [ΣEi − ΣCi]}
+
+(vii) If a national bank or Federal savings association acting as an agent for a repo-style transaction provides a guarantee to a customer of the security or cash its customer has lent or borrowed with respect to the performance of the customer's counterparty and the guarantee is not limited to the difference between the fair value of the security or cash its customer has lent and the fair value of the collateral the borrower has provided, the amount of the guarantee that is greater than the difference between the fair value of the security or cash its customer has lent and the value of the collateral the borrower has provided;
+
+(viii) The credit equivalent amount of all off-balance sheet exposures of the national bank or Federal savings association, excluding repo-style transactions, repurchase or reverse repurchase or securities borrowing or lending transactions that qualify for sales treatment under GAAP, and derivative transactions, determined using the applicable credit conversion factor under § 3.33(b), provided, however, that the minimum credit conversion factor that may be assigned to an off-balance sheet exposure under this paragraph is 10 percent; and
+
+(ix) For a national bank or Federal savings association that is a clearing member:
+
+(A) A clearing member national bank or Federal savings association that guarantees the performance of a clearing member client with respect to a cleared transaction must treat its exposure to the clearing member client as a derivative contract for purposes of determining its total leverage exposure;
+
+(B) A clearing member national bank or Federal savings association that guarantees the performance of a CCP with respect to a transaction cleared on behalf of a clearing member client must treat its exposure to the CCP as a derivative contract for purposes of determining its total leverage exposure;
+
+(C) A clearing member national bank or Federal savings association that does not guarantee the performance of a CCP with respect to a transaction cleared on behalf of a clearing member client may exclude its exposure to the CCP for purposes of determining its total leverage exposure;
+
+(D) A national bank or Federal savings association that is a clearing member may exclude from its total leverage exposure the effective notional principal amount of credit protection sold through a credit derivative contract, or other similar instrument, that it clears on behalf of a clearing member client through a CCP as calculated in accordance with paragraph (c)(2)(iv) of this section; and
+
+(E) Notwithstanding paragraphs (c)(2)(ix)(A) through (C) of this section, a national bank or Federal savings association may exclude from its total leverage exposure a clearing member's exposure to a clearing member client for a derivative contract, if the clearing member client and the clearing member are affiliates and consolidated for financial reporting purposes on the national bank's or Federal savings association's balance sheet.
+
+(x) A custodial bank shall exclude from its total leverage exposure the lesser of:
+
+(A) The amount of funds that the custody bank has on deposit at a qualifying central bank; and
+
+(B) The amount of funds that the custody bank's clients have on deposit at the custody bank that are linked to fiduciary or custodial and safekeeping accounts. For purposes of this paragraph (c)(2)(x), a deposit account is linked to a fiduciary or custodial and safekeeping account if the deposit account is provided to a client that maintains a fiduciary or custodial and safekeeping account with the custody bank, and the deposit account is used to facilitate the administration of the fiduciary or custody and safekeeping account.
+
+(d) Advanced approaches capital ratio calculations. An advanced approaches national bank or Federal savings association that has completed the parallel run process and received notification from the OCC pursuant to § 3.121(d) must determine its regulatory capital ratios as described in paragraphs (d)(1) through (3) of this section.
+
+(1) Common equity tier 1 capital ratio. The national bank's or Federal savings association's common equity tier 1 capital ratio is the lower of:
+
+(i) The ratio of the national bank's or Federal savings association's common equity tier 1 capital to standardized total risk-weighted assets; and
+
+(ii) The ratio of the national bank's or Federal savings association's common equity tier 1 capital to advanced approaches total risk-weighted assets.
+
+(2) Tier 1 capital ratio. The national bank's or Federal savings association's tier 1 capital ratio is the lower of:
+
+(i) The ratio of the national bank's or Federal savings association's tier 1 capital to standardized total risk-weighted assets; and
+
+(ii) The ratio of the national bank's or Federal savings association's tier 1 capital to advanced approaches total risk-weighted assets.
+
+(3) Total capital ratio. The national bank's or Federal savings association's total capital ratio is the lower of:
+
+(i) The ratio of the national bank's or Federal savings association's total capital to standardized total risk-weighted assets; and
+
+(ii) The ratio of the national bank's or Federal savings association's advanced-approaches-adjusted total capital to advanced approaches total risk-weighted assets. A national bank's or Federal savings association's advanced-approaches-adjusted total capital is the national bank's or Federal savings association's total capital after being adjusted as follows:
+
+(A) An advanced approaches national bank or Federal savings association must deduct from its total capital any allowance for loan and lease losses or adjusted allowance for credit losses, as applicable, included in its tier 2 capital in accordance with § 3.20(d)(3); and
+
+(B) An advanced approaches national bank or Federal savings association must add to its total capital any eligible credit reserves that exceed the national bank's or Federal savings association's total expected credit losses to the extent that the excess reserve amount does not exceed 0.6 percent of the national bank's or Federal savings association's credit risk-weighted assets.
+
+(4) Federal savings association tangible capital ratio. A Federal savings association's tangible capital ratio is the ratio of the Federal savings association's core capital (tier 1 capital) to average total assets as calculated under this subpart B. For purposes of this paragraph (d)(4), the term “total assets” means “total assets” as defined in part 6, subpart A of this chapter, subject to subpart G of this part.
+
+(e) Capital adequacy.
+
+(1) Notwithstanding the minimum requirements in this part, a national bank or Federal savings association must maintain capital commensurate with the level and nature of all risks to which the national bank or Federal savings association is exposed. The supervisory evaluation of a national bank's or Federal savings association's capital adequacy is based on an individual assessment of numerous factors, including those listed at this section (national banks), 12 CFR 167.3(c) (Federal savings associations).
+
+(2) A national bank or Federal savings association must have a process for assessing its overall capital adequacy in relation to its risk profile and a comprehensive strategy for maintaining an appropriate level of capital.
+
+[78 FR 62157, 62273, Oct. 11, 2013, as amended at 79 FR 57740, Sept. 26, 2014; 80 FR 41415, July 15, 2015; 84 FR 4238, Feb. 14, 2019; 84 FR 35248, July 22, 2019; 84 FR 59264, Nov. 1, 2019; 84 FR 61792, Nov. 13, 2019; 85 FR 4401, Jan. 24, 2020; 85 FR 4577, Jan. 27, 2020; 85 FR 57959, Sept. 17, 2020; 86 FR 725, Jan. 6, 2021]
+
+§ 3.11 Capital conservation buffer and countercyclical capital buffer amount.
+
+(a) Capital conservation buffer —
+
+(1) Composition of the capital conservation buffer. The capital conservation buffer is composed solely of common equity tier 1 capital.
+
+(2) Definitions. For purposes of this section, the following definitions apply:
+
+(i) Eligible retained income. The eligible retained income of a national bank or Federal savings association is the greater of:
+
+(A) The national bank's or Federal savings association's net income, calculated in accordance with the instructions to the Call Report, for the four calendar quarters preceding the current calendar quarter, net of any distributions and associated tax effects not already reflected in net income; and
+
+(B) The average of the national bank's or Federal savings association's net income, calculated in accordance with the instructions to the Call Report, for the four calendar quarters preceding the current calendar quarter.
+
+(ii) Maximum payout ratio. The maximum payout ratio is the percentage of eligible retained income that a national bank or Federal savings association can pay out in the form of distributions and discretionary bonus payments during the current calendar quarter. For a national bank or Federal savings association that is not a subsidiary of a U.S. top-tier bank holding company that has more than $700 billion in total assets as reported on the company's most recent Consolidated Financial Statement for Bank Holding Companies (Form FR Y-9C) or more than $10 trillion in assets under custody as reported on the company's most recent Banking Organization Systemic Risk Report (Form FR Y-15), the maximum payout ratio is based on the national bank's or Federal savings association's capital conservation buffer, calculated as of the last day of the previous calendar quarter, as set forth in Table 1 to § 3.11. For a national bank or Federal savings association that is a subsidiary of a U.S. top-tier bank holding company that has more than $700 billion in total assets as reported on the company's most recent Consolidated Financial Statement for Bank Holding Companies (Form FR Y-9C) or more than $10 trillion in assets under custody as reported on the company's most recent Banking Organization Systemic Risk Report (Form FR Y-15), the maximum payout ratio is determined under paragraph (c)(1) of this section.
+
+(iii) Maximum payout amount. A national bank's or Federal savings association's maximum payout amount for the current calendar quarter is equal to the national bank's or Federal savings association's eligible retained income, multiplied by the applicable maximum payout ratio.
+
+(iv) Private sector credit exposure. Private sector credit exposure means an exposure to a company or an individual that is not an exposure to a sovereign, the Bank for International Settlements, the European Central Bank, the European Commission, the European Stability Mechanism, the European Financial Stability Facility, the International Monetary Fund, a MDB, a PSE, or a GSE.
+
+(v) Leverage buffer standard. For a national bank or Federal savings association that is a subsidiary of a U.S. top-tier bank holding company that has more than $700 billion in total assets as reported on the company's most recent Consolidated Financial Statement for Bank Holding Companies (Form FR Y-9C) or more than $10 trillion in assets under custody as reported on the company's most recent Banking Organization Systemic Risk Report (Form FR Y-15), the leverage buffer standard is equal to the lesser of 1.0 percent or, if applicable, 50 percent of the most recent method 1 surcharge (expressed as a percentage) that the global systemically important BHC that controls the national bank or Federal savings association was required to calculate pursuant to § 217.403(b), subject to the effective date provisions of § 217.403(d).
+
+(3) Calculation of capital conservation buffer.
+
+(i) The capital conservation buffer for a national bank or Federal savings association is equal to the lowest of the following ratios, calculated as of the last day of the previous calendar quarter:
+
+(A) The national bank or Federal savings association's common equity tier 1 capital ratio minus the national bank or Federal savings association 's minimum common equity tier 1 capital ratio requirement under § 3.10;
+
+(B) The national bank or Federal savings association's tier 1 capital ratio minus the national bank or Federal savings association's minimum tier 1 capital ratio requirement under § 3.10; and
+
+(C) The national bank or Federal savings association's total capital ratio minus the national bank or Federal savings association's minimum total capital ratio requirement under § 3.10; or
+
+(ii) Notwithstanding paragraphs (a)(3)(i)(A)-(C) of this section, if the national bank's or Federal savings association's common equity tier 1, tier 1 or total capital ratio is less than or equal to the national bank's or Federal savings association's minimum common equity tier 1, tier 1 or total capital ratio requirement under § 3.10, respectively, the national bank's or Federal savings association's capital conservation buffer is zero.
+
+(4) Limits on distributions and discretionary bonus payments.
+
+(i) A national bank or Federal savings association shall not make distributions or discretionary bonus payments or create an obligation to make such distributions or payments during the current calendar quarter that, in the aggregate, exceed the maximum payout amount.
+
+(ii) A national bank or Federal savings association, with a capital conservation buffer that is greater than 2.5 percent plus 100 percent of its applicable countercyclical capital buffer, in accordance with paragraph (b) of this section and, if applicable, a leverage buffer greater than its leverage buffer standard is not subject to a maximum payout amount under this section.
+
+(iii) Negative eligible retained income. Except as provided in paragraph (a)(4)(iv) of this section, a national bank or Federal savings association may not make distributions or discretionary bonus payments during the current calendar quarter if the national bank's or Federal savings association's:
+
+(A) Eligible retained income is negative;
+
+(B) Capital conservation buffer was less than 2.5 percent as of the end of the previous calendar quarter; and
+
+(C) If applicable, leverage buffer, calculated as of the last day of the previous calendar quarter, was less than its leverage buffer standard.
+
+(iv) Prior approval. Notwithstanding the limitations in paragraphs (a)(4)(i) through (iii) of this section, the OCC may permit a national bank or Federal savings association to make a distribution or discretionary bonus payment upon a request of the national bank or Federal savings association, if the OCC determines that the distribution or discretionary bonus payment would not be contrary to the purposes of this section, or to the safety and soundness of the national bank or Federal savings association. In making such a determination, the OCC will consider the nature and extent of the request and the particular circumstances giving rise to the request.
+
+Table 1 to § 3.11—Calculation of Maximum Payout Amount
+
+Capital conservation buffer
+Maximum payout ratio
+
+Greater than 2.5 percent plus 100 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount
+No payout ratio limitation applies.
+
+Less than or equal to 2.5 percent plus 100 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount, and greater than 1.875 percent plus 75 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount
+60 percent.
+
+Less than or equal to 1.875 percent plus 75 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount, and greater than 1.25 percent plus 50 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount
+40 percent.
+
+Less than or equal to 1.25 percent plus 50 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount, and greater than 0.625 percent plus 25 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount
+20 percent.
+
+Less than or equal to 0.625 percent plus 25 percent of the national bank's or Federal savings association's applicable countercyclical capital buffer amount
+0 percent.
+
+(v) Other limitations on distributions. Additional limitations on distributions may apply to a national bank or Federal savings association under subparts H and I of this part; 12 CFR 5.46, 12 CFR part 5, subpart E; 12 CFR part 6.
+
+(b) Countercyclical capital buffer amount —
+
+(1) General. An advanced approaches national bank or Federal savings association, and a Category III national bank or Federal savings association, must calculate a countercyclical capital buffer amount in accordance with paragraphs (b)(1)(i) through (iv) of this section for purposes of determining its maximum payout ratio under Table 1 to this section.
+
+(i) Extension of capital conservation buffer. The countercyclical capital buffer amount is an extension of the capital conservation buffer as described in paragraph (a) of this section.
+
+(ii) Amount. An advanced approaches national bank or Federal savings association, and a Category III national bank or Federal savings association, has a countercyclical capital buffer amount determined by calculating the weighted average of the countercyclical capital buffer amounts established for the national jurisdictions where the national bank's or Federal savings association's private sector credit exposures are located, as specified in paragraphs (b)(2) and (3) of this section.
+
+(iii) Weighting. The weight assigned to a jurisdiction's countercyclical capital buffer amount is calculated by dividing the total risk-weighted assets for the national bank's or Federal savings association's private sector credit exposures located in the jurisdiction by the total risk-weighted assets for all of the national bank's or Federal savings association's private sector credit exposures. The methodology a national bank or Federal savings association uses for determining risk-weighted assets for purposes of this paragraph (b) must be the methodology that determines its risk-based capital ratios under § 3.10. Notwithstanding the previous sentence, the risk-weighted asset amount for a private sector credit exposure that is a covered position under subpart F of this part is its specific risk add-on as determined under § 3.210 multiplied by 12.5.
+
+(iv) Location.
+
+(A) Except as provided in paragraphs (b)(1)(iv)(B) and (b)(1)(iv)(C) of this section, the location of a private sector credit exposure is the national jurisdiction where the borrower is located (that is, where it is incorporated, chartered, or similarly established or, if the borrower is an individual, where the borrower resides).
+
+(B) If, in accordance with subparts D or E of this part, the national bank or Federal savings association has assigned to a private sector credit exposure a risk weight associated with a protection provider on a guarantee or credit derivative, the location of the exposure is the national jurisdiction where the protection provider is located.
+
+(C) The location of a securitization exposure is the location of the underlying exposures, or, if the underlying exposures are located in more than one national jurisdiction, the national jurisdiction where the underlying exposures with the largest aggregate unpaid principal balance are located. For purposes of this paragraph (b), the location of an underlying exposure shall be the location of the borrower, determined consistent with paragraph (b)(1)(iv)(A) of this section.
+
+(2) Countercyclical capital buffer amount for credit exposures in the United States —
+
+(i) Initial countercyclical capital buffer amount with respect to credit exposures in the United States. The initial countercyclical capital buffer amount in the United States is zero.
+
+(ii) Adjustment of the countercyclical capital buffer amount. The OCC will adjust the countercyclical capital buffer amount for credit exposures in the United States in accordance with applicable law.[10]
+
+(iii) Range of countercyclical capital buffer amount. The OCC will adjust the countercyclical capital buffer amount for credit exposures in the United States between zero percent and 2.5 percent of risk-weighted assets.
+
+(iv) Adjustment determination. The OCC will base its decision to adjust the countercyclical capital buffer amount under this section on a range of macroeconomic, financial, and supervisory information indicating an increase in systemic risk including, but not limited to, the ratio of credit to gross domestic product, a variety of asset prices, other factors indicative of relative credit and liquidity expansion or contraction, funding spreads, credit condition surveys, indices based on credit default swap spreads, options implied volatility, and measures of systemic risk.
+
+(v) Effective date of adjusted countercyclical capital buffer amount —
+
+(A) Increase adjustment. A determination by the OCC under paragraph (b)(2)(ii) of this section to increase the countercyclical capital buffer amount will be effective 12 months from the date of announcement, unless the OCC establishes an earlier effective date and includes a statement articulating the reasons for the earlier effective date.
+
+(B) Decrease adjustment. A determination by the OCC to decrease the established countercyclical capital buffer amount under paragraph (b)(2)(ii) of this section will be effective on the day following announcement of the final determination or the earliest date permissible under applicable law or regulation, whichever is later.
+
+(vi) Twelve month sunset. The countercyclical capital buffer amount will return to zero percent 12 months after the effective date that the adjusted countercyclical capital buffer amount is announced, unless the OCC announces a decision to maintain the adjusted countercyclical capital buffer amount or adjust it again before the expiration of the 12-month period.
+
+(3) Countercyclical capital buffer amount for foreign jurisdictions. The OCC will adjust the countercyclical capital buffer amount for private sector credit exposures to reflect decisions made by foreign jurisdictions consistent with due process requirements described in paragraph (b)(2) of this section.
+
+(c) Calculation of maximum payout ratio for a national bank or Federal savings association that is a subsidiary of a U.S. top-tier bank holding company that has more than $700 billion in total assets as reported on the company's most recent Consolidated Financial Statement for Bank Holding Companies (Form FR Y-9C) or more than $10 trillion in assets under custody as reported on the company's most recent Banking Organization Systemic Risk Report (Form FR Y-15) —
+
+(1) Maximum Payout Ratio. The maximum payout ratio of a national bank or Federal savings association that is a subsidiary of a U.S. top-tier bank holding company that has more than $700 billion in total assets as reported on the company's most recent Consolidated Financial Statement for Bank Holding Companies (Form FR Y-9C) or more than $10 trillion in assets under custody as reported on the company's most recent Banking Organization Systemic Risk Report (Form FR Y-15) is the lowest of the payout ratios determined by its capital conservation buffer, calculated as of the last day of the previous calendar quarter, as set forth in table 1 to § 3.11 and leverage buffer as set forth in table 2 to this section.
+
+(2) Leverage buffer.
+
+(i) The leverage buffer is composed solely of tier 1 capital.
+
+(ii) A national bank or Federal savings association that is a subsidiary of a U.S. top-tier bank holding company that has more than $700 billion in total assets as reported on the company's most recent Consolidated Financial Statement for Bank Holding Companies (Form FR Y-9C) or more than $10 trillion in assets under custody as reported on the company's most recent Banking Organization Systemic Risk Report (Form FR Y-15) has a leverage buffer that is equal to the national bank's or Federal savings association's supplementary leverage ratio minus 3 percent, calculated as of the last day of the previous calendar quarter.
+
+(iii) Notwithstanding paragraph (c)(2)(ii) of this section, if the supplementary leverage ratio of the national bank or Federal savings association that is a subsidiary of a U.S. top-tier bank holding company that has more than $700 billion in total assets as reported on the company's most recent Consolidated Financial Statement for Bank Holding Companies (Form FR Y-9C) or more than $10 trillion in assets under custody as reported on the company's most recent Banking Organization Systemic Risk Report (Form FR Y-15) is less than or equal to 3 percent, the national bank's or Federal savings association's leverage buffer is zero.
+
+Table 2 to § 3.11—Calculation of Maximum Payout
+
+Leverage buffer
+Maximum payout
+
+Greater than the national bank's or Federal savings association's leverage buffer standard
+No payout ratio limitation applies.
+
+Less than or equal to 100 percent of the national bank's or Federal savings association's leverage buffer standard, and greater than 75 percent of the national bank's or Federal savings association's leverage buffer standard
+60 percent.
+
+Less than or equal to 75 percent of the national bank's or Federal savings association's leverage buffer standard, and greater than 50 percent of the national bank's or Federal savings association's leverage buffer standard
+40 percent.
+
+Less than or equal to 50 percent of national bank's or Federal savings association's leverage buffer standard, and greater than 25 percent of the national bank's or Federal savings association's leverage buffer standard
+20 percent.
+
+Less than or equal to 25 percent of the national bank's or Federal savings association's leverage buffer standard
+0 percent.
+
+[78 FR 62157, 62273, Oct. 11, 2013, as amended at 84 FR 35249, July 22, 2019; 84 FR 59265, Nov. 1, 2019; 85 FR 15915, Mar. 20, 2020; 90 FR 55287, Dec. 1, 2025]
+
+Footnotes -
+3.11
+
+[10] The OCC expects that any adjustment will be based on a determination made jointly by the Board, OCC, and FDIC.
+
+§ 3.12 Community bank leverage ratio framework.
+
+(a) Community bank leverage ratio framework.
+
+(1) Notwithstanding any other provision in this part, a qualifying community banking organization that has made an election to use the community bank leverage ratio framework under paragraph (a)(3) of this section shall be considered to have met the minimum capital requirements under § 3.10, the capital ratio requirements for the well capitalized capital category under § 6.4(b)(1) of this chapter, and any other capital or leverage requirements to which the qualifying community banking organization is subject, if it has a leverage ratio greater than 9 percent.
+
+(2) For purposes of this section, a qualifying community banking organization means a national bank or Federal savings association that is not an advanced approaches national bank or Federal savings association and that satisfies all of the following criteria:
+
+(i) Has a leverage ratio of greater than 9 percent;
+
+(ii) Has total consolidated assets of less than $10 billion, calculated in accordance with the reporting instructions to the Call Report as of the end of the most recent calendar quarter;
+
+(iii) Has off-balance sheet exposures of 25 percent or less of its total consolidated assets as of the end of the most recent calendar quarter, calculated as the sum of the notional amounts of the exposures listed in paragraphs (a)(2)(iii)(A) through (I) of this section, divided by total consolidated assets, each as of the end of the most recent calendar quarter:
+
+(A) The unused portion of commitments (except for unconditionally cancellable commitments);
+
+(B) Self-liquidating, trade-related contingent items that arise from the movement of goods;
+
+(C) Transaction-related contingent items, including performance bonds, bid bonds, warranties, and performance standby letters of credit;
+
+(D) Sold credit protection through
+
+(1) Guarantees; and
+
+(2) Credit derivatives;
+
+(E) Credit-enhancing representations and warranties;
+
+(F) Securities lent and borrowed, calculated in accordance with the reporting instructions to the Call Report;
+
+(G) Financial standby letters of credit;
+
+(H) Forward agreements that are not derivative contracts; and
+
+(I) Off-balance sheet securitization exposures; and
+
+(iv) Has total trading assets plus trading liabilities, calculated in accordance with the reporting instructions to the Call Report of 5 percent or less of the national bank's or Federal savings association's total consolidated assets, each as of the end of the most recent calendar quarter.
+
+(3)
+
+(i) A qualifying community banking organization may elect to use the community bank leverage ratio framework if it makes an opt-in election under this paragraph (a)(3).
+
+(ii) For purposes of this paragraph (a)(3), a qualifying community banking organization makes an election to use the community bank leverage ratio framework by completing the applicable reporting requirements of its Call Report.
+
+(iii)
+
+(A) A qualifying community banking organization that has elected to use the community bank leverage ratio framework may opt out of the community bank leverage ratio framework by completing the applicable risk-based and leverage ratio reporting requirements necessary to demonstrate compliance with § 3.10(a)(1) in its Call Report or by otherwise providing this information to the OCC.
+
+(B) A qualifying community banking organization that opts out of the community bank leverage ratio framework pursuant to paragraph (a)(3)(iii)(A) of this section must comply with § 3.10(a)(1) immediately.
+
+(4)
+
+(i) Temporary relief. From December 2, 2020 through December 31, 2021, except as provided in paragraph (a)(4)(ii) of this section, the total consolidated assets of a national bank or Federal savings association for purposes of paragraph (a)(2)(ii) of this section shall be the lesser of:
+
+(A) The total consolidated assets reported by the national bank or Federal savings association in its Call Report as of December 31, 2019; and
+
+(B) The total consolidated assets of the national bank or Federal savings association calculated in accordance with the reporting instructions to the Call Report as of the end of the most recent calendar quarter.
+
+(ii) Reservation of authority. The temporary relief provided under paragraph (a)(4)(i) of this section does not apply to a national bank or Federal savings association if the OCC determines that permitting the institution to determine its assets in accordance with that paragraph would not be commensurate with the risk posed by the institution. When making this determination, the OCC will consider all relevant factors, including the extent of asset growth of the national bank or Federal savings association since December 31, 2019; the causes of this growth, including whether this growth occurred as a result of a merger or acquisition; whether such growth is likely to be temporary or permanent; whether the national bank or Federal savings association has become involved in any additional activities since December 31, 2019; and the type of assets held by the national bank or Federal savings association. The OCC will notify a national bank or Federal savings association of a determination under this paragraph. A national bank or Federal savings association may, not later than 30 days after the date of a determination by the OCC, inform the OCC, in writing, of why the national bank or Federal savings association should be eligible for the temporary relief. The OCC will make a final determination after reviewing any response.
+
+(b) Calculation of the leverage ratio. A qualifying community banking organization's leverage ratio is calculated in accordance with § 3.10(b)(4), except that a qualifying community banking organization is not required to:
+
+(1) Make adjustments and deductions from tier 2 capital for purposes of § 3.22(c); or
+
+(2) Calculate and deduct from tier 1 capital an amount resulting from insufficient tier 2 capital under § 3.22(f).
+
+(c) Treatment when ceasing to meet the qualifying community banking organization requirements.
+
+(1) Except as provided in paragraphs (c)(5) and (6) of this section, if a national bank or Federal savings association ceases to meet the definition of a qualifying community banking organization, the national bank or Federal savings association has two reporting periods under its Call Report (grace period) to either satisfy the requirements to be a qualifying community banking organization or to comply with § 3.10(a)(1) and report the required capital measures under § 3.10(a)(1) on its Call Report.
+
+(2) The grace period begins as of the end of the calendar quarter in which the national bank or Federal savings association ceases to satisfy the criteria to be a qualifying community banking organization provided in paragraph (a)(2) of this section. The grace period ends on the last day of the second consecutive calendar quarter following the beginning of the grace period.
+
+(3) During the grace period, the national bank or Federal savings association continues to be treated as a qualifying community banking organization for the purpose of this part and must continue calculating and reporting its leverage ratio under this section unless the national bank or Federal savings association has opted out of using the community bank leverage ratio framework under paragraph (a)(3) of this section.
+
+(4) During the grace period, the qualifying community banking organization continues to be considered to have met the minimum capital requirements under § 3.10(a)(1), the capital ratio requirements for the well capitalized capital category under § 6.4(b)(1)(i)(A) through (D) of this chapter, and any other capital or leverage requirements to which the qualifying community banking organization is subject, and must continue calculating and reporting its leverage ratio under this section.
+
+(5) Notwithstanding paragraphs (c)(1) through (4) of this section, a national bank or Federal savings association that no longer meets the definition of a qualifying community banking organization as a result of a merger or acquisition has no grace period and immediately ceases to be a qualifying community banking organization. Such a national bank or Federal savings association must comply with the minimum capital requirements under § 3.10(a)(1) and must report the required capital measures under § 3.10(a)(1) for the quarter in which it ceases to be a qualifying community banking organization.
+
+(6) Notwithstanding paragraphs (c)(1) through (4) of this section, a national bank or Federal savings association that has a leverage ratio of 8 percent or less does not have a grace period and must comply with the minimum capital requirements under § 3.10(a)(1) and must report the required capital measures under § 3.10(a)(1) for the quarter in which it reports a leverage ratio of 8 percent or less.
+
+[84 FR 61792, Nov. 13, 2019, as amended at 85 FR 77359, Dec. 2, 2020]
+
+§§ 3.13-3.19 [Reserved]

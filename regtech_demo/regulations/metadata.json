@@ -1,0 +1,68 @@
+{
+  "title": "Title 12 — Banks and Banking",
+  "sections": {
+    "title12_part3_subpartA_general_provisions.txt": {
+      "title": "Title 12, Part 3, Subpart A",
+      "description": "General Provisions (Capital Adequacy definitions)",
+      "part": 3,
+      "subpart": "A",
+      "effective_date": null,
+      "fetched_at": "2026-04-21T16:18:19.324128+00:00",
+      "char_count": 119648
+    },
+    "title12_part3_subpartB_capital_ratios.txt": {
+      "title": "Title 12, Part 3, Subpart B",
+      "description": "Capital Ratio Requirements and Buffers (CET1 4.5%, Tier 1 6%, Total 8%)",
+      "part": 3,
+      "subpart": "B",
+      "effective_date": null,
+      "fetched_at": "2026-04-21T16:18:20.853412+00:00",
+      "char_count": 55470
+    },
+    "title12_part3_subpartC_definition_of_capital.txt": {
+      "title": "Title 12, Part 3, Subpart C",
+      "description": "Definition of Capital (deductions, DTA threshold)",
+      "part": 3,
+      "subpart": "C",
+      "effective_date": null,
+      "fetched_at": "2026-04-21T16:18:22.347853+00:00",
+      "char_count": 77645
+    },
+    "title12_part3_subpartD_rwa_standardized.txt": {
+      "title": "Title 12, Part 3, Subpart D",
+      "description": "Risk-Weighted Assets — Standardized Approach (risk weights, derivatives)",
+      "part": 3,
+      "subpart": "D",
+      "effective_date": null,
+      "fetched_at": "2026-04-21T16:18:24.279623+00:00",
+      "char_count": 162239
+    },
+    "title12_part3_subpartE_rwa_irb.txt": {
+      "title": "Title 12, Part 3, Subpart E",
+      "description": "Risk-Weighted Assets — Internal Ratings-Based Approach",
+      "part": 3,
+      "subpart": "E",
+      "effective_date": null,
+      "fetched_at": "2026-04-21T16:18:26.217667+00:00",
+      "char_count": 322590
+    },
+    "title12_part3_subpartF_rwa_market_risk.txt": {
+      "title": "Title 12, Part 3, Subpart F",
+      "description": "Risk-Weighted Assets — Market Risk",
+      "part": 3,
+      "subpart": "F",
+      "effective_date": null,
+      "fetched_at": "2026-04-21T16:18:27.928235+00:00",
+      "char_count": 93863
+    },
+    "title12_part50_subpartB_lcr_hqla.txt": {
+      "title": "Title 12, Part 50, Subpart B",
+      "description": "Liquidity Risk Measurement Standards (LCR, HQLA definitions)",
+      "part": 50,
+      "subpart": "B",
+      "effective_date": null,
+      "fetched_at": "2026-04-21T16:18:29.650306+00:00",
+      "char_count": 1338
+    }
+  }
+}

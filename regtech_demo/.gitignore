@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+venv/
+__pycache__/
+*.pyc
+audit_findings_cache.json
