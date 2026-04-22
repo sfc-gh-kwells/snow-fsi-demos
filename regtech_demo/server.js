@@ -263,7 +263,7 @@ app.get('/api/balance-sheet', async (req, res) => {
         // Strip markdown formatting for clean display
         const clean = raw.replace(/#{1,3}\s*/g, '').replace(/\*{1,2}/g, '').replace(/>\s*/g, '').replace(/—/g, '–').trim();
         const short = clean.length > 80 ? clean.slice(0, 77) + '…' : clean;
-        const full = clean.length > 300 ? clean.slice(0, 297) + '…' : clean;
+        const full = clean;
         return {
           id:              a.FLAG_ID,
           metric:          'RWA',
@@ -419,7 +419,7 @@ app.post('/api/search', async (req, res) => {
     res.json({
       results: (data.results || []).map((item) => ({
         text:         item.RAW_TEXT,
-        docName:      item.TITLE,
+        docName:      DOC_DISPLAY_NAMES[item.TITLE] || item.TITLE,
         docVersion:   item.VERSION,
         pageNumber:   null,
         sectionTitle: item.CHAPTER,

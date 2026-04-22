@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import {
   BarChart, Bar, LineChart, Line,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell,
@@ -15,7 +15,15 @@ const QUARTERS_ORDERED = ['Q1 2024','Q2 2024','Q3 2024','Q4 2024','Q1 2025','Q2 
 const ANOMALY_QUARTER  = 'Q4 2025'
 
 function KpiCard({ label, value, unit, change, anomaly, sub, tooltip }) {
-  const [showTip, setShowTip] = useState(false)
+  const [tipPos, setTipPos] = useState(null)
+  const subRef = useRef(null)
+
+  const showTip = (e) => {
+    if (!tooltip) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    setTipPos({ top: rect.bottom + 8, left: rect.left })
+  }
+
   return (
     <div className={`bsa-kpi-card${anomaly ? ' anomaly' : ''}`}>
       {anomaly && (
@@ -32,13 +40,16 @@ function KpiCard({ label, value, unit, change, anomaly, sub, tooltip }) {
       )}
       {sub && (
         <div
+          ref={subRef}
           className={`bsa-kpi-sub${tooltip ? ' has-tooltip' : ''}`}
-          onMouseEnter={() => tooltip && setShowTip(true)}
-          onMouseLeave={() => setShowTip(false)}
+          onMouseEnter={showTip}
+          onMouseLeave={() => setTipPos(null)}
         >
           {sub}
-          {showTip && tooltip && (
-            <div className="bsa-tooltip">{tooltip}</div>
+          {tipPos && tooltip && (
+            <div className="bsa-tooltip" style={{ top: tipPos.top, left: tipPos.left }}>
+              {tooltip}
+            </div>
           )}
         </div>
       )}
@@ -47,16 +58,25 @@ function KpiCard({ label, value, unit, change, anomaly, sub, tooltip }) {
 }
 
 function AnomalyNote({ anomaly }) {
-  const [showTip, setShowTip] = useState(false)
+  const [tipPos, setTipPos] = useState(null)
+
+  const showTip = (e) => {
+    if (!anomaly.descriptionFull) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    setTipPos({ top: rect.bottom + 8, left: rect.left })
+  }
+
   return (
     <div
       className="bsa-anomaly-note has-tooltip"
-      onMouseEnter={() => setShowTip(true)}
-      onMouseLeave={() => setShowTip(false)}
+      onMouseEnter={showTip}
+      onMouseLeave={() => setTipPos(null)}
     >
       ⚠ <strong>Q4 2025 anomaly:</strong> {anomaly.description} — RWA {anomaly.pctChange > 0 ? '+' : ''}{anomaly.pctChange.toFixed(1)}% vs expected range
-      {showTip && anomaly.descriptionFull && (
-        <div className="bsa-tooltip">{anomaly.descriptionFull}</div>
+      {tipPos && anomaly.descriptionFull && (
+        <div className="bsa-tooltip" style={{ top: tipPos.top, left: tipPos.left }}>
+          {anomaly.descriptionFull}
+        </div>
       )}
     </div>
   )
@@ -327,8 +347,7 @@ export default function BalanceSheetAnalytics() {
         .bsa-anomaly-note { margin-top: 10px; font-size: 12px; color: #92400e; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 5px; padding: 8px 12px; position: relative; }
         .has-tooltip { cursor: default; }
         .bsa-kpi-sub.has-tooltip { text-decoration: underline dotted #9ca3af; cursor: help; }
-        .bsa-tooltip { position: absolute; z-index: 50; top: calc(100% + 8px); left: 0; min-width: 280px; max-width: 380px; background: #1e293b; color: #f1f5f9; font-size: 12px; line-height: 1.5; padding: 10px 14px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); pointer-events: none; white-space: normal; max-height: 160px; overflow-y: auto; }
-        .bsa-tooltip::before { content: ''; position: absolute; bottom: 100%; left: 20px; border: 6px solid transparent; border-bottom-color: #1e293b; }
+        .bsa-tooltip { position: fixed; z-index: 9999; min-width: 280px; max-width: 420px; background: #1e293b; color: #f1f5f9; font-size: 12px; line-height: 1.6; padding: 10px 14px; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); pointer-events: none; white-space: normal; }
         @media (max-width: 1100px) { .bsa-kpi-row { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 700px)  { .bsa-kpi-row { grid-template-columns: 1fr 1fr; } }
       `}</style>

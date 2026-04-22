@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react'
+import Chatbot from '../Chatbot'
 
-const SEVERITY_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3 }
 
+const DOC_SUGGESTIONS = [
+  { icon: '📋', label: 'What are the key capital ratio requirements under 12 CFR Part 3?' },
+  { icon: '📊', label: 'How did our RWA perform against Basel III thresholds in Q4 2025?' },
+  { icon: '💧', label: 'What HQLA assets qualify under the LCR rules in 12 CFR Part 50?' },
+  { icon: '📑', label: 'Summarize the key changes in the latest regulatory document.' },
+]
+
+// ── Main component ────────────────────────────────────────────────────────────
 export default function DocumentIntelligence() {
   const [data,          setData]          = useState(null)
   const [loading,       setLoading]       = useState(true)
   const [selectedDocId, setSelectedDocId] = useState(null)
-  const [searchQuery,   setSearchQuery]   = useState('')
-  const [searching,     setSearching]     = useState(false)
-  const [searchResults, setSearchResults] = useState(null)
   const [filterSev,     setFilterSev]     = useState('all')
 
   useEffect(() => {
@@ -16,32 +21,12 @@ export default function DocumentIntelligence() {
       .then((r) => r.json())
       .then((d) => {
         setData(d)
-        // Default to the newest doc
         const newest = d.documents?.slice(-1)[0]
         if (newest) setSelectedDocId(newest.id)
         setLoading(false)
       })
       .catch(() => setLoading(false))
   }, [])
-
-  const handleSearch = async () => {
-    if (!searchQuery.trim()) return
-    setSearching(true)
-    setSearchResults(null)
-    try {
-      const r = await fetch('/api/search', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ query: searchQuery, docId: selectedDocId }),
-      })
-      const d = await r.json()
-      setSearchResults(d.results || [])
-    } catch {
-      setSearchResults([])
-    } finally {
-      setSearching(false)
-    }
-  }
 
   if (loading) return <div className="rt-loading">Loading regulatory documents…</div>
   if (!data)   return <div className="rt-empty">No data available.</div>
@@ -61,7 +46,7 @@ export default function DocumentIntelligence() {
         <div>
           <h1 className="rt-section-title">Document Intelligence</h1>
           <p className="rt-section-sub">
-            AI-extracted regulatory requirements · Cortex Search over raw document text
+            AI-extracted regulatory requirements · Cortex Agent for regulatory Q&amp;A
           </p>
         </div>
       </div>
@@ -80,7 +65,7 @@ export default function DocumentIntelligence() {
                 <div
                   key={doc.id}
                   className={`di-doc-item${doc.id === selectedDocId ? ' active' : ''}`}
-                  onClick={() => { setSelectedDocId(doc.id); setSearchResults(null) }}
+                  onClick={() => setSelectedDocId(doc.id)}
                 >
                   <div className="di-doc-name">{doc.name}</div>
                   <div className="di-doc-meta">
@@ -126,7 +111,6 @@ export default function DocumentIntelligence() {
                 </div>
                 <div className="di-summary">{selectedDoc.summary}</div>
 
-                {/* Severity breakdown */}
                 <div className="di-severity-row">
                   {['Critical','High','Medium','Low'].map((s) => (
                     severityCounts[s] ? (
@@ -142,15 +126,15 @@ export default function DocumentIntelligence() {
           )}
         </aside>
 
-        {/* ── Right panel: requirements table + search ── */}
+        {/* ── Right panel: requirements table + agent chat ── */}
         <div className="di-main">
 
-          {/* Requirements table */}
-          <div className="rt-card" style={{ marginBottom: 16 }}>
+          {/* Extracted requirements */}
+          <div className="rt-card">
             <div className="rt-card-header">
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span className="rt-card-title">Extracted Requirements</span>
-                <span className="rt-card-sub">via AI_EXTRACT</span>
+                <span className="rt-card-sub">via AI_COMPLETE</span>
               </div>
               <div className="di-filter-row">
                 {['all','Critical','High','Medium'].map((s) => (
@@ -198,60 +182,13 @@ export default function DocumentIntelligence() {
             </div>
           </div>
 
-          {/* Cortex Search */}
-          <div className="rt-card">
-            <div className="rt-card-header">
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span className="rt-card-title">Document Search</span>
-                <span className="rt-card-sub">Cortex Search · semantic search over raw document text</span>
-              </div>
-            </div>
-            <div className="rt-card-body">
-              <div className="di-search-row">
-                <input
-                  className="di-search-input"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                  placeholder='e.g. "What is the new Tier 1 capital deduction rule?" or "SA-CCR netting set requirements"'
-                />
-                <button className="rt-btn rt-btn-primary" onClick={handleSearch} disabled={searching || !searchQuery.trim()}>
-                  {searching ? 'Searching…' : 'Search'}
-                </button>
-              </div>
-
-              <div className="di-search-suggestions">
-                {['What changed in the Tier 1 capital deduction rules?',
-                  'New FRTB market risk capital requirements',
-                  'Liquidity Coverage Ratio HQLA definition changes',
-                ].map((q) => (
-                  <button key={q} className="di-suggestion" onClick={() => { setSearchQuery(q); }}>
-                    {q}
-                  </button>
-                ))}
-              </div>
-
-              {searchResults !== null && (
-                <div className="di-search-results">
-                  {searchResults.length === 0 ? (
-                    <div className="rt-empty">No results found. Try a different query.</div>
-                  ) : searchResults.map((r, i) => (
-                    <div key={i} className="di-result-card">
-                      <div className="di-result-meta">
-                        <span className="di-result-doc">{r.docName} · {r.docVersion}</span>
-                        {r.sectionTitle && <span className="di-result-section">{r.sectionTitle}</span>}
-                        {r.pageNumber  && <span className="di-result-page">p. {r.pageNumber}</span>}
-                      </div>
-                      <div className="di-result-text">{r.text}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
         </div>
       </div>
+
+      <Chatbot
+        title="Regulatory Document AI"
+        suggestions={DOC_SUGGESTIONS}
+      />
 
       <style>{`
         .di-page-header { margin-bottom: 20px; }
@@ -273,19 +210,7 @@ export default function DocumentIntelligence() {
         .di-filter-btn { padding: 3px 10px; border-radius: 4px; border: 1px solid #e5e7eb; background: white; font-size: 11px; font-weight: 500; color: #6b7280; cursor: pointer; }
         .di-filter-btn:hover { background: #f3f4f6; }
         .di-filter-btn.active { background: var(--navy); color: white; border-color: var(--navy); }
-        .di-search-row { display: flex; gap: 8px; margin-bottom: 10px; }
-        .di-search-input { flex: 1; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px; outline: none; }
-        .di-search-input:focus { border-color: var(--navy); box-shadow: 0 0 0 2px rgba(0,51,102,0.1); }
-        .di-search-suggestions { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-        .di-suggestion { padding: 4px 10px; background: #f0f4ff; border: 1px solid #c7d7f0; border-radius: 20px; font-size: 11px; color: var(--navy); cursor: pointer; transition: background 0.12s; }
-        .di-suggestion:hover { background: #dce8fa; }
-        .di-search-results { display: flex; flex-direction: column; gap: 10px; }
-        .di-result-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 14px; }
-        .di-result-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
-        .di-result-doc { font-size: 11px; font-weight: 600; color: var(--navy); }
-        .di-result-section { font-size: 11px; color: #6b7280; }
-        .di-result-page { font-size: 11px; color: #9ca3af; }
-        .di-result-text { font-size: 13px; color: #374151; line-height: 1.6; }
+
         @media (max-width: 900px) { .di-layout { grid-template-columns: 1fr; } }
       `}</style>
     </div>

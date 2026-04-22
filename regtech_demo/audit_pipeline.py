@@ -4,6 +4,9 @@ audit_pipeline.py — Cortex Code Agent-powered regulatory audit pipeline
 Reads SQL pipeline files from pipelines/ and analyzes them against
 extracted regulatory requirements using Snowflake Cortex AI.
 
+The Cortex Code Agent SDK is used ONLY for AI reasoning (analyze_pipeline).
+Plain SQL operations (fetch, insert, truncate) use snowflake.connector directly.
+
 Usage:
     python audit_pipeline.py [--connection MY_DEMO] [--force] [--dry-run]
 """
@@ -17,8 +20,12 @@ import logging
 import re
 import sys
 import time
+import tomllib
 from datetime import datetime, timezone
 from pathlib import Path
+
+import snowflake.connector
+from snowflake.connector import DictCursor
 
 try:
     from cortex_code_agent_sdk import (
@@ -127,6 +134,42 @@ def _extract_json(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Snowflake connector helper
+# ---------------------------------------------------------------------------
+
+def _get_sf_conn(connection_name: str) -> snowflake.connector.SnowflakeConnection:
+    """Return a snowflake.connector connection for a named Snowflake CLI connection.
+
+    Reads connection parameters from ~/.snowflake/config.toml (Snowflake CLI format).
+    Defaults for warehouse, database, schema, and role are applied so callers do not
+    need to qualify every object name.
+    """
+    config_path = Path.home() / ".snowflake" / "config.toml"
+    if not config_path.exists():
+        raise FileNotFoundError(f"Snowflake config not found: {config_path}")
+
+    with open(config_path, "rb") as fh:
+        config = tomllib.load(fh)
+
+    connections = config.get("connections", {})
+    params = connections.get(connection_name) or connections.get(connection_name.lower())
+    if params is None:
+        available = list(connections.keys())
+        raise KeyError(
+            f"Connection '{connection_name}' not found in {config_path}. "
+            f"Available connections: {available}"
+        )
+
+    return snowflake.connector.connect(
+        **params,
+        warehouse="COMPUTE_WH",
+        database=DATABASE,
+        schema=SCHEMA,
+        role="SYSADMIN",
+    )
+
+
+# ---------------------------------------------------------------------------
 # Pipeline header metadata parser
 # ---------------------------------------------------------------------------
 
@@ -191,33 +234,34 @@ def load_pipelines() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Phase 2: Fetch regulatory requirements via agent
+# Phase 2: Fetch regulatory requirements via direct connector query
 # ---------------------------------------------------------------------------
 
-async def fetch_requirements(connection: str) -> str:
-    """Use an agent call to read extracted requirements from Snowflake."""
+def fetch_requirements(sf_conn: snowflake.connector.SnowflakeConnection) -> str:
+    """Read extracted requirements from Snowflake and return as formatted text.
+
+    Uses a direct connector query — no agent SDK needed for a plain SELECT.
+    The returned text is passed verbatim into the audit prompt for each pipeline.
+    """
     log.info("Fetching regulatory requirements from %s ...", REQUIREMENTS_TABLE)
-    options = _make_options(connection)
+    cur = sf_conn.cursor(DictCursor)
+    cur.execute(f"SELECT * FROM {REQUIREMENTS_TABLE} ORDER BY REQ_ID")
+    rows = cur.fetchall()
 
-    prompt = f"""You have access to the sql_execute tool. Run this query and return the full result as text:
+    if not rows:
+        log.warning("No requirements found in %s", REQUIREMENTS_TABLE)
+        return "(No requirements found)"
 
-SELECT * FROM {REQUIREMENTS_TABLE};
-
-Return the query results as-is. Do not summarize or omit any rows."""
-
-    try:
-        result = await asyncio.wait_for(
-            _collect_response(query(prompt=prompt, options=options)),
-            timeout=AGENT_TIMEOUT_SECONDS,
+    lines: list[str] = []
+    for row in rows:
+        lines.append(
+            f"[{row['REQ_ID']}] {row['CATEGORY']} (Severity: {row['SEVERITY']})\n"
+            f"  Requirement: {row['REQUIREMENT']}\n"
+            f"  Threshold:   {row.get('THRESHOLD') or 'N/A'}\n"
+            f"  Impact Area: {row.get('IMPACT_AREA') or 'N/A'}"
         )
-    except asyncio.TimeoutError:
-        log.error("Timed out fetching requirements after %ds", AGENT_TIMEOUT_SECONDS)
-        sys.exit(1)
-    except Exception as exc:
-        log.error("Failed to fetch requirements: %s", exc)
-        sys.exit(1)
-
-    log.info("Requirements fetched (%d chars)", len(result))
+    result = "\n\n".join(lines)
+    log.info("Requirements fetched: %d rows (%d chars)", len(rows), len(result))
     return result
 
 
@@ -329,98 +373,61 @@ async def analyze_pipeline(
 # Phase 4: Write findings to Snowflake
 # ---------------------------------------------------------------------------
 
-def _escape_sql_string(value: str) -> str:
-    """Escape single quotes for safe SQL string interpolation."""
-    if value is None:
-        return ""
-    return str(value).replace("\\", "\\\\").replace("'", "''")
-
-
-async def write_findings_to_snowflake(
+def write_findings_to_snowflake(
     all_findings: list[dict],
-    connection: str,
+    sf_conn: snowflake.connector.SnowflakeConnection,
     force: bool,
 ) -> None:
-    """Insert findings into AUDIT_FINDINGS table via agent sql_execute calls.
+    """Insert findings into AUDIT_FINDINGS using a direct connector connection.
 
-    Saves findings to a local JSON cache first, then inserts in small batches
-    to avoid SDK timeout issues.
+    Uses parameterized executemany() — no string escaping required.
+    Saves a local JSON cache first as a backup regardless of DB outcome.
     """
-    options = _make_options(connection)
-
-    # Always save findings locally as a cache/backup
     cache_path = BASE_DIR / "audit_findings_cache.json"
     with open(cache_path, "w") as fp:
         json.dump(all_findings, fp, indent=2)
     log.info("Cached %d findings to %s", len(all_findings), cache_path)
 
+    cur = sf_conn.cursor()
+
     if force:
         log.info("--force: truncating existing findings ...")
-        truncate_prompt = f"Use the sql_execute tool to run: TRUNCATE TABLE {FINDINGS_TABLE};"
-        try:
-            await asyncio.wait_for(
-                _collect_response(query(prompt=truncate_prompt, options=options)),
-                timeout=60,
-            )
-            log.info("Truncated %s", FINDINGS_TABLE)
-        except Exception as exc:
-            log.warning("Failed to truncate findings table: %s", exc)
+        cur.execute(f"TRUNCATE TABLE {FINDINGS_TABLE}")
+        log.info("Truncated %s", FINDINGS_TABLE)
 
     if not all_findings:
         log.info("No findings to write.")
         return
 
-    # Insert in batches of 5 to avoid timeout on large payloads
-    BATCH_SIZE = 5
-    inserted = 0
-    for batch_start in range(0, len(all_findings), BATCH_SIZE):
-        batch = all_findings[batch_start : batch_start + BATCH_SIZE]
-        value_rows = []
-        for f in batch:
-            vals = (
-                f"('{_escape_sql_string(f.get('finding_id', ''))}', "
-                f"'{_escape_sql_string(f.get('pipeline_name', ''))}', "
-                f"'{_escape_sql_string(f.get('severity', ''))}', "
-                f"'{_escape_sql_string(f.get('category', ''))}', "
-                f"'{_escape_sql_string(f.get('description', ''))}', "
-                f"'{_escape_sql_string(f.get('affected_table', ''))}', "
-                f"'{_escape_sql_string(f.get('old_logic', ''))}', "
-                f"'{_escape_sql_string(f.get('suggested_fix', ''))}', "
-                f"'{_escape_sql_string(f.get('regulation_ref', ''))}')"
-            )
-            value_rows.append(vals)
-
-        insert_sql = (
-            f"INSERT INTO {FINDINGS_TABLE} "
-            f"(FINDING_ID, PIPELINE_NAME, SEVERITY, CATEGORY, DESCRIPTION, "
-            f"AFFECTED_TABLE, OLD_LOGIC, SUGGESTED_FIX, REGULATION_REF) VALUES\n"
-            + ",\n".join(value_rows)
-            + ";"
+    rows = [
+        (
+            f.get("finding_id", ""),
+            f.get("pipeline_name", ""),
+            f.get("severity", ""),
+            f.get("category", ""),
+            f.get("description", ""),
+            f.get("affected_table", ""),
+            f.get("old_logic", ""),
+            f.get("suggested_fix", ""),
+            f.get("regulation_ref", ""),
         )
-
-        insert_prompt = f"Use the sql_execute tool to run this SQL:\n\n{insert_sql}"
-        batch_num = batch_start // BATCH_SIZE + 1
-        total_batches = (len(all_findings) + BATCH_SIZE - 1) // BATCH_SIZE
-        log.info("Inserting batch %d/%d (%d rows) ...", batch_num, total_batches, len(batch))
-        try:
-            await asyncio.wait_for(
-                _collect_response(query(prompt=insert_prompt, options=options)),
-                timeout=120,
-            )
-            inserted += len(batch)
-        except asyncio.TimeoutError:
-            log.error("Timed out inserting batch %d", batch_num)
-        except Exception as exc:
-            log.error("Failed to insert batch %d: %s", batch_num, exc)
-
-    log.info("Inserted %d/%d findings into %s", inserted, len(all_findings), FINDINGS_TABLE)
+        for f in all_findings
+    ]
+    cur.executemany(
+        f"INSERT INTO {FINDINGS_TABLE} "
+        f"(FINDING_ID, PIPELINE_NAME, SEVERITY, CATEGORY, DESCRIPTION, "
+        f"AFFECTED_TABLE, OLD_LOGIC, SUGGESTED_FIX, REGULATION_REF) "
+        f"VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+        rows,
+    )
+    log.info("Inserted %d findings into %s", len(all_findings), FINDINGS_TABLE)
 
 
 # ---------------------------------------------------------------------------
 # Phase 5: Write run log entry
 # ---------------------------------------------------------------------------
 
-async def write_run_log(
+def write_run_log(
     run_id: str,
     pipelines_scanned: int,
     total_findings: int,
@@ -428,28 +435,26 @@ async def write_run_log(
     high_count: int,
     medium_count: int,
     duration_seconds: float,
-    connection: str,
+    sf_conn: snowflake.connector.SnowflakeConnection,
 ) -> None:
-    """Insert a summary row into AUDIT_RUN_LOG."""
-    options = _make_options(connection)
-
-    insert_sql = (
-        f"INSERT INTO {RUN_LOG_TABLE} "
-        f"(RUN_ID, RUN_TIMESTAMP, STATUS, PIPELINES_SCANNED, FINDINGS_COUNT, "
-        f"CRITICAL_COUNT, HIGH_COUNT, MEDIUM_COUNT, DURATION_SECONDS) VALUES "
-        f"('{_escape_sql_string(run_id)}', CURRENT_TIMESTAMP(), 'COMPLETED', "
-        f"{pipelines_scanned}, {total_findings}, "
-        f"{critical_count}, {high_count}, {medium_count}, "
-        f"{round(duration_seconds, 1)});"
-    )
-
-    prompt = f"Use the sql_execute tool to run this SQL:\n\n{insert_sql}"
-
+    """Insert a summary row into AUDIT_RUN_LOG via a direct connector call."""
     log.info("Writing run log entry for %s ...", run_id)
     try:
-        await asyncio.wait_for(
-            _collect_response(query(prompt=prompt, options=options)),
-            timeout=60,
+        cur = sf_conn.cursor()
+        cur.execute(
+            f"INSERT INTO {RUN_LOG_TABLE} "
+            f"(RUN_ID, RUN_TIMESTAMP, STATUS, PIPELINES_SCANNED, FINDINGS_COUNT, "
+            f"CRITICAL_COUNT, HIGH_COUNT, MEDIUM_COUNT, DURATION_SECONDS) "
+            f"VALUES (%s, CURRENT_TIMESTAMP(), 'COMPLETED', %s, %s, %s, %s, %s, %s)",
+            (
+                run_id,
+                pipelines_scanned,
+                total_findings,
+                critical_count,
+                high_count,
+                medium_count,
+                round(duration_seconds, 1),
+            ),
         )
         log.info("Run log entry written")
     except Exception as exc:
@@ -473,55 +478,62 @@ async def run(args: argparse.Namespace) -> None:
     # Phase 1: Load pipelines
     pipelines = load_pipelines()
 
-    # Phase 2: Fetch requirements
-    requirements_text = await fetch_requirements(connection)
+    # Open one shared connector connection for all direct SQL operations.
+    # analyze_pipeline uses the agent SDK separately (it needs AI reasoning).
+    sf_conn = _get_sf_conn(connection)
+    try:
+        # Phase 2: Fetch requirements
+        requirements_text = fetch_requirements(sf_conn)
 
-    # Phase 3: Analyze each pipeline sequentially
-    all_findings: list[dict] = []
-    finding_counter = 0
+        # Phase 3: Analyze each pipeline sequentially
+        all_findings: list[dict] = []
+        finding_counter = 0
 
-    for i, pipeline in enumerate(pipelines, 1):
-        log.info("[%d/%d] Analyzing pipeline: %s", i, len(pipelines), pipeline["name"])
-        findings, finding_counter = await analyze_pipeline(
-            pipeline, requirements_text, connection, finding_counter,
+        for i, pipeline in enumerate(pipelines, 1):
+            log.info("[%d/%d] Analyzing pipeline: %s", i, len(pipelines), pipeline["name"])
+            findings, finding_counter = await analyze_pipeline(
+                pipeline, requirements_text, connection, finding_counter,
+            )
+            all_findings.extend(findings)
+
+        # Summarize
+        critical = sum(1 for f in all_findings if f.get("severity") == "Critical")
+        high = sum(1 for f in all_findings if f.get("severity") == "High")
+        medium = sum(1 for f in all_findings if f.get("severity") == "Medium")
+        duration = time.monotonic() - t_start
+
+        log.info("-" * 60)
+        log.info("AUDIT COMPLETE")
+        log.info("  Pipelines scanned:  %d", len(pipelines))
+        log.info("  Total findings:     %d", len(all_findings))
+        log.info("  Critical:           %d", critical)
+        log.info("  High:               %d", high)
+        log.info("  Medium:             %d", medium)
+        log.info("  Duration:           %.1fs", duration)
+        log.info("-" * 60)
+
+        if args.dry_run:
+            log.info("DRY RUN — printing findings to stdout (not writing to Snowflake)")
+            print(json.dumps(all_findings, indent=2))
+            return
+
+        # Phase 4: Write findings
+        write_findings_to_snowflake(all_findings, sf_conn, args.force)
+
+        # Phase 5: Write run log
+        write_run_log(
+            run_id=run_id,
+            pipelines_scanned=len(pipelines),
+            total_findings=len(all_findings),
+            critical_count=critical,
+            high_count=high,
+            medium_count=medium,
+            duration_seconds=duration,
+            sf_conn=sf_conn,
         )
-        all_findings.extend(findings)
 
-    # Summarize
-    critical = sum(1 for f in all_findings if f.get("severity") == "Critical")
-    high = sum(1 for f in all_findings if f.get("severity") == "High")
-    medium = sum(1 for f in all_findings if f.get("severity") == "Medium")
-    duration = time.monotonic() - t_start
-
-    log.info("-" * 60)
-    log.info("AUDIT COMPLETE")
-    log.info("  Pipelines scanned:  %d", len(pipelines))
-    log.info("  Total findings:     %d", len(all_findings))
-    log.info("  Critical:           %d", critical)
-    log.info("  High:               %d", high)
-    log.info("  Medium:             %d", medium)
-    log.info("  Duration:           %.1fs", duration)
-    log.info("-" * 60)
-
-    if args.dry_run:
-        log.info("DRY RUN — printing findings to stdout (not writing to Snowflake)")
-        print(json.dumps(all_findings, indent=2))
-        return
-
-    # Phase 4: Write findings
-    await write_findings_to_snowflake(all_findings, connection, args.force)
-
-    # Phase 5: Write run log
-    await write_run_log(
-        run_id=run_id,
-        pipelines_scanned=len(pipelines),
-        total_findings=len(all_findings),
-        critical_count=critical,
-        high_count=high,
-        medium_count=medium,
-        duration_seconds=duration,
-        connection=connection,
-    )
+    finally:
+        sf_conn.close()
 
     log.info("=" * 60)
     log.info("DONE — %d findings written to %s", len(all_findings), FINDINGS_TABLE)
