@@ -2,6 +2,16 @@
 
 An AI-powered regulatory technology platform built on Snowflake Cortex. Demonstrates how Cortex AI services (COMPLETE, Search, Agents, ML Anomaly Detection) can automate balance sheet analytics, regulatory document intelligence, and pipeline compliance auditing for banking institutions.
 
+## Screenshots
+
+**Balance Sheet Analytics** — KPI cards, RWA trend charts, ML anomaly detection, and Cortex Agent chatbot with text-to-SQL
+
+![Balance Sheet Analytics](demo_screenshots/balance_sheet_analytics.png)
+
+**Pipeline Audit** — Agent-powered compliance findings across 8 SQL pipelines with severity breakdown
+
+![Pipeline Audit](demo_screenshots/pipeline_audit.png)
+
 ## Architecture
 
 ```
@@ -17,11 +27,43 @@ React UI (Vite)  <-->  Express API (server.js)  <-->  Snowflake REST APIs
 - Cortex Search Service — semantic search over 12 CFR banking regulations
 - Semantic View — structured access to balance sheet and audit data
 - Cortex Agent — orchestrated AI analyst combining text-to-SQL and search
+- [Cortex Code Agent SDK](https://docs.snowflake.com/en/user-guide/cortex-code-agent-sdk/cortex-code-agent-sdk) — programmatic agent automation for the audit pipeline
+
+## Cortex Code Agent SDK
+
+The audit pipeline (`audit_pipeline.py`) demonstrates the [Cortex Code Agent SDK](https://docs.snowflake.com/en/user-guide/cortex-code-agent-sdk/cortex-code-agent-sdk), which lets you programmatically drive Cortex Code agents from Python scripts. Instead of chatting interactively, the SDK sends structured prompts and collects responses — enabling fully automated, multi-step AI workflows.
+
+**How the audit pipeline uses it:**
+
+1. **Configure** — creates a `CortexCodeAgentOptions` with a Snowflake connection, model, and working directory
+2. **Fetch requirements** — sends a `query()` prompt asking the agent to read extracted regulatory requirements from Snowflake
+3. **Analyze each pipeline** — for each of the 8 SQL files, sends a prompt with the SQL source and requirements, asking the agent to identify compliance gaps against Basel III/IV regulations
+4. **Parse structured output** — extracts JSON findings from the agent's response (severity, category, regulation reference, suggested fix)
+5. **Write results** — sends a final prompt to INSERT findings and a run log entry back into Snowflake
+
+```python
+from cortex_code_agent_sdk import CortexCodeAgentOptions, query
+
+options = CortexCodeAgentOptions(
+    connection="MY_DEMO",
+    model="auto",
+    dangerously_allow_all_tool_calls=True,
+)
+
+# Send a prompt and collect the response
+response_iter = query(prompt="Analyze this SQL pipeline...", options=options)
+async for msg in response_iter:
+    # Process AssistantMessage and ResultMessage
+    ...
+```
+
+The SDK handles authentication, tool orchestration, and streaming — the script just sends prompts and parses responses. This pattern works for any task you'd normally do interactively in Cortex Code: querying data, running SQL, reading files, or chaining multi-step analysis.
 
 ## Prerequisites
 
 - Snowflake account with Cortex AI enabled
 - [Snowflake CLI](https://docs.snowflake.com/en/developer-guide/snowflake-cli/index) (`snow`) installed
+- [Cortex Code CLI](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code) installed (required by the Agent SDK)
 - Node.js 18+
 - Python 3.10+
 - A Snowflake [programmatic access token](https://docs.snowflake.com/en/user-guide/admin-programmatic-access-token) (PAT)
@@ -71,7 +113,7 @@ After running Steps 3b-7 in the notebook:
 python3 audit_pipeline.py --connection MY_DEMO --force
 ```
 
-The audit pipeline requires `cortex_code_agent_sdk`:
+The audit pipeline uses the [Cortex Code Agent SDK](#cortex-code-agent-sdk) to programmatically drive an AI agent that analyzes each SQL file against regulatory requirements:
 
 ```bash
 python3 -m venv venv && source venv/bin/activate
@@ -119,6 +161,7 @@ regtech_demo/
 │       └── PipelineAudit.jsx
 ├── pipelines/                 # 8 SQL pipelines with intentional compliance gaps
 ├── regulations/               # eCFR text files (fetched by fetch_regulations.py)
+├── demo_screenshots/          # UI screenshots for README
 ├── regtech_demo_setup.ipynb   # Snowflake provisioning notebook
 ├── fetch_regulations.py       # Downloads regulations from eCFR API
 ├── audit_pipeline.py          # Agent-powered audit (cortex_code_agent_sdk)
