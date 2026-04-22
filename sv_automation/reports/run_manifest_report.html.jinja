@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SV Automation — Run Report {{ run_id }}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; background: #f4f5f7; color: #172b4d; }
+    header { background: #0c3d6b; color: #fff; padding: 20px 32px; }
+    header h1 { font-size: 22px; font-weight: 600; }
+    header p { margin-top: 4px; font-size: 13px; opacity: .75; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 24px 32px; }
+
+    /* Stat cards */
+    .summary-bar { display: flex; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+    .stat { background: #fff; border: 1px solid #dfe1e6; border-radius: 6px; padding: 16px 20px; flex: 1; min-width: 130px; }
+    .stat .num { font-size: 30px; font-weight: 700; color: #0c3d6b; }
+    .stat .num.warn { color: #ae2a19; }
+    .stat .num.ok   { color: #00875a; }
+    .stat .label { font-size: 12px; color: #6b778c; margin-top: 4px; }
+
+    /* Section headers */
+    h2.section { font-size: 17px; margin: 32px 0 14px; border-bottom: 2px solid #dfe1e6; padding-bottom: 6px; }
+
+    /* Generic table */
+    table.data-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #dfe1e6; border-radius: 8px; overflow: hidden; font-size: 13px; margin-bottom: 8px; }
+    table.data-table th { background: #f4f5f7; text-align: left; padding: 9px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: #6b778c; border-bottom: 1px solid #dfe1e6; }
+    table.data-table td { padding: 9px 14px; border-top: 1px solid #f4f5f7; vertical-align: middle; }
+    table.data-table tr:hover td { background: #f8f9fa; }
+
+    /* Badges */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+    .badge-pass    { background: #e3fcef; color: #006644; }
+    .badge-warn    { background: #fffae6; color: #6d5100; }
+    .badge-fail    { background: #ffebe6; color: #ae2a19; }
+    .badge-hitl    { background: #e6f0ff; color: #0052cc; }
+    .badge-timeout { background: #f0e6ff; color: #5243aa; }
+    .badge-neutral { background: #f4f5f7; color: #505f79; }
+
+    /* Score bar */
+    .score-bar-wrap { background: #dfe1e6; border-radius: 4px; height: 8px; width: 120px; display: inline-block; vertical-align: middle; }
+    .score-bar-fill { height: 8px; border-radius: 4px; }
+    .fill-high   { background: #00875a; }
+    .fill-medium { background: #f79233; }
+    .fill-low    { background: #de350b; }
+
+    /* SV detail cards */
+    .sv-card { background: #fff; border: 1px solid #dfe1e6; border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .sv-card-header { display: flex; align-items: center; gap: 12px; padding: 13px 18px; background: #f4f5f7; border-bottom: 1px solid #dfe1e6; cursor: pointer; }
+    .sv-card-header .sv-name { font-family: monospace; font-weight: 700; font-size: 14px; flex: 1; }
+    .sv-card-stats { font-size: 12px; color: #6b778c; display: flex; gap: 14px; }
+    .sv-card-stats span b { color: #172b4d; }
+    .sv-card-body { padding: 0; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .sv-card-header { border-bottom: 1px solid #dfe1e6; }
+
+    /* Enrichment grid */
+    .enrich-grid { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #f4f5f7; }
+    .enrich-chip { background: #f4f5f7; border-radius: 4px; padding: 4px 10px; font-size: 12px; color: #505f79; }
+    .enrich-chip b { color: #0c3d6b; }
+
+    /* Question detail table */
+    table.q-detail { width: 100%; border-collapse: collapse; font-size: 13px; }
+    table.q-detail th { background: #f4f5f7; padding: 8px 14px; text-align: left; font-size: 11px; color: #6b778c; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; border-bottom: 1px solid #dfe1e6; }
+    table.q-detail td { padding: 9px 14px; border-top: 1px solid #f4f5f7; vertical-align: top; line-height: 1.4; }
+    .q-row-pass td:first-child    { border-left: 3px solid #00875a; }
+    .q-row-partial td:first-child { border-left: 3px solid #f79233; background: #fffef5; }
+    .q-row-fail td:first-child    { border-left: 3px solid #de350b; background: #fff5f5; }
+    .q-row-partial td { background: #fffef5; }
+    .q-row-fail td    { background: #fff5f5; }
+    .q-num { font-size: 12px; color: #97a0af; width: 32px; }
+    .q-question { max-width: 360px; }
+    .q-note { font-size: 12px; color: #505f79; font-style: italic; }
+
+    /* Quarantine / error items */
+    .alert-item { background: #fff5f5; border: 1px solid #ffbdad; border-radius: 6px; padding: 13px 18px; margin-bottom: 10px; }
+    .alert-item .ai-header { font-family: monospace; font-weight: 700; margin-bottom: 4px; color: #ae2a19; }
+    .alert-item .ai-detail { font-size: 13px; color: #5e2a1a; }
+
+    /* Config block */
+    pre.config-block { background: #fff; border: 1px solid #dfe1e6; border-radius: 6px; padding: 14px 18px; font-size: 12px; line-height: 1.7; overflow-x: auto; }
+
+    /* Duration formatting */
+    .dur { font-family: monospace; font-size: 12px; color: #505f79; }
+
+    footer { text-align: center; padding: 24px; font-size: 12px; color: #97a0af; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SV Automation — Run Report</h1>
+  <p>
+    {{ run_id }}
+    &nbsp;|&nbsp; {{ config.database }}.{{ config.schema }}
+    &nbsp;|&nbsp; Generated {{ generated_at }} UTC
+  </p>
+</header>
+
+<div class="container">
+
+  {# ── Computed values ── #}
+  {% set total_svs   = svs | length %}
+  {% set quar_count  = quarantined | length %}
+  {% set err_count   = errors | length %}
+  {% set total_q     = svs | map(attribute="total_questions") | sum %}
+  {% set total_pass  = svs | map(attribute="pass") | sum %}
+  {% set total_fail  = svs | map(attribute="fail") | sum %}
+  {% set total_part  = svs | map(attribute="partial") | sum %}
+  {% set avg_score   = (svs | map(attribute="accuracy_score") | sum / total_svs) | round(1) if total_svs > 0 else 0 %}
+  {% set total_ms    = summary.total_duration_ms | default(0) %}
+  {% set total_min   = (total_ms / 60000) | round(1) %}
+
+  {# ── Summary stat cards ── #}
+  <div class="summary-bar">
+    <div class="stat">
+      <div class="num">{{ total_svs }}</div>
+      <div class="label">SVs Created</div>
+    </div>
+    <div class="stat">
+      <div class="num {% if avg_score < 70 %}warn{% elif avg_score >= 85 %}ok{% endif %}">{{ avg_score }}%</div>
+      <div class="label">Avg Accuracy</div>
+    </div>
+    <div class="stat">
+      <div class="num">{{ total_q }}</div>
+      <div class="label">Questions Tested</div>
+    </div>
+    <div class="stat">
+      <div class="num ok">{{ total_pass }}</div>
+      <div class="label">Pass</div>
+    </div>
+    <div class="stat">
+      <div class="num {% if total_part > 0 %}warn{% endif %}">{{ total_part }}</div>
+      <div class="label">Partial</div>
+    </div>
+    <div class="stat">
+      <div class="num {% if total_fail > 0 %}warn{% endif %}">{{ total_fail }}</div>
+      <div class="label">Fail</div>
+    </div>
+    <div class="stat">
+      <div class="num {% if quar_count > 0 %}warn{% endif %}">{{ quar_count }}</div>
+      <div class="label">Quarantined</div>
+    </div>
+    <div class="stat">
+      <div class="num">{{ total_min }}m</div>
+      <div class="label">Total Duration</div>
+    </div>
+  </div>
+
+  {# ── SV Accuracy Overview ── #}
+  <h2 class="section">Semantic View Accuracy</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Semantic View</th>
+        <th>Score</th>
+        <th style="width:140px"></th>
+        <th>Pass</th>
+        <th>Partial</th>
+        <th>Fail</th>
+        <th>Total Q</th>
+        <th>Metrics</th>
+        <th>Filters</th>
+        <th>Relationships</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sv in svs | sort(attribute="accuracy_score") | reverse %}
+      {% set score = sv.accuracy_score | float %}
+      {% set fill_class = "fill-high" if score >= 80 else ("fill-medium" if score >= 60 else "fill-low") %}
+      {% set badge_class = "badge-pass" if score >= 70 else "badge-fail" %}
+      {% set enr = sv.enrichment | default({}) %}
+      <tr>
+        <td style="font-family:monospace;font-weight:600">{{ sv.sv_name }}</td>
+        <td><span class="badge {{ badge_class }}">{{ score }}%</span></td>
+        <td>
+          <div class="score-bar-wrap">
+            <div class="score-bar-fill {{ fill_class }}" style="width:{{ [score, 100] | min }}%"></div>
+          </div>
+        </td>
+        <td style="color:#006644;font-weight:600">{{ sv.pass | default(0) }}</td>
+        <td style="color:#6d5100;font-weight:600">{{ sv.partial | default(0) }}</td>
+        <td style="color:#ae2a19;font-weight:600">{{ sv.fail | default(0) }}</td>
+        <td>{{ sv.total_questions | default(0) }}</td>
+        <td>{{ enr.metrics_added | default("—") }}</td>
+        <td>{{ enr.filters_added | default("—") }}</td>
+        <td>{{ enr.relationships_added | default("—") }}</td>
+        <td>
+          {% if sv.needs_human_validation %}
+            <span class="badge badge-hitl" title="{{ sv.human_validation_reason | default('') }}">needs review</span>
+          {% elif score >= 70 %}
+            <span class="badge badge-pass">ok</span>
+          {% else %}
+            <span class="badge badge-fail">below threshold</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {# ── Phase Timings ── #}
+  <h2 class="section">Phase Timings</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>Duration</th>
+        <th>Started</th>
+        <th>Ended</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for phase_name, pd in phases.items() %}
+      {% set ms = pd.duration_ms | default(0) %}
+      {% set mins = (ms / 60000) | round(1) %}
+      <tr>
+        <td style="font-family:monospace">{{ phase_name }}</td>
+        <td>
+          <span class="dur">{{ mins }}m</span>
+          <span style="font-size:11px;color:#97a0af">&nbsp;({{ ms | int | string }}ms)</span>
+        </td>
+        <td class="dur">{{ pd.start | default("—") }}</td>
+        <td class="dur">{{ pd.end   | default("—") }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="4" style="color:#97a0af;font-style:italic;padding:14px">No phase timing data recorded.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {# ── Agent Call Timeline ── #}
+  <h2 class="section">Agent Call Timeline</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>Item</th>
+        <th>Status</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ac in agent_calls %}
+      {% set ms = ac.duration_ms | default(0) %}
+      {% set mins = (ms / 60000) | round(1) %}
+      {% set status_badge = "badge-pass" if ac.status == "success" else ("badge-timeout" if ac.status == "timeout" else "badge-fail") %}
+      <tr>
+        <td style="font-family:monospace;font-size:12px">{{ ac.phase }}</td>
+        <td style="font-family:monospace">{{ ac.item }}</td>
+        <td><span class="badge {{ status_badge }}">{{ ac.status }}</span></td>
+        <td><span class="dur">{{ mins }}m ({{ ms | int }}ms)</span></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="4" style="color:#97a0af;font-style:italic;padding:14px">No agent call data recorded.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {# ── Per-SV Detail ── #}
+  <h2 class="section">Per-SV Detail</h2>
+  {% for sv in svs | sort(attribute="accuracy_score") | reverse %}
+  {% set score = sv.accuracy_score | float %}
+  {% set pill_class = "badge-pass" if score >= 80 else ("badge-warn" if score >= 60 else "badge-fail") %}
+  {% set enr = sv.enrichment | default({}) %}
+  <div class="sv-card">
+    <details>
+      <summary>
+        <div class="sv-card-header">
+          <span class="sv-name">{{ sv.sv_name }}</span>
+          <div class="sv-card-stats">
+            <span><b style="color:#006644">{{ sv.pass | default(0) }}</b> pass</span>
+            <span><b style="color:#f79233">{{ sv.partial | default(0) }}</b> partial</span>
+            <span><b style="color:#ae2a19">{{ sv.fail | default(0) }}</b> fail</span>
+            <span><b>{{ sv.total_questions | default(0) }}</b> total</span>
+          </div>
+          <span class="badge {{ pill_class }}">{{ score }}%</span>
+          {% if sv.needs_human_validation %}
+            <span class="badge badge-hitl">needs review</span>
+          {% endif %}
+          <span style="font-size:12px;color:#6b778c;margin-left:6px">&#9660;</span>
+        </div>
+      </summary>
+      <div class="sv-card-body">
+        {# Enrichment chips #}
+        <div class="enrich-grid">
+          <div class="enrich-chip"><b>{{ enr.tables_with_descriptions | default(0) }}</b> tables described</div>
+          <div class="enrich-chip"><b>{{ enr.columns_with_descriptions | default(0) }}</b> columns described</div>
+          <div class="enrich-chip"><b>{{ enr.columns_with_synonyms | default(0) }}</b> synonyms</div>
+          <div class="enrich-chip"><b>{{ enr.columns_with_sample_values | default(0) }}</b> sample values</div>
+          <div class="enrich-chip"><b>{{ enr.metrics_added | default(0) }}</b> metrics</div>
+          <div class="enrich-chip"><b>{{ enr.filters_added | default(0) }}</b> filters</div>
+          <div class="enrich-chip"><b>{{ enr.relationships_added | default(0) }}</b> relationships</div>
+          {% if sv.human_validation_reason %}
+          <div class="enrich-chip" style="background:#e6f0ff;color:#0052cc">{{ sv.human_validation_reason }}</div>
+          {% endif %}
+        </div>
+        {# Questions #}
+        {% if sv.question_results %}
+        <table class="q-detail">
+          <thead>
+            <tr>
+              <th class="q-num">#</th>
+              <th>Question</th>
+              <th style="width:72px">Result</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for q in sv.question_results %}
+            <tr class="q-row-{{ q.result }}">
+              <td class="q-num">{{ loop.index }}</td>
+              <td class="q-question">{{ q.nl_question }}</td>
+              <td>
+                {% if q.result == "pass" %}
+                  <span class="badge badge-pass">pass</span>
+                {% elif q.result == "partial" %}
+                  <span class="badge badge-warn">partial</span>
+                {% else %}
+                  <span class="badge badge-fail">fail</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if q.note %}
+                  <span class="q-note">{{ q.note }}</span>
+                {% else %}
+                  <span style="color:#97a0af">—</span>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div style="padding:16px;color:#97a0af;font-style:italic;font-size:13px">No questions tested.</div>
+        {% endif %}
+      </div>
+    </details>
+  </div>
+  {% endfor %}
+
+  {# ── Quarantine Log ── #}
+  {% if quarantined %}
+  <h2 class="section">Quarantine Log</h2>
+  {% for q in quarantined %}
+  <div class="alert-item">
+    <div class="ai-header">{{ q.phase }} / {{ q.item }}</div>
+    <div class="ai-detail">{{ q.reason }}</div>
+    <div style="font-size:11px;color:#97a0af;margin-top:4px">{{ q.ts }}</div>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  {# ── Errors ── #}
+  {% if errors %}
+  <h2 class="section">Errors ({{ errors | length }})</h2>
+  {% for e in errors %}
+  <div class="alert-item">
+    <div class="ai-header">{{ e.phase }} / {{ e.item }}</div>
+    <div class="ai-detail">{{ e.error }}</div>
+    {% if e.context %}
+    <div style="font-size:12px;color:#97a0af;margin-top:4px">{{ e.context }}</div>
+    {% endif %}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  {# ── Config Snapshot ── #}
+  <h2 class="section">Run Configuration</h2>
+  <pre class="config-block">database:             {{ config.database }}
+schema:               {{ config.schema }}
+target_database:      {{ config.target_database }}
+target_schema:        {{ config.target_schema }}
+connection:           {{ config.connection }}
+model:                {{ config.model }}
+agent_timeout:        {{ config.agent_timeout_seconds }}s
+total_tables_scoped:  {{ summary.total_tables | default("?") }}</pre>
+
+</div>
+
+<footer>SV Automation &nbsp;|&nbsp; {{ run_id }}</footer>
+</body>
+</html>

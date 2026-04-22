@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SV Automation — Evaluation Report</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; background: #f4f5f7; color: #172b4d; }
+    header { background: #0c3d6b; color: #fff; padding: 20px 32px; }
+    header h1 { font-size: 22px; font-weight: 600; }
+    header p { margin-top: 4px; font-size: 13px; opacity: .75; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+
+    /* Summary stats */
+    .summary-bar { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .stat { background: #fff; border: 1px solid #dfe1e6; border-radius: 6px; padding: 16px 20px; flex: 1; min-width: 140px; }
+    .stat .num { font-size: 32px; font-weight: 700; color: #0c3d6b; }
+    .stat .num.warn { color: #ae2a19; }
+    .stat .label { font-size: 12px; color: #6b778c; margin-top: 4px; }
+
+    /* HITL box */
+    .hitl-box { background: #fff; border: 2px solid #0c3d6b; border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+    .hitl-box h2 { font-size: 16px; margin-bottom: 8px; color: #0c3d6b; }
+    .hitl-box p { color: #505f79; margin-bottom: 16px; line-height: 1.5; }
+    .hitl-cmds { background: #f4f5f7; border-radius: 4px; padding: 12px 16px; font-family: monospace; font-size: 13px; line-height: 2; }
+    .hitl-cmds .approve { color: #006644; font-weight: 600; }
+    .hitl-cmds .reject  { color: #ae2a19; font-weight: 600; }
+
+    /* Section headers */
+    h2.section { font-size: 17px; margin: 32px 0 14px; border-bottom: 2px solid #dfe1e6; padding-bottom: 6px; }
+
+    /* Score bar */
+    .score-bar-wrap { background: #dfe1e6; border-radius: 4px; height: 8px; width: 100%; }
+    .score-bar-fill { height: 8px; border-radius: 4px; }
+    .fill-high   { background: #00875a; }
+    .fill-medium { background: #f79233; }
+    .fill-low    { background: #de350b; }
+
+    /* SV overview table */
+    table.sv-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #dfe1e6; border-radius: 8px; overflow: hidden; font-size: 13px; }
+    table.sv-table th { background: #f4f5f7; text-align: left; padding: 10px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: #6b778c; border-bottom: 1px solid #dfe1e6; }
+    table.sv-table td { padding: 10px 14px; border-top: 1px solid #f4f5f7; vertical-align: middle; }
+    table.sv-table tr:hover td { background: #f8f9fa; }
+
+    /* Badges */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+    .badge-pass    { background: #e3fcef; color: #006644; }
+    .badge-warn    { background: #fffae6; color: #6d5100; }
+    .badge-fail    { background: #ffebe6; color: #ae2a19; }
+    .badge-hitl    { background: #e6f0ff; color: #0052cc; }
+
+    /* Failed questions alert banner */
+    .failed-banner { background: #ffebe6; border: 1px solid #ff8f73; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
+    .failed-banner h3 { color: #ae2a19; font-size: 15px; margin-bottom: 6px; }
+    .failed-banner p { color: #5e2a1a; font-size: 13px; line-height: 1.5; }
+
+    /* SV question detail cards */
+    .sv-card { background: #fff; border: 1px solid #dfe1e6; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+    .sv-card-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #f4f5f7; border-bottom: 1px solid #dfe1e6; }
+    .sv-card-header .sv-name { font-family: monospace; font-weight: 700; font-size: 14px; flex: 1; }
+    .sv-card-header .score-pill { font-size: 13px; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
+    .score-pill-high   { background: #e3fcef; color: #006644; }
+    .score-pill-medium { background: #fffae6; color: #6d5100; }
+    .score-pill-low    { background: #ffebe6; color: #ae2a19; }
+    .sv-card-stats { font-size: 12px; color: #6b778c; display: flex; gap: 16px; }
+    .sv-card-stats span b { color: #172b4d; }
+
+    /* Question detail table */
+    table.q-detail { width: 100%; border-collapse: collapse; font-size: 13px; }
+    table.q-detail th { background: #f4f5f7; padding: 8px 14px; text-align: left; font-size: 11px; color: #6b778c; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; border-bottom: 1px solid #dfe1e6; }
+    table.q-detail td { padding: 10px 14px; border-top: 1px solid #f4f5f7; vertical-align: top; line-height: 1.4; }
+    .q-row-pass    td { background: #fff; }
+    .q-row-pass    td:first-child { border-left: 3px solid #00875a; }
+    .q-row-partial td { background: #fffef5; }
+    .q-row-partial td:first-child { border-left: 3px solid #f79233; }
+    .q-row-fail    td { background: #fff5f5; }
+    .q-row-fail    td:first-child { border-left: 3px solid #de350b; }
+    .q-num { font-size: 12px; color: #97a0af; width: 32px; }
+    .q-question { max-width: 380px; }
+    .q-note { font-size: 12px; color: #505f79; font-style: italic; }
+    .q-sql { font-family: monospace; font-size: 11px; color: #172b4d; white-space: pre-wrap; word-break: break-all; max-width: 340px; }
+    .no-questions { padding: 18px; color: #97a0af; font-size: 13px; font-style: italic; }
+
+    /* Failures-only section */
+    .failure-item { background: #fff5f5; border: 1px solid #ffbdad; border-radius: 6px; padding: 14px 18px; margin-bottom: 10px; }
+    .failure-item .fi-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .failure-item .fi-sv { font-size: 11px; background: #ffebe6; color: #ae2a19; border-radius: 10px; padding: 2px 8px; font-weight: 600; font-family: monospace; }
+    .failure-item .fi-q { font-size: 13px; font-weight: 600; color: #172b4d; flex: 1; }
+    .failure-item .fi-note { font-size: 12px; color: #5e2a1a; margin-top: 4px; }
+    .failure-item .fi-sql { font-family: monospace; font-size: 11px; color: #505f79; background: #fff; border: 1px solid #ffbdad; border-radius: 4px; padding: 6px 10px; margin-top: 8px; white-space: pre-wrap; word-break: break-all; }
+
+    footer { text-align: center; padding: 24px; font-size: 12px; color: #97a0af; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SV Automation — Evaluation Report</h1>
+  <p>Generated {{ generated_at }} UTC &nbsp;|&nbsp; HITL Checkpoint 2 of 2</p>
+</header>
+
+<div class="container">
+
+  <!-- HITL instructions -->
+  <div class="hitl-box">
+    <h2>Action Required — Approve or Reject</h2>
+    <p>
+      Review the accuracy scores and failed questions below. SVs flagged in red are below the minimum threshold.
+      Approve to proceed with Cortex Search integration, or reject to abort.
+    </p>
+    <div class="hitl-cmds">
+      <span class="approve">touch post_evaluation.approved</span>   &nbsp;— proceed to Cortex Search<br>
+      <span class="reject">touch post_evaluation.rejected</span>   &nbsp;— abort the run
+    </div>
+  </div>
+
+  <!-- ── Summary stats ── -->
+  {% set total = sv_scores|length %}
+  {% set needs_hitl_count = sv_scores | selectattr("needs_human_validation") | list | length %}
+  {% set avg_score = (sv_scores | map(attribute="accuracy_score") | sum / total) | round(1) if total > 0 else 0 %}
+  {% set below_threshold = sv_scores | selectattr("accuracy_score", "lt", 70) | list | length %}
+  {% set total_questions = sv_scores | map(attribute="total_questions", default=0) | sum %}
+  {% set total_pass = sv_scores | map(attribute="pass", default=0) | sum %}
+  {% set total_fail = sv_scores | map(attribute="fail", default=0) | sum %}
+  {% set total_partial = sv_scores | map(attribute="partial", default=0) | sum %}
+
+  <div class="summary-bar">
+    <div class="stat">
+      <div class="num">{{ total }}</div>
+      <div class="label">SVs Evaluated</div>
+    </div>
+    <div class="stat">
+      <div class="num {% if avg_score < 70 %}warn{% endif %}">{{ avg_score }}%</div>
+      <div class="label">Avg Accuracy</div>
+    </div>
+    <div class="stat">
+      <div class="num">{{ total_questions }}</div>
+      <div class="label">Questions Tested</div>
+    </div>
+    <div class="stat">
+      <div class="num" style="color:#00875a">{{ total_pass }}</div>
+      <div class="label">Passed</div>
+    </div>
+    <div class="stat">
+      <div class="num" style="color:#f79233">{{ total_partial }}</div>
+      <div class="label">Partial</div>
+    </div>
+    <div class="stat">
+      <div class="num {% if total_fail > 0 %}warn{% endif %}">{{ total_fail }}</div>
+      <div class="label">Failed</div>
+    </div>
+    <div class="stat">
+      <div class="num {% if needs_hitl_count > 0 %}warn{% endif %}">{{ needs_hitl_count }}</div>
+      <div class="label">Need Human Review</div>
+    </div>
+  </div>
+
+  <!-- ── Failed questions alert ── -->
+  {% set all_failures = [] %}
+  {% for sv in sv_scores %}
+    {% for q in sv.question_results | default([]) if q.result in ["fail", "partial"] %}
+      {% set _ = all_failures.append({"sv_name": sv.sv_name, "q": q}) %}
+    {% endfor %}
+  {% endfor %}
+
+  {% if all_failures %}
+  <div class="failed-banner">
+    <h3>⚠ {{ all_failures|length }} question(s) failed or partially passed</h3>
+    <p>{{ total_fail }} failed &nbsp;·&nbsp; {{ total_partial }} partial. Review the detail sections below.</p>
+  </div>
+  {% endif %}
+
+  <!-- ── Per-SV score overview table ── -->
+  <h2 class="section">Semantic View Scores</h2>
+  <table class="sv-table">
+    <thead>
+      <tr>
+        <th>Semantic View</th>
+        <th>Accuracy</th>
+        <th style="width:180px">Score</th>
+        <th>Pass</th>
+        <th>Partial</th>
+        <th>Fail</th>
+        <th>Total Q</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sv in sv_scores | sort(attribute="accuracy_score") | reverse %}
+      {% set score = sv.accuracy_score | float %}
+      {% set fill_class = "fill-high" if score >= 80 else ("fill-medium" if score >= 60 else "fill-low") %}
+      {% set badge_class = "badge-pass" if score >= 70 else "badge-fail" %}
+      <tr>
+        <td style="font-family:monospace;font-weight:600">{{ sv.sv_name }}</td>
+        <td><span class="badge {{ badge_class }}">{{ score }}%</span></td>
+        <td>
+          <div class="score-bar-wrap">
+            <div class="score-bar-fill {{ fill_class }}" style="width:{{ [score, 100] | min }}%"></div>
+          </div>
+        </td>
+        <td style="color:#006644;font-weight:600">{{ sv.pass | default(0) }}</td>
+        <td style="color:#6d5100;font-weight:600">{{ sv.partial | default(0) }}</td>
+        <td style="color:#ae2a19;font-weight:600">{{ sv.fail | default(0) }}</td>
+        <td>{{ sv.total_questions | default(0) }}</td>
+        <td>
+          {% if sv.needs_human_validation %}
+            <span class="badge badge-hitl" title="{{ sv.human_validation_reason }}">needs review</span>
+          {% elif score >= 70 %}
+            <span class="badge badge-pass">ok</span>
+          {% else %}
+            <span class="badge badge-fail">below threshold</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- ── Failed & partial questions (prominent callout) ── -->
+  {% if all_failures %}
+  <h2 class="section">Failed &amp; Partial Questions</h2>
+  {% for item in all_failures %}
+  <div class="failure-item">
+    <div class="fi-header">
+      <span class="fi-sv">{{ item.sv_name }}</span>
+      <span class="fi-q">{{ item.q.nl_question }}</span>
+      {% if item.q.result == "fail" %}
+        <span class="badge badge-fail">fail</span>
+      {% else %}
+        <span class="badge badge-warn">partial</span>
+      {% endif %}
+    </div>
+    {% if item.q.note %}
+    <div class="fi-note">{{ item.q.note }}</div>
+    {% endif %}
+    {% if item.q.generated_sql %}
+    <div class="fi-sql">{{ item.q.generated_sql }}</div>
+    {% endif %}
+    {% if item.q.error %}
+    <div class="fi-note" style="color:#ae2a19">Error: {{ item.q.error }}</div>
+    {% endif %}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  <!-- ── All questions detail by SV ── -->
+  <h2 class="section">All Questions by Semantic View</h2>
+  {% for sv in sv_scores | sort(attribute="accuracy_score") %}
+  {% set score = sv.accuracy_score | float %}
+  {% set pill_class = "score-pill-high" if score >= 80 else ("score-pill-medium" if score >= 60 else "score-pill-low") %}
+  <div class="sv-card">
+    <div class="sv-card-header">
+      <span class="sv-name">{{ sv.sv_name }}</span>
+      <div class="sv-card-stats">
+        <span><b style="color:#006644">{{ sv.pass | default(0) }}</b> pass</span>
+        <span><b style="color:#f79233">{{ sv.partial | default(0) }}</b> partial</span>
+        <span><b style="color:#ae2a19">{{ sv.fail | default(0) }}</b> fail</span>
+        <span><b>{{ sv.total_questions | default(0) }}</b> total</span>
+      </div>
+      <span class="score-pill {{ pill_class }}">{{ score }}%</span>
+      {% if sv.needs_human_validation %}
+        <span class="badge badge-hitl">needs review</span>
+      {% endif %}
+    </div>
+
+    {% if sv.question_results %}
+    <table class="q-detail">
+      <thead>
+        <tr>
+          <th class="q-num">#</th>
+          <th>Question</th>
+          <th style="width:80px">Result</th>
+          <th>Note / Error</th>
+          {% if sv.question_results | selectattr("generated_sql") | list %}
+          <th>Generated SQL</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% set has_sql = sv.question_results | selectattr("generated_sql") | list | length > 0 %}
+        {% for q in sv.question_results %}
+        <tr class="q-row-{{ q.result }}">
+          <td class="q-num">{{ loop.index }}</td>
+          <td class="q-question">{{ q.nl_question }}</td>
+          <td>
+            {% if q.result == "pass" %}
+              <span class="badge badge-pass">pass</span>
+            {% elif q.result == "partial" %}
+              <span class="badge badge-warn">partial</span>
+            {% else %}
+              <span class="badge badge-fail">fail</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if q.note %}<span class="q-note">{{ q.note }}</span>{% endif %}
+            {% if q.error %}<span class="q-note" style="color:#ae2a19">{{ q.error }}</span>{% endif %}
+            {% if not q.note and not q.error %}<span style="color:#97a0af">—</span>{% endif %}
+          </td>
+          {% if has_sql %}
+          <td>
+            {% if q.generated_sql %}
+              <span class="q-sql">{{ q.generated_sql }}</span>
+            {% else %}
+              <span style="color:#97a0af">—</span>
+            {% endif %}
+          </td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="no-questions">No questions were tested for this semantic view.</div>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <!-- ── SVs requiring human review ── -->
+  {% if needs_hitl_count > 0 %}
+  <h2 class="section">SVs Requiring Human Review</h2>
+  {% for sv in sv_scores if sv.needs_human_validation %}
+  <div style="background:#fff;border:1px solid #4c9aff;border-radius:6px;padding:14px 18px;margin-bottom:10px;">
+    <div style="font-family:monospace;font-weight:600;margin-bottom:4px;">{{ sv.sv_name }}</div>
+    <div style="font-size:13px;color:#505f79;">{{ sv.human_validation_reason or "Insufficient evaluation data." }}</div>
+    <div style="font-size:12px;color:#6b778c;margin-top:4px;">YAML: <code>{{ sv.yaml_path }}</code></div>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+</div>
+
+<footer>SV Automation &nbsp;|&nbsp; HITL Checkpoint 2 — post_evaluation</footer>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SV Automation — Cluster Assessment Report</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; background: #f4f5f7; color: #172b4d; }
+    header { background: #0c3d6b; color: #fff; padding: 20px 32px; }
+    header h1 { font-size: 22px; font-weight: 600; }
+    header p { margin-top: 4px; font-size: 13px; opacity: .75; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+    .summary-bar { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .stat { background: #fff; border: 1px solid #dfe1e6; border-radius: 6px; padding: 16px 20px; flex: 1; min-width: 140px; }
+    .stat .num { font-size: 32px; font-weight: 700; color: #0c3d6b; }
+    .stat .label { font-size: 12px; color: #6b778c; margin-top: 4px; }
+    .hitl-box { background: #fff; border: 2px solid #0c3d6b; border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+    .hitl-box h2 { font-size: 16px; margin-bottom: 8px; color: #0c3d6b; }
+    .hitl-box p { color: #505f79; margin-bottom: 16px; line-height: 1.5; }
+    .hitl-cmds { background: #f4f5f7; border-radius: 4px; padding: 12px 16px; font-family: monospace; font-size: 13px; line-height: 2; }
+    .hitl-cmds .approve { color: #006644; font-weight: 600; }
+    .hitl-cmds .reject  { color: #ae2a19; font-weight: 600; }
+    h2.section { font-size: 17px; margin: 28px 0 12px; border-bottom: 2px solid #dfe1e6; padding-bottom: 6px; }
+    .cluster-card { background: #fff; border: 1px solid #dfe1e6; border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .cluster-header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; cursor: pointer; user-select: none; }
+    .cluster-header:hover { background: #f4f5f7; }
+    .cluster-id { font-weight: 600; font-size: 15px; flex: 1; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+    .badge-high    { background: #e3fcef; color: #006644; }
+    .badge-medium  { background: #fffae6; color: #6d5100; }
+    .badge-low     { background: #ffebe6; color: #ae2a19; }
+    .badge-count   { background: #e6f0ff; color: #0052cc; }
+    .cluster-body { padding: 0 20px 16px; border-top: 1px solid #dfe1e6; }
+    .cluster-body details > summary { list-style: none; }
+    .meta-row { display: flex; gap: 24px; padding: 12px 0; flex-wrap: wrap; }
+    .meta-item { flex: 1; min-width: 160px; }
+    .meta-item .key { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: #6b778c; margin-bottom: 3px; }
+    .meta-item .val { font-size: 13px; }
+    table.tables-list { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+    table.tables-list th { background: #f4f5f7; text-align: left; padding: 7px 10px; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: #6b778c; }
+    table.tables-list td { padding: 7px 10px; border-top: 1px solid #f4f5f7; font-family: monospace; }
+    table.tables-list tr:hover td { background: #f4f5f7; }
+    .join-keys { margin-top: 8px; }
+    .join-key-item { font-family: monospace; font-size: 12px; background: #f4f5f7; border-radius: 4px; padding: 5px 10px; margin-bottom: 4px; }
+    .unclustered { background: #fffae6; border: 1px solid #f0d060; border-radius: 6px; padding: 12px 16px; }
+    .unclustered h3 { font-size: 13px; color: #6d5100; margin-bottom: 8px; }
+    .unclustered ul { padding-left: 18px; font-family: monospace; font-size: 12px; line-height: 1.8; }
+    footer { text-align: center; padding: 24px; font-size: 12px; color: #97a0af; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SV Automation — Cluster Assessment Report</h1>
+  <p>Generated {{ generated_at }} UTC &nbsp;|&nbsp; HITL Checkpoint 1 of 2</p>
+</header>
+
+<div class="container">
+
+  <!-- HITL instructions -->
+  <div class="hitl-box">
+    <h2>Action Required — Approve or Reject</h2>
+    <p>
+      Review the cluster assignments below. When satisfied, run one of the following commands
+      from the run directory to unblock the pipeline. The process is polling for one of these
+      signal files and will proceed automatically within ~10 seconds.
+    </p>
+    <div class="hitl-cmds">
+      <span class="approve">touch post_plan.approved</span>   &nbsp;— proceed to SV generation<br>
+      <span class="reject">touch post_plan.rejected</span>   &nbsp;— abort the run
+    </div>
+  </div>
+
+  <!-- Summary stats -->
+  <div class="summary-bar">
+    <div class="stat">
+      <div class="num">{{ cluster_plan.total_clusters }}</div>
+      <div class="label">Clusters</div>
+    </div>
+    <div class="stat">
+      <div class="num">
+        {% set total_tables = namespace(n=0) %}
+        {% for c in cluster_plan.clusters %}{% set total_tables.n = total_tables.n + c.tables|length %}{% endfor %}
+        {{ total_tables.n }}
+      </div>
+      <div class="label">Clustered Tables</div>
+    </div>
+    <div class="stat">
+      <div class="num">{{ cluster_plan.unclustered_tables|length }}</div>
+      <div class="label">Unclustered</div>
+    </div>
+    <div class="stat">
+      <div class="num">
+        {% set high = namespace(n=0) %}
+        {% for c in cluster_plan.clusters %}{% if c.confidence == "high" %}{% set high.n = high.n + 1 %}{% endif %}{% endfor %}
+        {{ high.n }}
+      </div>
+      <div class="label">High Confidence</div>
+    </div>
+    <div class="stat">
+      <div class="num">{{ lineage_results|length }}</div>
+      <div class="label">Lineage Mapped</div>
+    </div>
+  </div>
+
+  <!-- Cluster cards -->
+  <h2 class="section">Clusters</h2>
+  {% set lineage_by_id = {} %}
+  {% for lr in lineage_results %}{% set _ = lineage_by_id.update({lr.cluster_id: lr}) %}{% endfor %}
+
+  {% for cluster in cluster_plan.clusters %}
+  {% set lr = lineage_by_id.get(cluster.cluster_id, {}) %}
+  <div class="cluster-card">
+    <div class="cluster-header">
+      <span class="cluster-id">{{ cluster.cluster_id }}</span>
+      <span class="badge badge-{{ cluster.confidence }}">{{ cluster.confidence }} confidence</span>
+      <span class="badge badge-count">{{ cluster.tables|length }} tables</span>
+      {% if cluster.split_reason %}<span class="badge" style="background:#ffebe6;color:#ae2a19">split</span>{% endif %}
+    </div>
+    {% if cluster.confidence_rationale %}
+    <div style="padding:6px 20px 0;font-size:12px;color:#6b778c;border-top:1px solid #f4f5f7;background:#fafbfc;">
+      {{ cluster.confidence_rationale }}
+    </div>
+    {% endif %}
+    <div class="cluster-body">
+
+      <div class="meta-row">
+        <div class="meta-item">
+          <div class="key">Recommended SV Name</div>
+          <div class="val" style="font-family:monospace">{{ lr.recommended_sv_name or "—" }}</div>
+        </div>
+        <div class="meta-item">
+          <div class="key">Description</div>
+          <div class="val">{{ lr.recommended_description or "—" }}</div>
+        </div>
+        <div class="meta-item">
+          <div class="key">Primary Tag</div>
+          <div class="val" style="font-family:monospace">{{ cluster.primary_tag or "—" }}</div>
+        </div>
+        <div class="meta-item">
+          <div class="key">Primary Warehouse</div>
+          <div class="val" style="font-family:monospace">{{ cluster.primary_warehouse or "—" }}</div>
+        </div>
+        <div class="meta-item">
+          <div class="key">Personas</div>
+          <div class="val">{{ cluster.personas | join(", ") if cluster.personas else "—" }}</div>
+        </div>
+      </div>
+
+      {% if cluster.split_reason %}
+      <div style="background:#fff8f0;border:1px solid #f0c070;border-radius:4px;padding:8px 12px;margin-bottom:10px;font-size:12px;color:#6d5100;">
+        <strong>Split reason:</strong> {{ cluster.split_reason }}
+      </div>
+      {% endif %}
+
+      <!-- Tables -->
+      <table class="tables-list">
+        <thead>
+          <tr>
+            <th>Table</th>
+            <th>Type</th>
+            <th>Columns</th>
+            <th>Upstream Deps</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tbl in cluster.tables %}
+          {% set detail = lr.table_details.get(tbl, {}) if lr.table_details else {} %}
+          <tr>
+            <td>{{ tbl }}</td>
+            <td>{{ detail.table_type or "—" }}</td>
+            <td>{{ detail.columns|length if detail.columns else "—" }}</td>
+            <td>{{ detail.upstream|length if detail.upstream else 0 }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!-- Join keys -->
+      {% if lr.join_keys %}
+      <div class="join-keys" style="margin-top:14px;">
+        <div class="key" style="font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#6b778c;margin-bottom:6px;">Identified Join Keys</div>
+        {% for jk in lr.join_keys %}
+        <div class="join-key-item">
+          {{ jk.table_a.split('.')[-1] }} ↔ {{ jk.table_b.split('.')[-1] }}
+          &nbsp;on&nbsp; {{ jk.key_columns | join(", ") }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <!-- Weak / ambiguous flags -->
+      {% if cluster.weak_cohesion_tables %}
+      <div style="margin-top:10px;font-size:12px;color:#6d5100;">
+        <strong>Weak cohesion:</strong> {{ cluster.weak_cohesion_tables | join(", ") }}
+      </div>
+      {% endif %}
+      {% if cluster.ambiguous_tables %}
+      <div style="margin-top:6px;font-size:12px;color:#6d5100;">
+        <strong>Ambiguous (multi-cluster affinity):</strong> {{ cluster.ambiguous_tables | join(", ") }}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- Unclustered -->
+  {% if cluster_plan.unclustered_tables %}
+  <h2 class="section">Unclustered Tables</h2>
+  <div class="unclustered">
+    <h3>{{ cluster_plan.unclustered_tables|length }} table(s) had insufficient query history to assign to a cluster.</h3>
+    <ul>
+      {% for t in cluster_plan.unclustered_tables %}
+      <li>{{ t }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+</div>
+
+<footer>SV Automation &nbsp;|&nbsp; HITL Checkpoint 1 — post_plan</footer>
+</body>
+</html>

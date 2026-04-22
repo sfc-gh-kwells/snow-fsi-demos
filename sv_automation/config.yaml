@@ -1,0 +1,37 @@
+scope:
+  level: schema            # account | database | schema
+  database: MY_DATABASE
+  schema: MY_SCHEMA
+
+mode:
+  type: automated          # automated | hitl
+  hitl_checkpoints:
+    - post_plan            # HITL Checkpoint 1: after Phase 3 assessment report
+    - post_evaluation      # HITL Checkpoint 2: after Phase 5 evaluation report
+    - on_breaking_refresh_change  # during refresh R2 for breaking changes
+
+thresholds:
+  max_tables_per_sv: 15
+  min_accuracy_score: 70         # SVs below this flagged in automated mode
+  cortex_search_min_distinct: 50
+  query_history_lookback_days: 30
+  min_eval_questions_per_table: 5
+  min_join_eval_questions: 10
+  min_query_length: 50           # filter trivial queries from eval set
+  min_table_queries: 5           # exclude tables with fewer than 5 queries in lookback window (0 = no filter)
+
+self_healing:
+  max_self_heal_retries: 3       # max cortex reflect fix attempts per SV
+  max_orchestrator_retries: 1    # max single-shot agent retries (other phases)
+
+batching:
+  table_batch_size: 25           # tables per Phase 1 shard agent
+  max_concurrent_agents: 10      # asyncio.gather() concurrency cap
+  agent_timeout_seconds: 1200    # max seconds per agent call before quarantine (20 min)
+
+snowflake:
+  connection: MY_DEMO
+  role: SYSADMIN                 # role used for all Snowflake operations
+  model: auto                    # auto | claude-sonnet-4-6 | claude-opus-4-6
+  target_database: MY_DATABASE   # database for created semantic views
+  target_schema: PUBLIC
