@@ -1,0 +1,207 @@
+FIRST AMENDMENT
+to the
+ISDA MASTER AGREEMENT
+
+dated as of January 15, 2025
+
+between
+
+COMERICA BANK
+("Party A")
+
+and
+
+RACKSPACE US, INC.
+("Party B")
+
+RECITALS
+
+WHEREAS, Party A and Party B are parties to an ISDA Master Agreement dated as of 
+September 26, 2007, including the Schedule thereto (the "Agreement");
+
+WHEREAS, the parties now desire to amend certain provisions of the Agreement to 
+reflect changes in the parties' credit profiles and risk management requirements 
+following the recent corporate restructuring of Party B;
+
+NOW, THEREFORE, in consideration of the mutual agreements contained herein and for 
+other good and valuable consideration, the receipt and sufficiency of which are 
+hereby acknowledged, the parties agree as follows:
+
+ARTICLE I
+AMENDMENTS TO CROSS DEFAULT PROVISIONS
+
+Section 1.1 Cross Default Threshold Amount
+
+Part 1(f) of the Schedule to the Agreement is hereby amended and restated in its 
+entirety to read as follows:
+
+"(f) Cross Default. The provisions of Section 5(a)(vi) will apply to Party A and 
+     will apply to Party B.
+
+     'Specified Indebtedness' means any obligation (whether present or future, 
+     contingent or otherwise, as principal or surety or otherwise) in respect of 
+     borrowed money.
+
+     'Threshold Amount' means:
+
+     (i) With respect to Party A: USD 15,000,000 (Fifteen Million United States 
+         Dollars), increased from the original amount of USD 5,000,000.
+
+     (ii) With respect to Party B: USD 7,500,000 (Seven Million Five Hundred 
+          Thousand United States Dollars), increased from the original amount 
+          of USD 5,000,000.
+
+     'Specified Entities' means:
+
+     (i) With respect to Party A: Comerica Incorporated and any Material 
+         Subsidiary (as defined in Comerica Incorporated's credit agreement).
+
+     (ii) With respect to Party B: Rackspace Technology, Inc. (the parent 
+          company) and any subsidiary that accounts for more than 10% of 
+          consolidated revenues."
+
+Section 1.2 Grace Period for Cross Default
+
+The following sentence is added to Section 5(a)(vi) of the Agreement:
+
+"Notwithstanding the foregoing, a Cross Default Event shall not occur unless 
+such default, event of default or similar condition or event continues unremedied 
+for a period of five (5) Local Business Days after written notice thereof is 
+given by the Non-defaulting Party to the Defaulting Party."
+
+ARTICLE II
+AUTOMATIC EARLY TERMINATION
+
+Section 2.1 Modification of Automatic Early Termination
+
+Part 1(h) of the Schedule to the Agreement is hereby amended and restated to 
+read as follows:
+
+"(h) Automatic Early Termination. The 'Automatic Early Termination' provision 
+     of Section 6(a) will apply to Party A and will apply to Party B.
+
+     Notwithstanding Section 6(a), Automatic Early Termination shall only be 
+     triggered upon the occurrence of an Event of Default under Section 5(a)(vii) 
+     (Bankruptcy) and shall not apply to any other Event of Default."
+
+ARTICLE III
+ADDITIONAL TERMINATION EVENTS
+
+Section 3.1 Additional Termination Event
+
+The following provision is hereby added to Part 1(k) of the Schedule:
+
+"(k) Additional Termination Event. The following shall constitute an Additional 
+     Termination Event:
+
+     (i) Material Adverse Change. If Party B experiences a Material Adverse 
+         Change (as defined below), such event shall constitute an Additional 
+         Termination Event with respect to Party B as the sole Affected Party.
+
+         'Material Adverse Change' means any change, event, or circumstance that 
+         has or would reasonably be expected to have a material adverse effect on:
+         (A) the business, assets, operations, or financial condition of Party B; or
+         (B) the ability of Party B to perform its obligations under this Agreement.
+
+     (ii) Change of Control. If a Change of Control (as defined below) occurs 
+          with respect to Party B, such event shall constitute an Additional 
+          Termination Event with respect to Party B as the sole Affected Party.
+
+          'Change of Control' means:
+          (A) Any person or group acquires beneficial ownership of more than 50% 
+              of the voting securities of Party B or Rackspace Technology, Inc.; or
+          (B) Party B or Rackspace Technology, Inc. merges or consolidates with 
+              another entity, unless the existing shareholders retain more than 
+              50% of the voting power of the surviving entity."
+
+ARTICLE IV
+SET-OFF RIGHTS
+
+Section 4.1 Enhanced Set-Off Rights
+
+Part 6 of the Schedule to the Agreement is hereby amended to add the following:
+
+"Set-off. Upon the occurrence of an Early Termination Date, in addition to and 
+not in limitation of any other rights that a party may have under applicable law, 
+a party ('X') shall have the right to set off any amounts owed by the other party 
+('Y') to X against any amounts owed by X to Y (whether or not arising under this 
+Agreement, matured or contingent, and regardless of the currency in which such 
+amounts are denominated).
+
+For purposes of effecting any such set-off, X may convert any obligation to a 
+single currency selected by X, using rates of exchange determined by X in a 
+commercially reasonable manner."
+
+ARTICLE V
+REPRESENTATIONS, WARRANTIES AND EFFECTIVENESS
+
+Section 5.1 Representations and Warranties
+
+Each party represents and warrants to the other that:
+
+(a) It has all necessary power and authority to execute and deliver this First 
+    Amendment and to perform its obligations hereunder;
+
+(b) This First Amendment has been duly authorized, executed and delivered by it 
+    and constitutes its legal, valid and binding obligation;
+
+(c) No Event of Default, Potential Event of Default, or Termination Event has 
+    occurred and is continuing;
+
+(d) All representations and warranties made by it in the Agreement are true and 
+    correct as of the date hereof.
+
+Section 5.2 Effectiveness
+
+This First Amendment shall become effective as of January 15, 2025 (the "First 
+Amendment Effective Date").
+
+Section 5.3 Continuity of Agreement
+
+Except as expressly amended hereby, the Agreement shall continue in full force 
+and effect in accordance with its terms. On and after the First Amendment 
+Effective Date, each reference in the Agreement to "this Agreement," "hereunder," 
+"hereof," or words of like import shall mean and be a reference to the Agreement 
+as amended by this First Amendment.
+
+Section 5.4 Amendment Hierarchy
+
+In the event of any conflict between the terms of the original Agreement dated 
+September 26, 2007 and this First Amendment, this First Amendment shall prevail.
+
+Section 5.5 Governing Law
+
+This First Amendment shall be governed by and construed in accordance with the 
+laws of the State of Michigan (consistent with the original Agreement).
+
+Section 5.6 Counterparts
+
+This First Amendment may be executed in counterparts, each of which shall be 
+deemed an original.
+
+IN WITNESS WHEREOF, the parties have caused this First Amendment to be executed 
+as of the date first written above.
+
+COMERICA BANK                             RACKSPACE US, INC.
+
+By: _________________________            By: _________________________
+Name: Jennifer Martinez                  Name: Michael Thompson
+Title: Senior Vice President             Title: Chief Financial Officer
+Date: January 15, 2025                   Date: January 15, 2025
+
+
+SCHEDULE OF AMENDED TERMS
+
+The following table summarizes the key changes made by this First Amendment:
+
++----------------------------------+-------------------+-------------------+
+| Term                             | Original Value    | Amended Value     |
++----------------------------------+-------------------+-------------------+
+| Cross Default Threshold (Party A)| USD 5,000,000     | USD 15,000,000    |
+| Cross Default Threshold (Party B)| USD 5,000,000     | USD 7,500,000     |
+| Cross Default Grace Period       | None              | 5 Business Days   |
+| Automatic Early Termination      | All Events        | Bankruptcy Only   |
+| Additional Termination Events    | None              | MAC, Change of    |
+|                                  |                   | Control           |
+| Set-off Rights                   | Limited           | Enhanced          |
++----------------------------------+-------------------+-------------------+

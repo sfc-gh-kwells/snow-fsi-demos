@@ -1,0 +1,407 @@
+name: isda_agreement_terms
+description: |
+  Semantic model for querying ISDA Master Agreement terms including party information,
+  events of default, termination events, close-out methods, and amendment resolution.
+  Use this to answer questions about specific agreements, counterparty exposure,
+  and current effective terms after amendment resolution.
+
+tables:
+  - name: agreement_terms
+    description: Current agreement terms with amendment resolution applied
+    base_table:
+      database: ISDA_DOCUMENT_POC
+      schema: SEMANTIC_VIEWS
+      table: V_AGREEMENT_TERMS
+    
+    dimensions:
+      - name: document_id
+        description: Unique identifier for the master agreement document
+        expr: DOCUMENT_ID
+        data_type: VARCHAR
+        
+      - name: file_name
+        description: Original filename of the document
+        expr: FILE_NAME
+        data_type: VARCHAR
+        
+      - name: party_a
+        description: First party to the agreement (typically the dealer/bank)
+        expr: PARTY_A
+        data_type: VARCHAR
+        synonyms:
+          - counterparty a
+          - dealer
+          - bank
+          - party 1
+        cortex_search_service:
+          service: PARTY_NAME_SEARCH
+          literal_column: PARTY_NAME
+          database: ISDA_DOCUMENT_POC
+          schema: SEMANTIC_VIEWS
+          
+      - name: party_b  
+        description: Second party to the agreement (typically the client/customer)
+        expr: PARTY_B
+        data_type: VARCHAR
+        synonyms:
+          - counterparty b
+          - client
+          - customer
+          - party 2
+        cortex_search_service:
+          service: PARTY_NAME_SEARCH
+          literal_column: PARTY_NAME
+          database: ISDA_DOCUMENT_POC
+          schema: SEMANTIC_VIEWS
+          
+      - name: agreement_version
+        description: ISDA agreement version (1992 or 2002)
+        expr: AGREEMENT_VERSION
+        data_type: VARCHAR
+        sample_values:
+          - "1992"
+          - "2002"
+          
+      - name: governing_law
+        description: Legal jurisdiction governing the agreement
+        expr: GOVERNING_LAW
+        data_type: VARCHAR
+        sample_values:
+          - "New York"
+          - "English"
+          
+      - name: events_of_default
+        description: JSON array of events that trigger default (Section 5(a)) including Failure to Pay, Breach, Credit Support Default, Misrepresentation, Default Under Specified Transaction, Cross Default, Bankruptcy, Merger Without Assumption
+        expr: EVENTS_OF_DEFAULT
+        data_type: VARCHAR
+        synonyms:
+          - default events
+          - EOD
+          - section 5a
+          
+      - name: termination_events
+        description: JSON array of termination events (Section 5(b)) including Illegality, Force Majeure, Tax Event, Tax Event Upon Merger, Credit Event Upon Merger
+        expr: TERMINATION_EVENTS  
+        data_type: VARCHAR
+        synonyms:
+          - section 5b
+          - illegality
+          - force majeure
+          - tax event
+          
+      - name: closeout_method
+        description: Method for calculating close-out amounts (Close-out Amount for 2002, Market Quotation or Loss for 1992)
+        expr: CLOSEOUT_METHOD
+        data_type: VARCHAR
+        sample_values:
+          - "Close-out Amount"
+          - "Market Quotation"
+          - "Loss"
+        synonyms:
+          - close out
+          - calculation method
+          
+      - name: cross_default_applicable
+        description: Whether cross-default provisions apply to this agreement
+        expr: CROSS_DEFAULT_APPLICABLE
+        data_type: BOOLEAN
+        
+      - name: cross_default_source
+        description: Source of current cross-default terms - either Original Agreement or Amendment number with date
+        expr: CROSS_DEFAULT_SOURCE
+        data_type: VARCHAR
+        
+      - name: has_amendments
+        description: Whether the agreement has been amended
+        expr: HAS_AMENDMENTS
+        data_type: BOOLEAN
+        
+      - name: eligible_collateral
+        description: Types of collateral accepted under the Credit Support Annex (CSA)
+        expr: ELIGIBLE_COLLATERAL
+        data_type: VARCHAR
+
+      - name: automatic_early_termination_party_a
+        description: Whether Automatic Early Termination applies to Party A
+        expr: AUTOMATIC_EARLY_TERMINATION_PARTY_A
+        data_type: BOOLEAN
+        synonyms:
+          - AET party a
+          
+      - name: automatic_early_termination_party_b
+        description: Whether Automatic Early Termination applies to Party B
+        expr: AUTOMATIC_EARLY_TERMINATION_PARTY_B
+        data_type: BOOLEAN
+        synonyms:
+          - AET party b
+
+    time_dimensions:
+      - name: agreement_date
+        description: Date the master agreement was executed
+        expr: AGREEMENT_DATE
+        data_type: DATE
+        
+      - name: latest_amendment_date
+        description: Date of most recent amendment (if any)
+        expr: LATEST_AMENDMENT_DATE
+        data_type: DATE
+
+    facts:
+      - name: original_cross_default_threshold
+        description: Original cross-default threshold from the master agreement before any amendments
+        expr: ORIGINAL_CROSS_DEFAULT_THRESHOLD
+        data_type: NUMBER
+        
+      - name: current_cross_default_threshold_party_a
+        description: Current cross-default threshold for Party A after amendment resolution (later amendments supersede earlier)
+        expr: CURRENT_CROSS_DEFAULT_THRESHOLD_PARTY_A
+        data_type: NUMBER
+        synonyms:
+          - threshold amount party a
+          - default threshold party a
+          
+      - name: current_cross_default_threshold_party_b
+        description: Current cross-default threshold for Party B after amendment resolution
+        expr: CURRENT_CROSS_DEFAULT_THRESHOLD_PARTY_B
+        data_type: NUMBER
+        synonyms:
+          - threshold amount party b
+          - default threshold party b
+          
+      - name: csa_threshold_party_a
+        description: Credit Support Annex threshold amount for Party A
+        expr: CSA_THRESHOLD_PARTY_A
+        data_type: NUMBER
+        
+      - name: csa_threshold_party_b
+        description: Credit Support Annex threshold amount for Party B
+        expr: CSA_THRESHOLD_PARTY_B
+        data_type: NUMBER
+        
+      - name: minimum_transfer_amount
+        description: Minimum transfer amount under Credit Support Annex
+        expr: MINIMUM_TRANSFER_AMOUNT
+        data_type: NUMBER
+        
+      - name: latest_amendment_number
+        description: Number of the most recent amendment
+        expr: LATEST_AMENDMENT_NUMBER
+        data_type: NUMBER
+
+    filters:
+      - name: has_cross_default
+        description: Agreements with cross-default provisions applicable
+        expr: CROSS_DEFAULT_APPLICABLE = TRUE
+        
+      - name: has_amendments
+        description: Agreements that have been amended
+        expr: HAS_AMENDMENTS = TRUE
+        
+      - name: isda_2002
+        description: 2002 ISDA Master Agreements only
+        expr: AGREEMENT_VERSION = '2002'
+        
+      - name: isda_1992
+        description: 1992 ISDA Master Agreements only
+        expr: AGREEMENT_VERSION = '1992'
+        
+      - name: has_csa
+        description: Agreements with Credit Support Annex
+        expr: CSA_DOCUMENT_ID IS NOT NULL
+
+  - name: amendment_history
+    description: Detailed amendment history for each master agreement showing how terms changed over time
+    base_table:
+      database: ISDA_DOCUMENT_POC
+      schema: SEMANTIC_VIEWS
+      table: V_AMENDMENT_HISTORY
+    
+    dimensions:
+      - name: master_agreement_id
+        description: Unique identifier for the master agreement
+        expr: MASTER_AGREEMENT_ID
+        data_type: VARCHAR
+        
+      - name: party_a
+        description: First party to the agreement (typically the dealer/bank)
+        expr: PARTY_A
+        data_type: VARCHAR
+        synonyms:
+          - counterparty a
+          - dealer
+          - bank
+          
+      - name: party_b
+        description: Second party to the agreement (typically the client/customer)
+        expr: PARTY_B
+        data_type: VARCHAR
+        synonyms:
+          - counterparty b
+          - client
+          - customer
+          
+      - name: agreement_version
+        description: ISDA agreement version (1992 or 2002)
+        expr: AGREEMENT_VERSION
+        data_type: VARCHAR
+        
+      - name: amendment_document_id
+        description: Unique identifier for the amendment document
+        expr: AMENDMENT_DOCUMENT_ID
+        data_type: VARCHAR
+        
+      - name: amended_sections
+        description: JSON array of sections modified by this amendment
+        expr: AMENDED_SECTIONS
+        data_type: VARCHAR
+        synonyms:
+          - sections changed
+          - modified sections
+          
+      - name: additional_termination_events
+        description: New termination events added by this amendment
+        expr: ADDITIONAL_TERMINATION_EVENTS
+        data_type: VARCHAR
+        
+      - name: supersedes_previous_amendment
+        description: Whether this amendment supersedes a previous amendment
+        expr: SUPERSEDES_PREVIOUS_AMENDMENT
+        data_type: BOOLEAN
+
+    time_dimensions:
+      - name: original_agreement_date
+        description: Date the master agreement was executed
+        expr: ORIGINAL_AGREEMENT_DATE
+        data_type: DATE
+        
+      - name: amendment_effective_date
+        description: Date this amendment became effective
+        expr: AMENDMENT_EFFECTIVE_DATE
+        data_type: DATE
+        synonyms:
+          - amendment date
+          - effective date
+
+    facts:
+      - name: amendment_number
+        description: Sequential number of the amendment (1, 2, 3, etc.)
+        expr: AMENDMENT_NUMBER
+        data_type: NUMBER
+        
+      - name: original_cross_default_threshold
+        description: Original cross-default threshold from the master agreement
+        expr: ORIGINAL_CROSS_DEFAULT_THRESHOLD
+        data_type: NUMBER
+        
+      - name: new_cross_default_threshold_party_a
+        description: New cross-default threshold for Party A set by this amendment
+        expr: NEW_CROSS_DEFAULT_THRESHOLD_PARTY_A
+        data_type: NUMBER
+        
+      - name: new_cross_default_threshold_party_b
+        description: New cross-default threshold for Party B set by this amendment
+        expr: NEW_CROSS_DEFAULT_THRESHOLD_PARTY_B
+        data_type: NUMBER
+
+verified_queries:
+  - name: "list_all_agreements"
+    question: "Show me all ISDA agreements with their counterparties"
+    verified_sql: |
+      SELECT DOCUMENT_ID, PARTY_A, PARTY_B, AGREEMENT_VERSION, AGREEMENT_DATE
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_AGREEMENT_TERMS
+      ORDER BY AGREEMENT_DATE DESC
+    verified_at: 2024-01-15
+    verified_by: system
+    
+  - name: "cross_default_thresholds"
+    question: "What are the current cross-default thresholds for each agreement?"
+    verified_sql: |
+      SELECT PARTY_A, PARTY_B, CURRENT_CROSS_DEFAULT_THRESHOLD_PARTY_A, CURRENT_CROSS_DEFAULT_THRESHOLD_PARTY_B, CROSS_DEFAULT_SOURCE
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_AGREEMENT_TERMS
+      WHERE CROSS_DEFAULT_APPLICABLE = TRUE
+    verified_at: 2024-01-15
+    verified_by: system
+    
+  - name: "amended_agreements"
+    question: "Which agreements have been amended?"
+    verified_sql: |
+      SELECT PARTY_A, PARTY_B, AGREEMENT_DATE, LATEST_AMENDMENT_DATE, LATEST_AMENDMENT_NUMBER, CROSS_DEFAULT_SOURCE
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_AGREEMENT_TERMS
+      WHERE HAS_AMENDMENTS = TRUE
+    verified_at: 2024-01-15
+    verified_by: system
+    
+  - name: "barclays_threshold"
+    question: "What is the cross-default threshold for Barclays?"
+    verified_sql: |
+      SELECT PARTY_A, PARTY_B, ORIGINAL_CROSS_DEFAULT_THRESHOLD, CURRENT_CROSS_DEFAULT_THRESHOLD_PARTY_A, CROSS_DEFAULT_SOURCE
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_AGREEMENT_TERMS
+      WHERE PARTY_A ILIKE '%Barclays%' OR PARTY_B ILIKE '%Barclays%'
+    verified_at: 2024-01-15
+    verified_by: system
+
+  - name: "barclays_amendment_history"
+    question: "Show me the amendment history for the Barclays agreement"
+    verified_sql: |
+      SELECT PARTY_A, PARTY_B, AGREEMENT_VERSION, ORIGINAL_AGREEMENT_DATE,
+             AMENDMENT_NUMBER, AMENDMENT_EFFECTIVE_DATE, AMENDED_SECTIONS,
+             ORIGINAL_CROSS_DEFAULT_THRESHOLD, NEW_CROSS_DEFAULT_THRESHOLD_PARTY_A, 
+             NEW_CROSS_DEFAULT_THRESHOLD_PARTY_B, SUPERSEDES_PREVIOUS_AMENDMENT
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_AMENDMENT_HISTORY
+      WHERE PARTY_A ILIKE '%Barclays%' OR PARTY_B ILIKE '%Barclays%'
+      ORDER BY AMENDMENT_NUMBER
+    verified_at: 2024-01-15
+    verified_by: system
+
+  - name: "rackspace_amendment_history"
+    question: "Show me the amendment history for Rackspace"
+    verified_sql: |
+      SELECT PARTY_A, PARTY_B, AGREEMENT_VERSION, ORIGINAL_AGREEMENT_DATE,
+             AMENDMENT_NUMBER, AMENDMENT_EFFECTIVE_DATE, AMENDED_SECTIONS,
+             ORIGINAL_CROSS_DEFAULT_THRESHOLD, NEW_CROSS_DEFAULT_THRESHOLD_PARTY_A, 
+             NEW_CROSS_DEFAULT_THRESHOLD_PARTY_B, SUPERSEDES_PREVIOUS_AMENDMENT
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_AMENDMENT_HISTORY
+      WHERE PARTY_A ILIKE '%Rackspace%' OR PARTY_B ILIKE '%Rackspace%'
+      ORDER BY AMENDMENT_NUMBER
+    verified_at: 2024-01-15
+    verified_by: system
+
+custom_instructions: |
+  When answering questions about ISDA agreements:
+  
+  1. CONTEXT TRACKING: When user says "this agreement" or "the agreement", refer to the most 
+     recently discussed agreement (e.g., if they just asked about Barclays, "this agreement" 
+     means the Barclays agreement).
+  
+  2. AMENDMENT HISTORY: Use V_AMENDMENT_HISTORY to show how terms changed over time. This view
+     shows each amendment with its effective date, sections changed, and new threshold values.
+  
+  3. AMENDMENT RESOLUTION: Always use CURRENT_CROSS_DEFAULT_THRESHOLD fields which reflect 
+     the "later supersedes earlier" resolution logic. The CROSS_DEFAULT_SOURCE field shows 
+     whether the value comes from the original agreement or which amendment.
+     
+  4. ORIGINAL vs CURRENT: If asked about "original" terms, use ORIGINAL_CROSS_DEFAULT_THRESHOLD.
+     If asked about "current" or "effective" terms, use CURRENT_CROSS_DEFAULT_THRESHOLD.
+     
+  5. EVENTS OF DEFAULT (Section 5(a)) include:
+     - Failure to Pay or Deliver
+     - Breach of Agreement  
+     - Credit Support Default
+     - Misrepresentation
+     - Default Under Specified Transaction
+     - Cross Default (applies if CROSS_DEFAULT_APPLICABLE = TRUE)
+     - Bankruptcy
+     - Merger Without Assumption
+     
+  6. TERMINATION EVENTS (Section 5(b)) include:
+     - Illegality
+     - Force Majeure (2002 only)
+     - Tax Event
+     - Tax Event Upon Merger
+     - Credit Event Upon Merger
+     
+  7. CLOSE-OUT METHODS differ by version:
+     - 1992 ISDA: Market Quotation (primary) or Loss (fallback)
+     - 2002 ISDA: Close-out Amount (single unified method)
+     
+  8. For party searches, use ILIKE for case-insensitive matching.

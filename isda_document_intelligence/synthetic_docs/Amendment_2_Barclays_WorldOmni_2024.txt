@@ -1,0 +1,210 @@
+SECOND AMENDMENT
+to the
+ISDA MASTER AGREEMENT
+
+dated as of September 15, 2024
+
+between
+
+BARCLAYS BANK PLC
+("Party A")
+
+and
+
+WORLD OMNI AUTO RECEIVABLES TRUST 2007-B
+("Party B")
+
+RECITALS
+
+WHEREAS, Party A and Party B are parties to an ISDA Master Agreement dated as of 
+September 26, 2007, including the Schedule thereto, as amended by the First Amendment 
+dated as of March 1, 2024 (collectively, the "Agreement");
+
+WHEREAS, the parties now desire to further amend certain provisions of the Agreement, 
+including an increase to the Cross Default Threshold Amounts to reflect changes in 
+market conditions and the parties' credit profiles;
+
+NOW, THEREFORE, in consideration of the mutual agreements contained herein and for 
+other good and valuable consideration, the receipt and sufficiency of which are 
+hereby acknowledged, the parties agree as follows:
+
+ARTICLE I
+AMENDMENTS TO CROSS DEFAULT PROVISIONS
+
+Section 1.1 Cross Default Threshold Amount - Superseding Prior Amendment
+
+This Section 1.1 supersedes and replaces in its entirety Section 1.1 of the First 
+Amendment dated March 1, 2024.
+
+Part 1(f) of the Schedule to the Agreement is hereby amended and restated in its 
+entirety to read as follows:
+
+"(f) Cross Default. The provisions of Section 5(a)(vi) will apply to Party A and 
+     will apply to Party B.
+
+     'Specified Indebtedness' means any obligation (whether present or future, 
+     contingent or otherwise, as principal or surety or otherwise) in respect of 
+     borrowed money, excluding any indebtedness owed to any affiliate of the 
+     relevant party.
+
+     'Threshold Amount' means:
+
+     (i) With respect to Party A: USD 25,000,000 (Twenty-Five Million United States 
+         Dollars), or if higher, an amount equal to 3% of the shareholders' equity 
+         of Party A as shown in its most recent audited financial statements.
+
+     (ii) With respect to Party B: USD 15,000,000 (Fifteen Million United States 
+          Dollars)
+
+     'Specified Entities' means:
+
+     (i) With respect to Party A: Barclays PLC and any subsidiary of Barclays PLC 
+         that is a Material Subsidiary (as defined in the credit agreement of 
+         Barclays PLC).
+
+     (ii) With respect to Party B: World Omni Financial Corp. and any issuer of 
+          securities in a securitization transaction sponsored by World Omni 
+          Financial Corp.
+
+     For the avoidance of doubt, (a) a default, event of default or other similar 
+     condition or event in respect of Specified Indebtedness of a party or any 
+     Specified Entity of that party in an aggregate amount equal to or exceeding 
+     the applicable Threshold Amount shall constitute a Cross Default under 
+     Section 5(a)(vi) of this Agreement, and (b) the Threshold Amount applicable 
+     to Party A shall be recalculated annually upon the filing of Party A's 
+     audited financial statements."
+
+ARTICLE II
+ADDITIONAL TERMINATION EVENT
+
+Section 2.1 Additional Termination Event
+
+The following provision is hereby added to Part 1(k) of the Schedule:
+
+"(k) Additional Termination Event. The following shall constitute an Additional 
+     Termination Event:
+
+     (i) Rating Downgrade Event. If at any time:
+
+         (A) With respect to Party A: The long-term senior unsecured debt rating 
+             of Party A falls below BBB- by Standard & Poor's or Baa3 by Moody's 
+             Investors Service, or either rating agency withdraws its rating of 
+             Party A; or
+
+         (B) With respect to Party B: The rating of any class of notes issued by 
+             Party B falls below BBB- by Standard & Poor's or Baa3 by Moody's 
+             Investors Service;
+
+         then such event shall constitute an Additional Termination Event with 
+         respect to the relevant party as the sole Affected Party, and all 
+         Transactions shall be Affected Transactions.
+
+     (ii) Net Asset Value Decline. With respect to Party B only: If the Net Asset 
+          Value of Party B declines by more than 25% from the Net Asset Value as 
+          of the date of this Second Amendment, as determined by Party A acting 
+          in good faith, such decline shall constitute an Additional Termination 
+          Event with respect to Party B as the sole Affected Party."
+
+ARTICLE III
+COLLATERAL REQUIREMENTS
+
+Section 3.1 Credit Support
+
+The following provision is hereby added to Part 4 of the Schedule:
+
+"Credit Support Provider.
+
+(a) Credit Support Provider with respect to Party A: None, unless Party A's 
+    long-term senior unsecured debt rating falls below A- by Standard & Poor's 
+    or A3 by Moody's, in which case Barclays PLC shall provide a guarantee 
+    substantially in the form of the ISDA 2016 Guarantee.
+
+(b) Credit Support Provider with respect to Party B: World Omni Financial Corp.
+
+Credit Support Document.
+
+(a) Credit Support Document with respect to Party A: The guarantee from Barclays 
+    PLC, if required pursuant to the above provision.
+
+(b) Credit Support Document with respect to Party B: The Credit Support Annex 
+    between the parties, if any, and the guarantee from World Omni Financial Corp."
+
+ARTICLE IV
+REPRESENTATIONS, WARRANTIES AND EFFECTIVENESS
+
+Section 4.1 Representations and Warranties
+
+Each party represents and warrants to the other that:
+
+(a) It has all necessary power and authority to execute and deliver this Second 
+    Amendment and to perform its obligations hereunder;
+
+(b) This Second Amendment has been duly authorized, executed and delivered by it 
+    and constitutes its legal, valid and binding obligation;
+
+(c) No Event of Default, Potential Event of Default, or Termination Event has 
+    occurred and is continuing;
+
+(d) All representations and warranties made by it in the Agreement (as amended 
+    through the First Amendment) are true and correct as of the date hereof.
+
+Section 4.2 Acknowledgment of Prior Amendments
+
+The parties acknowledge that this Second Amendment is entered into with full 
+knowledge of and subject to the First Amendment dated March 1, 2024, and that 
+to the extent any provision of this Second Amendment conflicts with or supersedes 
+any provision of the First Amendment, this Second Amendment shall control.
+
+Section 4.3 Effectiveness
+
+This Second Amendment shall become effective as of September 15, 2024 (the "Second 
+Amendment Effective Date").
+
+Section 4.4 Continuity of Agreement
+
+Except as expressly amended hereby, the Agreement (as amended by the First Amendment 
+and this Second Amendment) shall continue in full force and effect in accordance 
+with its terms. On and after the Second Amendment Effective Date, each reference 
+in the Agreement to "this Agreement," "hereunder," "hereof," or words of like import 
+shall mean and be a reference to the Agreement as amended by the First Amendment 
+and this Second Amendment.
+
+Section 4.5 Amendment Hierarchy
+
+For the avoidance of doubt, in the event of any conflict between the terms of the 
+original Agreement dated September 26, 2007, the First Amendment dated March 1, 2024, 
+and this Second Amendment, the following order of precedence shall apply (with 
+later documents prevailing over earlier documents):
+
+1. This Second Amendment (highest priority)
+2. The First Amendment dated March 1, 2024
+3. The original ISDA Master Agreement dated September 26, 2007 (lowest priority)
+
+Section 4.6 Governing Law
+
+This Second Amendment shall be governed by and construed in accordance with the 
+laws of the State of New York (without reference to choice of law doctrine).
+
+Section 4.7 Counterparts
+
+This Second Amendment may be executed in counterparts, each of which shall be 
+deemed an original.
+
+IN WITNESS WHEREOF, the parties have caused this Second Amendment to be executed 
+as of the date first written above.
+
+BARCLAYS BANK PLC                        WORLD OMNI AUTO RECEIVABLES TRUST 2007-B
+
+By: _________________________            By: _________________________
+Name:                                    Name:
+Title: Managing Director                 Title: Trustee
+Date: September 15, 2024                 Date: September 15, 2024
+
+ACKNOWLEDGED AND AGREED by the Credit Support Provider:
+
+WORLD OMNI FINANCIAL CORP.
+
+By: _________________________
+Name:
+Title: Chief Financial Officer
+Date: September 15, 2024

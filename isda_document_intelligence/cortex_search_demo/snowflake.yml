@@ -1,0 +1,14 @@
+definition_version: 2
+entities:
+  cortex_search_demo:
+    type: streamlit
+    identifier:
+      name: CORTEX_SEARCH_DEMO
+      database: ISDA_DOCUMENT_POC
+      schema: SEMANTIC_VIEWS
+    query_warehouse: COMPUTE_WH
+    runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
+    compute_pool: DEMO_POOL_CPU
+    main_file: streamlit_app.py
+    artifacts:
+      - streamlit_app.py

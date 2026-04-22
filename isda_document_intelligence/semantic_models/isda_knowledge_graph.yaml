@@ -1,0 +1,212 @@
+name: isda_knowledge_graph
+description: |
+  Semantic model for navigating the ISDA document knowledge graph.
+  Use this to explore relationships between documents, parties, events, and clauses.
+  Supports queries like "which documents is Barclays party to?" or 
+  "what events of default are in the BofA agreement?" or
+  "show the amendment chain for World Omni".
+
+tables:
+  - name: knowledge_graph
+    description: Unified view of nodes and edges in the document knowledge graph
+    base_table:
+      database: ISDA_DOCUMENT_POC
+      schema: SEMANTIC_VIEWS
+      table: V_KNOWLEDGE_GRAPH
+    
+    dimensions:
+      - name: node_id
+        description: Unique identifier for graph node
+        expr: NODE_ID
+        data_type: VARCHAR
+        
+      - name: node_type
+        description: Type of node - DOCUMENT, PARTY, EVENT_OF_DEFAULT, TERMINATION_EVENT, or CLAUSE
+        expr: NODE_TYPE
+        data_type: VARCHAR
+        sample_values:
+          - DOCUMENT
+          - PARTY
+          - EVENT_OF_DEFAULT
+          - TERMINATION_EVENT
+          - CLAUSE
+          - CSA
+          - AMENDMENT
+          
+      - name: node_label
+        description: Human-readable label for the node (e.g., party name, event type, document title)
+        expr: NODE_LABEL
+        data_type: VARCHAR
+        
+      - name: node_properties
+        description: Additional properties stored as JSON
+        expr: NODE_PROPERTIES
+        data_type: VARCHAR
+        
+      - name: edge_id
+        description: Unique identifier for the edge/relationship
+        expr: EDGE_ID
+        data_type: VARCHAR
+        
+      - name: edge_type
+        description: Type of relationship - PARTY_TO, CONTAINS, AMENDS, SUPERSEDES, or SUPPLEMENTS
+        expr: EDGE_TYPE
+        data_type: VARCHAR
+        sample_values:
+          - PARTY_TO
+          - CONTAINS
+          - AMENDS
+          - SUPERSEDES
+          - SUPPLEMENTS
+          - HAS_CSA
+          
+      - name: source_node_id
+        description: ID of the source node in the relationship
+        expr: SOURCE_NODE_ID
+        data_type: VARCHAR
+        
+      - name: target_node_id
+        description: ID of the target node in the relationship
+        expr: TARGET_NODE_ID
+        data_type: VARCHAR
+        
+      - name: edge_properties
+        description: Additional edge properties stored as JSON
+        expr: EDGE_PROPERTIES
+        data_type: VARCHAR
+        
+      - name: source_label
+        description: Human-readable label of the source node
+        expr: SOURCE_LABEL
+        data_type: VARCHAR
+        
+      - name: source_type
+        description: Type of the source node
+        expr: SOURCE_TYPE
+        data_type: VARCHAR
+        
+      - name: target_label
+        description: Human-readable label of the target node
+        expr: TARGET_LABEL
+        data_type: VARCHAR
+        
+      - name: target_type
+        description: Type of the target node
+        expr: TARGET_TYPE
+        data_type: VARCHAR
+
+    filters:
+      - name: documents_only
+        description: Filter to document nodes only
+        expr: NODE_TYPE = 'DOCUMENT'
+        
+      - name: parties_only
+        description: Filter to party nodes only
+        expr: NODE_TYPE = 'PARTY'
+        
+      - name: events_of_default_only
+        description: Filter to event of default nodes
+        expr: NODE_TYPE = 'EVENT_OF_DEFAULT'
+        
+      - name: termination_events_only
+        description: Filter to termination event nodes
+        expr: NODE_TYPE = 'TERMINATION_EVENT'
+        
+      - name: amendments_only
+        description: Filter to amendment document nodes
+        expr: NODE_TYPE = 'AMENDMENT'
+        
+      - name: party_relationships
+        description: Filter to PARTY_TO edges showing which parties are in which documents
+        expr: EDGE_TYPE = 'PARTY_TO'
+        
+      - name: contains_relationships
+        description: Filter to CONTAINS edges showing what events/clauses are in documents
+        expr: EDGE_TYPE = 'CONTAINS'
+        
+      - name: amendment_relationships
+        description: Filter to AMENDS or SUPERSEDES edges showing amendment hierarchy
+        expr: EDGE_TYPE IN ('AMENDS', 'SUPERSEDES')
+
+verified_queries:
+  - name: "documents_by_party"
+    question: "What documents is Barclays party to?"
+    verified_sql: |
+      SELECT DISTINCT TARGET_LABEL as DOCUMENT, TARGET_TYPE as DOCUMENT_TYPE
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_KNOWLEDGE_GRAPH
+      WHERE SOURCE_LABEL ILIKE '%Barclays%' 
+        AND EDGE_TYPE = 'PARTY_TO'
+    verified_at: 2024-01-15
+    verified_by: system
+    
+  - name: "events_in_document"  
+    question: "What events of default are defined in the BofA agreement?"
+    verified_sql: |
+      SELECT TARGET_LABEL as EVENT_OF_DEFAULT
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_KNOWLEDGE_GRAPH
+      WHERE SOURCE_LABEL ILIKE '%BofA%' OR SOURCE_LABEL ILIKE '%Bank of America%'
+        AND SOURCE_TYPE = 'DOCUMENT'
+        AND TARGET_TYPE = 'EVENT_OF_DEFAULT'
+        AND EDGE_TYPE = 'CONTAINS'
+    verified_at: 2024-01-15
+    verified_by: system
+    
+  - name: "amendment_chain"
+    question: "Show the amendment history for agreements"
+    verified_sql: |
+      SELECT SOURCE_LABEL as AMENDMENT, EDGE_TYPE as RELATIONSHIP, TARGET_LABEL as PARENT_DOCUMENT
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_KNOWLEDGE_GRAPH
+      WHERE EDGE_TYPE IN ('AMENDS', 'SUPERSEDES')
+      ORDER BY SOURCE_LABEL
+    verified_at: 2024-01-15
+    verified_by: system
+    
+  - name: "all_parties"
+    question: "List all parties in the system"
+    verified_sql: |
+      SELECT DISTINCT NODE_LABEL as PARTY_NAME
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_KNOWLEDGE_GRAPH
+      WHERE NODE_TYPE = 'PARTY'
+      ORDER BY NODE_LABEL
+    verified_at: 2024-01-15
+    verified_by: system
+    
+  - name: "party_agreement_count"
+    question: "How many agreements is each party involved in?"
+    verified_sql: |
+      SELECT SOURCE_LABEL as PARTY, COUNT(DISTINCT TARGET_NODE_ID) as AGREEMENT_COUNT
+      FROM ISDA_DOCUMENT_POC.SEMANTIC_VIEWS.V_KNOWLEDGE_GRAPH
+      WHERE EDGE_TYPE = 'PARTY_TO' AND SOURCE_TYPE = 'PARTY'
+      GROUP BY SOURCE_LABEL
+      ORDER BY AGREEMENT_COUNT DESC
+    verified_at: 2024-01-15
+    verified_by: system
+
+custom_instructions: |
+  When navigating the knowledge graph:
+  
+  1. EDGE TYPES and their meanings:
+     - PARTY_TO: Connects a PARTY node to a DOCUMENT node (who is in which agreement)
+     - CONTAINS: Connects a DOCUMENT to EVENT_OF_DEFAULT, TERMINATION_EVENT, or CLAUSE nodes
+     - AMENDS: Connects an AMENDMENT document to the MASTER_AGREEMENT it modifies
+     - SUPERSEDES: Connects a newer AMENDMENT to an older AMENDMENT it replaces
+     - SUPPLEMENTS: Connects a CSA to its parent MASTER_AGREEMENT
+     - HAS_CSA: Connects a MASTER_AGREEMENT to its Credit Support Annex
+     
+  2. NODE TYPES:
+     - DOCUMENT: Master agreements (the main contracts)
+     - PARTY: Counterparties (banks, corporations, trusts)
+     - EVENT_OF_DEFAULT: Section 5(a) events like Bankruptcy, Cross Default
+     - TERMINATION_EVENT: Section 5(b) events like Illegality, Force Majeure
+     - CLAUSE: Specific contractual provisions
+     - AMENDMENT: Documents that modify master agreements
+     - CSA: Credit Support Annex documents
+     
+  3. For finding relationships:
+     - "Who is party to X?" → Filter EDGE_TYPE = 'PARTY_TO', look at SOURCE_LABEL (party) and TARGET_LABEL (document)
+     - "What's in document X?" → Filter EDGE_TYPE = 'CONTAINS', document is SOURCE, contents are TARGET
+     - "Amendment history?" → Filter EDGE_TYPE IN ('AMENDS', 'SUPERSEDES')
+     
+  4. Use ILIKE for case-insensitive party/document searches.
+  
+  5. SOURCE_LABEL and TARGET_LABEL provide human-readable names - prefer these over IDs in results.

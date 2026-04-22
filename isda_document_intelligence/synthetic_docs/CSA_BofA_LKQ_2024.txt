@@ -1,0 +1,191 @@
+CREDIT SUPPORT ANNEX
+to the Schedule to the
+ISDA MASTER AGREEMENT
+
+dated as of January 15, 2024
+
+between
+
+BANK OF AMERICA, N.A.
+("Party A")
+
+and
+
+LKQ CORPORATION
+("Party B")
+
+This Annex supplements, forms part of, and is subject to, the ISDA Master Agreement 
+dated as of September 15, 2023 between Party A and Party B (the "Agreement"), is part 
+of its Schedule and is a Credit Support Document under this Agreement with respect to 
+each party.
+
+PARAGRAPHS 1 - 12. INCORPORATION
+
+Paragraphs 1 through 12 inclusive of the ISDA Credit Support Annex (Bilateral Form) 
+(ISDA Agreements Subject to New York Law Only) published in 1994 by the International 
+Swaps and Derivatives Association, Inc. are incorporated herein by reference and made 
+a part hereof.
+
+PARAGRAPH 13. ELECTIONS AND VARIABLES
+
+(a) Security Interest for "Obligations". The term "Obligations" as used in this Annex 
+includes the following additional obligations:
+
+With respect to Party A: None.
+With respect to Party B: None.
+
+(b) Credit Support Obligations.
+
+    (i) Delivery Amount, Return Amount and Credit Support Amount.
+
+        (A) "Delivery Amount" has the meaning specified in Paragraph 3(a).
+        (B) "Return Amount" has the meaning specified in Paragraph 3(b).
+        (C) "Credit Support Amount" has the meaning specified in Paragraph 3(b).
+
+    (ii) Eligible Collateral. The following items will qualify as "Eligible Collateral" 
+         for each party:
+
+         Type of Collateral                              Valuation Percentage
+         -----------------------------------------------------------------
+         (A) Cash in USD                                      100%
+         (B) U.S. Treasury Securities 
+             (remaining maturity less than 1 year)            98%
+         (C) U.S. Treasury Securities 
+             (remaining maturity 1-5 years)                   97%
+         (D) U.S. Treasury Securities 
+             (remaining maturity 5-10 years)                  95%
+         (E) U.S. Treasury Securities 
+             (remaining maturity greater than 10 years)       93%
+
+    (iii) Other Eligible Support. None.
+
+    (iv) Thresholds.
+
+         (A) "Independent Amount" means:
+             With respect to Party A: Zero
+             With respect to Party B: As specified in each Confirmation
+
+         (B) "Threshold" means:
+             With respect to Party A: USD 25,000,000 (Twenty-Five Million Dollars);
+             provided, however, that if at any time (1) Party A's Credit Rating 
+             falls below BBB- by S&P or Baa3 by Moody's, or (2) an Event of Default 
+             or Potential Event of Default has occurred and is continuing with 
+             respect to Party A, then the Threshold for Party A shall be Zero.
+
+             With respect to Party B: USD 10,000,000 (Ten Million Dollars);
+             provided, however, that if at any time (1) Party B's Credit Rating 
+             falls below BB+ by S&P or Ba1 by Moody's, or (2) an Event of Default 
+             or Potential Event of Default has occurred and is continuing with 
+             respect to Party B, then the Threshold for Party B shall be Zero.
+
+         (C) "Minimum Transfer Amount" means:
+             With respect to Party A: USD 500,000
+             With respect to Party B: USD 500,000
+
+         (D) Rounding. The Delivery Amount and the Return Amount will be rounded 
+             up and down to the nearest integral multiple of USD 10,000, respectively.
+
+(c) Valuation and Timing.
+
+    (i) "Valuation Agent" means Party A; provided, however, that if an Event of 
+        Default has occurred and is continuing with respect to Party A, then 
+        Party B shall be the Valuation Agent.
+
+    (ii) "Valuation Date" means each Local Business Day.
+
+    (iii) "Valuation Time" means the close of business on the Local Business Day 
+          immediately preceding the Valuation Date.
+
+    (iv) "Notification Time" means 1:00 p.m., New York time, on a Local Business Day.
+
+(d) Conditions Precedent and Secured Party's Rights and Remedies. The following 
+    Termination Events will be a "Specified Condition" for the party specified:
+
+    Party A: Illegality and Tax Event
+    Party B: Illegality and Tax Event
+
+(e) Substitution.
+
+    (i) "Substitution Date" has the meaning specified in Paragraph 4(d)(ii).
+    (ii) Consent. Not required.
+
+(f) Dispute Resolution.
+
+    (i) "Resolution Time" means 1:00 p.m., New York time, on the Local Business Day 
+        following the date on which the notice is given that gives rise to a dispute.
+
+    (ii) Value. For the purpose of Paragraphs 5(i)(C) and 5(ii), the Value of Posted 
+         Credit Support will be calculated by obtaining quotations from two Reference 
+         Market-makers.
+
+    (iii) Alternative. The provisions of Paragraph 5 will apply.
+
+(g) Holding and Using Posted Collateral.
+
+    (i) Eligibility to Hold Posted Collateral. Party A and Party B will each be 
+        entitled to hold Posted Collateral; provided that the following conditions 
+        are satisfied:
+
+        (1) The party is not a Defaulting Party.
+
+    (ii) Use of Posted Collateral. The provisions of Paragraph 6(c) will apply to 
+         both Party A and Party B.
+
+(h) Distributions and Interest Amount.
+
+    (i) "Interest Rate" means the Federal Funds Overnight Rate as reported on 
+        Bloomberg Page FEDL01.
+
+    (ii) "Transfer of Interest Amount" will be made on the first Local Business Day 
+         of each calendar month.
+
+    (iii) Alternative to Interest Amount. The provisions of Paragraph 6(d)(ii) 
+          will apply.
+
+(i) Additional Representation(s). None.
+
+(j) Other Eligible Support and Other Posted Support.
+
+    (i) "Value" with respect to Other Eligible Support and Other Posted Support 
+        means: Not Applicable.
+
+    (ii) "Transfer" with respect to Other Eligible Support and Other Posted Support 
+         means: Not Applicable.
+
+(k) Demands and Notices.
+
+    All demands, specifications and notices under this Annex will be made pursuant 
+    to the Notices Section of this Agreement.
+
+(l) Addresses for Transfers.
+
+    Party A: Bank of America, N.A.
+             ABA: 026009593
+             Account: [Account Number]
+             Reference: LKQ Corporation CSA
+
+    Party B: As specified in writing by Party B
+
+(m) Other Provisions.
+
+    (i) Early Termination. Upon the occurrence of an Early Termination Date, the 
+        Secured Party may exercise any of the rights and remedies of a secured 
+        party with respect to Posted Collateral, including any such rights and 
+        remedies under law then in effect.
+
+    (ii) Relationship to Agreement. This Annex is a Credit Support Document for 
+         purposes of the Agreement, and the Posted Collateral shall constitute 
+         "Credit Support" for purposes of Section 5(a)(iii)(1) of the Agreement.
+
+    (iii) Gross-Up for Taxes. All payments of Interest Amount under this Annex 
+          shall be made free and clear of any Tax withholding.
+
+IN WITNESS WHEREOF, the parties have executed this Annex as of the date first 
+written above.
+
+BANK OF AMERICA, N.A.                    LKQ CORPORATION
+
+By: _________________________            By: _________________________
+Name:                                    Name:
+Title: Managing Director                 Title: Chief Financial Officer
+Date: January 15, 2024                   Date: January 15, 2024
