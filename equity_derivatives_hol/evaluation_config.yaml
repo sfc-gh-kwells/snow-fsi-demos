@@ -1,0 +1,110 @@
+# Agent Evaluation Configuration for Equity Derivatives Agent
+# Upload to: @CORTEX_AI_HOL.RAG_PIPELINE.EVALUATION_CONFIG/evaluation_config.yaml
+
+# Dataset definition
+dataset:
+  dataset_type: "CORTEX AGENT"
+  table_name: "CORTEX_AI_HOL.RAG_PIPELINE.AGENT_EVALUATION_DATA"
+  dataset_name: "EQ_DERIVATIVES_EVAL_DATASET"
+  column_mapping:
+    query_text: "INPUT_QUERY"
+    ground_truth: "GROUND_TRUTH"
+
+# Agent configuration
+evaluation:
+  agent_params:
+    agent_name: "CORTEX_AI_HOL.RAG_PIPELINE.EQ_DERIVATIVES_AGENT"
+    agent_type: "CORTEX AGENT"
+  run_params:
+    label: "Equity Derivatives Baseline Evaluation"
+    description: "Baseline evaluation of the equity derivatives agent across ISDA, equity research, and market data domains"
+  source_metadata:
+    type: "dataset"
+    dataset_name: "EQ_DERIVATIVES_EVAL_DATASET"
+
+# Metrics
+metrics:
+  # Built-in metrics
+  - "answer_correctness"
+  - "logical_consistency"
+
+  # Custom metric: Tool Selection Accuracy
+  # Evaluates whether the agent chose the right tool for the question
+  - name: "tool_selection"
+    score_ranges:
+      min_score: [1, 3]
+      median_score: [4, 6]
+      max_score: [7, 10]
+    prompt: |
+      Evaluate whether the agent selected the appropriate tool(s) for the user's query.
+
+      The agent has 5 tools:
+      1. AgreementTerms - for structured ISDA clause data (thresholds, parties, governing law)
+      2. DocumentSearch_ISDA - for searching raw ISDA document text (definitions, wording)
+      3. EquityResearch - for equity research reports (ratings, price targets, charts)
+      4. MarketData - for stock prices and trading data
+      5. SECFilings - for fundamental financial data from SEC filings
+
+      Score from 1-10:
+      1 = Used completely wrong tool (e.g., searched equity research for an ISDA question)
+      4 = Used a partially relevant tool but missed the optimal one
+      7 = Used the right tool but could have combined with another for a better answer
+      10 = Used exactly the right tool(s) for the query
+
+      User query: {{input}}
+      Agent output and tool calls: {{output}}
+      Expected behavior: {{ground_truth}}
+
+      Consider:
+      - Did the agent use the most appropriate tool for the question type?
+      - For cross-domain questions, did it use multiple tools effectively?
+      - Did it avoid unnecessary tool calls?
+
+  # Custom metric: Citation Quality
+  # Evaluates whether the agent properly cites sources
+  - name: "citation_quality"
+    score_ranges:
+      min_score: [1, 3]
+      median_score: [4, 6]
+      max_score: [7, 10]
+    prompt: |
+      Evaluate the quality of source citations in the agent's response.
+
+      Score from 1-10:
+      1 = No citations at all, makes claims without attribution
+      4 = Vague citations (e.g., "according to the data" without specifics)
+      7 = Good citations with document names or data sources identified
+      10 = Excellent citations with specific filenames, dates, and data points referenced
+
+      Agent output: {{output}}
+
+      Consider:
+      - Does the agent identify which document or data source information comes from?
+      - Are specific filenames, dates, or identifiers mentioned?
+      - Can the user trace back each claim to its source?
+
+  # Custom metric: Financial Accuracy
+  # Evaluates numerical precision for financial data
+  - name: "financial_accuracy"
+    score_ranges:
+      min_score: [1, 3]
+      median_score: [4, 6]
+      max_score: [7, 10]
+    prompt: |
+      Evaluate the financial accuracy and precision of the agent's response.
+
+      Score from 1-10:
+      1 = Contains factual errors, wrong numbers, or misleading financial statements
+      4 = Generally correct but imprecise (e.g., rounds inappropriately, missing currency)
+      7 = Accurate with proper formatting (currency symbols, decimal places, percentages)
+      10 = Precise, properly formatted, includes relevant context (dates, comparison periods)
+
+      User query: {{input}}
+      Agent output: {{output}}
+      Expected behavior: {{ground_truth}}
+
+      Consider:
+      - Are numerical values accurate and properly formatted?
+      - Are currencies and units specified?
+      - Are time periods and dates correctly referenced?
+      - For comparisons, is the math correct?
