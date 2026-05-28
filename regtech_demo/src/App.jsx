@@ -2,12 +2,14 @@ import { useState } from 'react'
 import DocumentIntelligence from './tabs/DocumentIntelligence.jsx'
 import BalanceSheetAnalytics from './tabs/BalanceSheetAnalytics.jsx'
 import PipelineAudit from './tabs/PipelineAudit.jsx'
+import CrossReportValidation from './tabs/CrossReportValidation.jsx'
 import './App.css'
 
 const TABS = [
   { id: 'documents',  label: 'Document Intelligence',   icon: '📄' },
-  { id: 'analytics',  label: 'Balance Sheet Analytics', icon: '📊' },
   { id: 'audit',      label: 'Pipeline Audit',          icon: '🔍' },
+  { id: 'analytics',  label: 'Balance Sheet Analytics', icon: '📊' },
+  { id: 'crossreport', label: 'Cross-Report Validation', icon: '⚖' },
 ]
 
 export default function App() {
@@ -52,6 +54,7 @@ export default function App() {
         {activeTab === 'documents' && <DocumentIntelligence />}
         {activeTab === 'analytics' && <BalanceSheetAnalytics />}
         {activeTab === 'audit'     && <PipelineAudit />}
+        {activeTab === 'crossreport' && <CrossReportValidation />}
       </main>
 
     </div>

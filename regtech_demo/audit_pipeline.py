@@ -77,6 +77,7 @@ log = logging.getLogger("audit_pipeline")
 
 BASE_DIR = Path(__file__).parent
 PIPELINES_DIR = BASE_DIR / "pipelines"
+PYTHON_UDFS_DIR = BASE_DIR / "pipelines" / "python_udfs"
 DATABASE = "REGTECH_DEMO_DB"
 SCHEMA = "REGULATORY_REPORTING"
 REQUIREMENTS_TABLE = f"{DATABASE}.{SCHEMA}.EXTRACTED_REQUIREMENTS"
@@ -201,12 +202,16 @@ def _parse_pipeline_header(sql: str) -> dict[str, str]:
 # ---------------------------------------------------------------------------
 
 def load_pipelines() -> list[dict]:
-    """Read all .sql files from pipelines/ directory, including header metadata."""
+    """Read all .sql files from pipelines/ directory, including header metadata.
+
+    Subdirectories (e.g. python_udfs/) are excluded — they contain reference
+    UDF implementations, not pipelines to audit.
+    """
     if not PIPELINES_DIR.exists():
         log.error("Pipelines directory not found: %s", PIPELINES_DIR)
         sys.exit(1)
 
-    sql_files = sorted(PIPELINES_DIR.glob("*.sql"))
+    sql_files = sorted(PIPELINES_DIR.glob("*.sql"))  # root-level only
     if not sql_files:
         log.error("No .sql files found in %s", PIPELINES_DIR)
         sys.exit(1)
@@ -231,6 +236,31 @@ def load_pipelines() -> list[dict]:
         )
     log.info("Loaded %d pipeline SQL files from %s", len(pipelines), PIPELINES_DIR)
     return pipelines
+
+
+def load_python_udf_reference() -> str:
+    """Read Python UDF definitions from pipelines/python_udfs/ as reference context.
+
+    These UDFs are passed into the audit prompt so the AI can recommend them
+    as suggested fixes when a SQL-only implementation is insufficient.
+    Returns an empty string if the directory does not exist.
+    """
+    if not PYTHON_UDFS_DIR.exists():
+        return ""
+
+    udf_files = sorted(PYTHON_UDFS_DIR.glob("*.sql"))
+    if not udf_files:
+        return ""
+
+    parts: list[str] = ["=== Available Python UDF Implementations ===\n"]
+    for f in udf_files:
+        parts.append(f"--- {f.name} ---\n")
+        parts.append(f.read_text(encoding="utf-8"))
+        parts.append("\n")
+
+    result = "\n".join(parts)
+    log.info("Loaded %d Python UDF reference files from %s", len(udf_files), PYTHON_UDFS_DIR)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -269,8 +299,18 @@ def fetch_requirements(sf_conn: snowflake.connector.SnowflakeConnection) -> str:
 # Phase 3: Analyze each pipeline
 # ---------------------------------------------------------------------------
 
-def _build_audit_prompt(pipeline: dict, requirements_text: str) -> str:
+def _build_audit_prompt(pipeline: dict, requirements_text: str, python_udf_context: str = "") -> str:
     name = pipeline["name"]
+    udf_section = ""
+    if python_udf_context:
+        udf_section = f"""
+AVAILABLE PYTHON UDF FIXES:
+{python_udf_context}
+When a regulatory calculation cannot be correctly expressed in SQL (e.g., array
+sorting for Expected Shortfall, matrix operations for PFE aggregation, or
+non-integer exponentiation for ILM), the suggested_fix field should show how
+to call the appropriate Python UDF above instead of a SQL-only workaround.
+"""
     return f"""You are a regulatory compliance auditor. Analyze this SQL data pipeline for Basel III/IV compliance issues.
 
 PIPELINE: {name}
@@ -285,7 +325,7 @@ SQL:
 
 REGULATORY REQUIREMENTS:
 {requirements_text}
-
+{udf_section}
 Analyze the pipeline SQL and identify compliance gaps. For each finding, return a JSON object with these fields:
 - finding_id: unique ID like "AUD-001"
 - pipeline_name: name of the pipeline file
@@ -294,7 +334,7 @@ Analyze the pipeline SQL and identify compliance gaps. For each finding, return 
 - description: clear explanation of the compliance gap
 - affected_table: which downstream table is affected
 - old_logic: the problematic SQL pattern from the pipeline
-- suggested_fix: corrected SQL that would be compliant
+- suggested_fix: corrected SQL or Python UDF call that would be compliant
 - regulation_ref: specific BCBS/Basel reference (e.g. "BCBS FRTB MAR33.1")
 
 Return ONLY valid JSON array. No markdown, no explanation outside the JSON."""
@@ -391,9 +431,7 @@ def write_findings_to_snowflake(
     cur = sf_conn.cursor()
 
     if force:
-        log.info("--force: truncating existing findings ...")
-        cur.execute(f"TRUNCATE TABLE {FINDINGS_TABLE}")
-        log.info("Truncated %s", FINDINGS_TABLE)
+        log.info("--force: skipping truncate — appending new findings to existing data")
 
     if not all_findings:
         log.info("No findings to write.")
@@ -409,7 +447,7 @@ def write_findings_to_snowflake(
             f.get("affected_table", ""),
             f.get("old_logic", ""),
             f.get("suggested_fix", ""),
-            f.get("regulation_ref", ""),
+            f.get("regulation_ref", "")[:2000],  # guard against column size limit
         )
         for f in all_findings
     ]

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from 'react'
+import { useState, useRef, useEffect, useMemo, useCallback } from 'react'
 import {
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
@@ -14,6 +14,16 @@ const STATUS_LABELS = {
   tool_execution:        'Executing query',
 }
 function getStatusLabel(s) { return STATUS_LABELS[s] || s }
+
+function downloadCSV(rows, filename) {
+  if (!rows?.length) return
+  const keys  = Object.keys(rows[0]).filter(k => k !== 'name')
+  const lines = [keys.join(','), ...rows.map(r => keys.map(k => JSON.stringify(r[k] ?? '')).join(','))]
+  const blob  = new Blob([lines.join('\n')], { type: 'text/csv' })
+  const url   = URL.createObjectURL(blob)
+  const a     = document.createElement('a'); a.href = url; a.download = filename; a.click()
+  URL.revokeObjectURL(url)
+}
 
 // ── Lightweight inline markdown ───────────────────────────────────────────────
 function parseInline(text) {
@@ -161,6 +171,7 @@ function ChartVisualization({ spec }) {
         <div className="cv-tabs">
           <button className={`cv-tab${view === 'chart' ? ' active' : ''}`} onClick={() => setView('chart')}>Chart</button>
           <button className={`cv-tab${view === 'table' ? ' active' : ''}`} onClick={() => setView('table')}>Table</button>
+          <button className="cv-tab cv-download" onClick={() => downloadCSV(data, 'chart-data.csv')} title="Download CSV">↓ CSV</button>
         </div>
       </div>
       <div className="cv-body">
@@ -197,7 +208,8 @@ function ChartVisualization({ spec }) {
 export default function Chatbot({
   open: openProp,
   onClose,
-  title       = 'RegTech AI Assistant',
+  title           = 'RegTech AI Assistant',
+  initialMessage  = '',
   suggestions = [
     { icon: '📊', label: 'What drove the RWA spike in Q4 2025?' },
     { icon: '⚠', label: 'Any threshold breaches this quarter?' },
@@ -213,17 +225,55 @@ export default function Chatbot({
   const [expandedThinking, setExpandedThinking] = useState({})
   const [expandedSql,      setExpandedSql]      = useState({})
   const [copiedId,         setCopiedId]         = useState(null)
-  const listRef = useRef(null)
+  const listRef           = useRef(null)
+  const initSentRef       = useRef(false)
+  // Thread state: threadId is fetched from the Cortex Threads API on first open.
+  // lastAssistantMsgId starts at 0 (= "start of thread") per Cortex Agents docs,
+  // then advances to each assistant message_id received in the SSE stream.
+  const [threadId,         setThreadId]         = useState(null)
+  const lastAssistantMsgId = useRef(0)
 
   useEffect(() => {
     if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight
   }, [messages, loading])
+
+  // Create a Cortex thread when the panel first opens so we get a real thread_id
+  const isOpen = controlled ? openProp : open
+  useEffect(() => {
+    if (!isOpen || threadId !== null) return
+    fetch('/api/threads', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d?.thread_id) setThreadId(d.thread_id) })
+      .catch(() => { /* non-critical — falls back to stateless mode */ })
+  }, [isOpen, threadId])
+
+  // Auto-send initialMessage when panel opens (used by report generator)
+  useEffect(() => {
+    if (!isOpen || !initialMessage || initSentRef.current) return
+    initSentRef.current = true
+    // Small delay to let the panel animate open before starting the stream
+    const t = setTimeout(() => send(initialMessage), 300)
+    return () => clearTimeout(t)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, initialMessage])
 
   const copySql = async (sql, id) => {
     await navigator.clipboard.writeText(sql)
     setCopiedId(id)
     setTimeout(() => setCopiedId(null), 2000)
   }
+
+  const sendFeedback = useCallback(async (msg, positive) => {
+    if (!msg.requestId || msg.feedback) return
+    setMessages(m => m.map(x => x.id === msg.id ? { ...x, feedback: positive ? 'up' : 'down' } : x))
+    try {
+      await fetch('/api/chat/feedback', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ orig_request_id: msg.requestId, positive, thread_id: threadId }),
+      })
+    } catch { /* non-critical */ }
+  }, [threadId])
 
   const send = async (text) => {
     text = (text || input).trim()
@@ -233,7 +283,6 @@ export default function Chatbot({
 
     const msgId  = Date.now().toString()
     const aId    = `${msgId}_a`
-    const history = messages.map(m => ({ role: m.role, text: m.text }))
 
     const updateMsg = (patch) =>
       setMessages(m => m.map(msg => msg.id === aId ? { ...msg, ...patch } : msg))
@@ -241,7 +290,8 @@ export default function Chatbot({
     setMessages(m => [...m,
       { id: `${msgId}_u`, role: 'user', text },
       { id: aId, role: 'assistant', text: '', isStreaming: true,
-        streamingStatus: 'Connecting…', thinkingSteps: [], thinkingContent: '', charts: [], sql: null },
+        streamingStatus: 'Connecting…', thinkingSteps: [], thinkingContent: '', charts: [], sql: null,
+        requestId: null, feedback: null },
     ])
     setExpandedThinking(e => ({ ...e, [aId]: true }))
 
@@ -249,7 +299,11 @@ export default function Chatbot({
       const res = await fetch('/api/chat', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ message: text, history }),
+        body:    JSON.stringify({
+          message:           text,
+          thread_id:         threadId,
+          parent_message_id: lastAssistantMsgId.current,
+        }),
       })
 
       if (!res.ok || !res.body) {
@@ -282,6 +336,13 @@ export default function Chatbot({
           try {
             const data = JSON.parse(dstr)
             switch (etype) {
+              case 'message_id':
+                // Advance the parent pointer — required for the next thread turn
+                if (data.message_id != null) lastAssistantMsgId.current = data.message_id
+                break
+              case 'request_id':
+                if (data.request_id) updateMsg({ requestId: data.request_id })
+                break
               case 'thinking':
                 if (data.text) { accThinking += data.text; updateMsg({ thinkingContent: accThinking, streamingStatus: 'Analyzing…' }) }
                 break
@@ -317,8 +378,10 @@ export default function Chatbot({
     }
   }
 
-  const isOpen   = controlled ? openProp : open
-  const closePanel = () => { controlled ? onClose?.() : setOpen(false) }
+  const closePanel = () => {
+    initSentRef.current = false
+    controlled ? onClose?.() : setOpen(false)
+  }
 
   const getSuggestionLabel = (s) => (typeof s === 'string' ? s : s.label)
 
@@ -414,6 +477,7 @@ export default function Chatbot({
                             <button className="sql-copy" onClick={e => { e.stopPropagation(); copySql(m.sql, m.id) }}>
                               {copiedId === m.id ? '✓ Copied' : 'Copy'}
                             </button>
+                            <button className="sql-copy" onClick={e => { e.stopPropagation(); const blob = new Blob([m.sql], {type:'text/plain'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='query.sql'; a.click(); URL.revokeObjectURL(url) }}>↓</button>
                             <span>{expandedSql[m.id] ? '▲' : '▼'}</span>
                           </div>
                         </button>
@@ -428,6 +492,24 @@ export default function Chatbot({
                     ) : m.isStreaming ? (
                       <div className="chat-bubble assistant-bubble chat-typing">Thinking…</div>
                     ) : null}
+
+                    {!m.isStreaming && m.text && (
+                      <div className="msg-feedback-row">
+                        <button
+                          className={`feedback-btn${m.feedback === 'up' ? ' active-up' : ''}`}
+                          onClick={() => sendFeedback(m, true)}
+                          title="Good response"
+                          disabled={!!m.feedback}
+                        >👍</button>
+                        <button
+                          className={`feedback-btn${m.feedback === 'down' ? ' active-down' : ''}`}
+                          onClick={() => sendFeedback(m, false)}
+                          title="Needs improvement"
+                          disabled={!!m.feedback}
+                        >👎</button>
+                        {m.feedback && <span className="feedback-sent">Feedback sent</span>}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -552,6 +634,19 @@ export default function Chatbot({
         .md-table { border-collapse: collapse; font-size: 11px; margin: 6px 0; width: 100%; }
         .md-table th { background: #f3f4f6; padding: 5px 8px; text-align: left; font-weight: 600; border: 1px solid #e5e7eb; }
         .md-table td { padding: 5px 8px; border: 1px solid #e5e7eb; }
+
+        /* Feedback thumbs */
+        .msg-feedback-row { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+        .feedback-btn { background: none; border: 1px solid #e5e7eb; border-radius: 4px; padding: 2px 7px; font-size: 12px; cursor: pointer; transition: background 0.1s, border-color 0.1s; line-height: 1.4; }
+        .feedback-btn:hover:not(:disabled) { background: #f3f4f6; border-color: #d1d5db; }
+        .feedback-btn:disabled { opacity: 0.5; cursor: default; }
+        .feedback-btn.active-up   { background: #dcfce7; border-color: #86efac; }
+        .feedback-btn.active-down { background: #fee2e2; border-color: #fca5a5; }
+        .feedback-sent { font-size: 10px; color: #9ca3af; margin-left: 4px; }
+
+        /* Chart CSV download tab */
+        .cv-download { color: #2563eb; border-color: #bfdbfe; }
+        .cv-download:hover { background: #eff6ff; }
 
         @media (max-width: 500px) { .chat-panel { width: 100vw; } }
       `}</style>
